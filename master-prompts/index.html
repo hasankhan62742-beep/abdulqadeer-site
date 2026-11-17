@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Master Prompts for Kindle Book — Muhammad Abdul Qadeer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Public+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F3EC; --surface:#FFFFFF; --surface2:#FFFDF8; --ink:#0F1B2D; --ink2:#334155; --muted:#64748B;
+  --gold:#B8934A; --gold2:#D9B96A; --navy:#0F1B2D; --navy2:#16263F; --line:#E7DFCE; --green:#166534; --greenBg:#DCFCE7;
+  --red:#991B1B; --redBg:#FEE2E2; --amber:#92400E; --amberBg:#FEF3C7; --accent:#0F766E;
+  --shadow:0 10px 30px rgba(15,27,45,.08); --radius:18px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0B1220; --surface:#121E33; --surface2:#16243D; --ink:#F1F5F9; --ink2:#CBD5E1; --muted:#94A3B8; --line:#24344E; --shadow:0 10px 30px rgba(0,0,0,.35); }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Public Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+a{color:var(--accent)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+/* HERO */
+.hero{background:var(--navy);color:#fff;overflow:hidden;position:relative}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 85% 10%, rgba(217,185,106,.22), transparent 60%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;gap:36px;padding:56px 0 48px;align-items:center}
+.eyebrow{letter-spacing:.14em;text-transform:uppercase;font-size:12px;font-weight:800;color:var(--gold2)}
+.hero h1{font-family:"Playfair Display",serif;font-size:clamp(38px,6vw,64px);line-height:.95;margin:12px 0 14px;font-weight:900}
+.hero h1 span{color:var(--gold2)}
+.hero p.lead{font-size:18px;color:#E2E8F0;max-width:620px;margin:0}
+.byline{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.avatar{width:48px;height:48px;border-radius:50%;background:var(--gold);color:#0F1B2D;display:grid;place-items:center;font-weight:900;font-size:18px}
+.byline b{font-size:16px}.byline small{display:block;color:#94A3B8}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+.chip{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);padding:8px 12px;border-radius:999px;font-size:13px;font-weight:700}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn{min-height:44px;padding:0 18px;border-radius:999px;border:0;font-weight:800;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;text-decoration:none}
+.btn-gold{background:var(--gold2);color:#0F1B2D}.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-dark{background:var(--navy);color:#fff}.btn-outline{background:var(--surface);color:var(--ink);border:1.5px solid var(--line)}
+/* Book visual */
+.book-wrap{display:flex;justify-content:center}
+.book{width:240px;aspect-ratio:1600/2560;max-height:360px;background:linear-gradient(160deg,#1E3A5F,#0F1B2D 55%);border-radius:6px 14px 14px 6px;box-shadow:18px 24px 50px rgba(0,0,0,.45);border-left:10px solid #0A1422;padding:26px 22px;display:flex;flex-direction:column;color:#fff;transform:rotate(2deg)}
+.book .k{font-size:10px;letter-spacing:.18em;color:var(--gold2);font-weight:800}
+.book h3{font-family:"Playfair Display",serif;font-size:28px;line-height:1.05;margin:12px 0 8px}
+.book p{font-size:12px;color:#CBD5E1;margin:0}
+.book .rule{height:3px;background:var(--gold);width:52px;margin:16px 0}
+.book .foot{margin-top:auto;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#E2E8F0}
+/* Sections */
+section{padding:44px 0}
+.sec-head{max-width:720px}
+.sec-head h2{font-family:"Playfair Display",serif;font-size:32px;line-height:1.1;margin:6px 0 8px}
+.sec-head p{color:var(--ink2);margin:0}
+.kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--gold)}
+/* Roadmap */
+.road{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+.step-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+.step-card .num{width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800}
+@media(prefers-color-scheme:dark){.step-card .num{background:var(--gold);color:#0F1B2D}}
+.step-card b{display:block;margin-top:10px;font-size:15px}.step-card p{font-size:13px;color:var(--muted);margin:4px 0 0}
+/* Grids */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.card h3{margin:0 0 8px;font-size:18px}
+.card p,.card li{color:var(--ink2);font-size:15px}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.pass{background:var(--greenBg);color:var(--green);font-weight:800;padding:4px 10px;border-radius:999px;font-size:12px}
+.fail{background:var(--redBg);color:var(--red);font-weight:800;padding:4px 10px;border-radius:999px;font-size:12px}
+.nt{background:var(--amberBg);color:var(--amber);font-weight:800;padding:4px 10px;border-radius:999px;font-size:12px}
+/* Prompt cards */
+.prompt-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);margin-top:22px}
+.prompt-head{padding:22px 22px 0;display:flex;gap:16px;align-items:flex-start}
+.pnum{flex:0 0 auto;width:52px;height:52px;border-radius:14px;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:"Playfair Display",serif;font-size:22px;font-weight:800}
+@media(prefers-color-scheme:dark){.pnum{background:var(--gold);color:#0F1B2D}}
+.prompt-head h3{margin:0;font-size:22px;line-height:1.2}
+.prompt-head p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.prompt-body{padding:18px 22px 22px}
+pre{white-space:pre-wrap;word-break:break-word;background:#0F1B2D;color:#E8EEF6;border-radius:14px;padding:18px;font-family:"JetBrains Mono",monospace;font-size:13.5px;line-height:1.7;margin:0;max-height:520px;overflow:auto}
+@media(prefers-color-scheme:dark){pre{background:#0A1424;border:1px solid #24344E}}
+.copy-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center}
+.copy-btn{min-height:44px}
+.checklist{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:8px}
+.checklist li{padding-left:28px;position:relative;font-size:14px;color:var(--ink2)}
+.checklist li::before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--greenBg);color:var(--green);display:grid;place-items:center;font-size:12px;font-weight:900}
+.note{background:#FFFBEB;border:1px solid #FDE68A;color:#78350F;border-radius:12px;padding:14px 16px;font-size:14px;margin-top:14px}
+@media(prefers-color-scheme:dark){.note{background:#2A2110;color:#FDE68A;border-color:#57451A}}
+.rules{background:var(--navy);color:#fff;border-radius:20px;padding:28px}
+.rules h2{font-family:"Playfair Display",serif;margin:0 0 6px}
+.rules ol{margin:12px 0 0;padding-left:20px;color:#E2E8F0}
+.rules li{margin:8px 0}
+footer{padding:36px 0 56px;color:var(--muted);font-size:14px;text-align:center}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(80px);background:var(--navy);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;font-size:14px;transition:.25s;z-index:50;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.toast.show{transform:translateX(-50%) translateY(0)}
+@media(max-width:860px){.hero-inner{grid-template-columns:1fr}.road{grid-template-columns:1fr 1fr}.grid2,.grid3{grid-template-columns:1fr}.book{transform:none}}
+@media(max-width:480px){.road{grid-template-columns:1fr}}
+@media print{.hero{background:#fff;color:#000}.hero p.lead,.byline small{color:#333}.actions,.copy-row,.toast{display:none!important}pre{max-height:none;background:#fff;color:#000;border:1px solid #ccc}body{background:#fff}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">The Complete System • Research-Based • Any Niche</div>
+      <h1>Master Prompts<br>for <span>Kindle Book</span></h1>
+      <p class="lead">Eight copy-paste master prompts that take a book from blank page to a publish-ready Kindle edition — structure, research, writing, visuals, audit, plagiarism spot-check, humanization, and KDP launch. No invented stats. No shortcuts. No step skipped.</p>
+      <div class="byline">
+        <div class="avatar">MQ</div>
+        <div><b>Prepared by Muhammad Abdul Qadeer</b><small>AI/ML Engineer &amp; Founder, Qadeer Automations • Kindle Author — 2 Published Books</small></div>
+      </div>
+      <div class="chips"><span class="chip">8 Master Prompts</span><span class="chip">50,000–65,000 Words Guide</span><span class="chip">Cover 1600 × 2560 px</span><span class="chip">$4.99 • 70% Royalty</span><span class="chip">Works for Any Niche</span></div>
+      <div class="actions">
+        <a class="btn btn-gold" href="#prompts">Start With Prompt 1 ↓</a>
+        <button class="btn btn-ghost" onclick="downloadAll('md')">Download All (.md)</button>
+        <button class="btn btn-ghost" onclick="downloadAll('txt')">Download All (.txt)</button>
+      </div>
+    </div>
+    <div class="book-wrap" aria-hidden="true">
+      <div class="book">
+        <div class="k">MASTER PROMPT SYSTEM</div>
+        <h3>Write. Audit.<br>Publish.<br>Properly.</h3>
+        <div class="rule"></div>
+        <p>The exact 8-step workflow used to produce Kindle books — built on verified KDP rules, not guesswork.</p>
+        <div class="foot">Muhammad Abdul Qadeer</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section>
+  <div class="sec-head"><div class="kicker">The Roadmap</div><h2>One workflow. Eight gates. Nothing ships until every gate passes.</h2><p>Run the prompts in order. Each step produces one deliverable that the next step depends on. If a step fails its checklist, fix it there — never carry a known problem forward.</p></div>
+  <div class="road">
+    <div class="step-card"><div class="num">1</div><b>Structure &amp; Format</b><p>Title, chapters, front &amp; back matter blueprint.</p></div>
+    <div class="step-card"><div class="num">2</div><b>Research</b><p>Verified facts only — source + date for every figure.</p></div>
+    <div class="step-card"><div class="num">3</div><b>Writing</b><p>Original, practical chapters with actions &amp; checklists.</p></div>
+    <div class="step-card"><div class="num">4</div><b>Figures &amp; Visuals</b><p>Original numbered figures, captioned &amp; inspected.</p></div>
+    <div class="step-card"><div class="num">5</div><b>Audit</b><p>Full QA — PASS / FAIL / NOT TESTED. No blind PASS.</p></div>
+    <div class="step-card"><div class="num">6</div><b>Plagiarism Spot-Check</b><p>14+ verbatim phrase searches. Honestly labelled.</p></div>
+    <div class="step-card"><div class="num">7</div><b>Humanization</b><p>Natural human voice. Facts untouched. Change log kept.</p></div>
+    <div class="step-card"><div class="num">8</div><b>KDP Publishing</b><p>Metadata, cover, disclosure, paid-first pricing.</p></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="grid2">
+    <div class="card">
+      <h3>📐 The pricing maths — verified KDP numbers</h3>
+      <table>
+        <tr><th>Item</th><th>Figure</th></tr>
+        <tr><td>Launch price (paid-first)</td><td><b>$4.99</b></td></tr>
+        <tr><td>Royalty plan</td><td><b>70%</b> (eligible price band $2.99–$9.99)</td></tr>
+        <tr><td>Gross royalty</td><td>$4.99 × 70% = <b>$3.49</b></td></tr>
+        <tr><td>After delivery fee (file-size based)</td><td><b>≈ $3.40 per sale</b></td></tr>
+        <tr><td>Free promotion at launch</td><td><b>Never</b> — paid launch first</td></tr>
+      </table>
+      <p style="font-size:13px;color:var(--muted)">Delivery fee varies with file size, so treat $3.40 as an estimate, not a guarantee. KDP terms: kdp.amazon.com.</p>
+    </div>
+    <div class="card">
+      <h3>⚖️ The audit scale — use it honestly</h3>
+      <p><span class="pass">PASS</span> &nbsp;Checked, evidence seen, meets the standard.</p>
+      <p><span class="fail">FAIL</span> &nbsp;Checked and it does not meet the standard. Fix before moving on.</p>
+      <p><span class="nt">NOT TESTED</span> &nbsp;Not checked yet. This is an honest answer — a guessed PASS is not.</p>
+      <div class="note"><b>Golden rule:</b> Never mark PASS without actually checking. An audit full of blind PASS marks is worse than no audit at all.</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:16px">
+    <h3>How to use these prompts</h3>
+    <p style="margin:0">Replace every <b>[bracket]</b> with your book's details — for example <b>[TOPIC]</b>, <b>[TARGET READER]</b>, <b>[READER'S #1 PROBLEM]</b>. Paste one prompt at a time into your AI assistant, review the output against that step's checklist, and only then move to the next prompt. Keep every output in one folder: <i>01-structure, 02-research, 03-drafts, 04-figures, 05-audit, 06-plagiarism, 07-final, 08-kdp</i>.</p>
+  </div>
+</section>
+
+<section id="prompts" style="padding-top:8px">
+  <div class="sec-head"><div class="kicker">Copy • Paste • Replace Brackets • Run</div><h2>The 8 Master Prompts</h2><p>Each prompt is complete and self-contained. Copy it exactly, fill the brackets, and demand the deliverable it specifies.</p></div>
+
+  <!-- PROMPT 1 -->
+  <article class="prompt-card" id="p1">
+    <div class="prompt-head"><div class="pnum">1</div><div><h3>Book Structure &amp; Format — The Blueprint</h3><p>Deliverable: complete book blueprint before a single chapter is written.</p></div></div>
+    <div class="prompt-body">
+<pre id="prompt-1">MASTER PROMPT 1 — BOOK STRUCTURE & FORMAT
+
+Act as a senior Kindle nonfiction editor. Design the complete blueprint for my book BEFORE any writing begins.
+
+MY BOOK:
+- Topic / niche: [TOPIC]
+- Target reader: [TARGET READER — job, situation, skill level]
+- Reader's #1 problem this book solves: [PROBLEM]
+- The transformation promised (where the reader ends up): [OUTCOME]
+- My verified credentials (use ONLY these, invent nothing): [YOUR REAL FACTS]
+
+DELIVER:
+1. TITLE + SUBTITLE: 5 options each. Title: clear benefit, searchable, no hype words ("guaranteed", "#1", "bestseller"). Subtitle must state the outcome and the audience.
+2. POSITIONING: one paragraph — who this is for, who it is NOT for, and how it differs from the 3 most obvious competing books (name the difference, never copy them).
+3. LENGTH PLAN: 50,000–65,000 words total. Show the maths: number of chapters × average words per chapter = total. If my topic genuinely needs less, say so and justify it — never pad to hit a number.
+4. CHAPTER PLAN: for every chapter give — chapter title, the one question it answers, 3–5 section headings, the practical payoff, and target word count. Sequence chapters so each builds on the previous one.
+5. STANDARD CHAPTER FORMAT (apply to every chapter): opening hook or real scenario → core teaching → worked example → "Do This Now" actions → common mistakes → measurable outcome → end-of-chapter checklist.
+6. FRONT MATTER: copyright page, dedication, foreword/preface note (who should write it and why — never invent a foreword author), table of contents, introduction (problem, promise, how to use this book, what this book will NOT do).
+7. BACK MATTER: conclusion, a 90-day action plan (week-by-week), appendices, glossary of key terms, worksheets, master checklists, "About the Author" drafted ONLY from my verified facts above, and a review request page.
+8. TONE & STYLE RULES: plain, direct, reader-friendly English; short paragraphs; second person ("you"); zero fluff, zero filler, zero repeated points.
+
+RULES: Invent nothing about me or my results. Flag any claim in my inputs that you cannot support. End by listing every decision I must approve before Prompt 2.</pre>
+      <div class="copy-row"><button class="btn btn-dark copy-btn" onclick="copyPrompt('prompt-1',this)">📋 Copy Prompt 1</button></div>
+      <ul class="checklist"><li>Word-count maths adds up to 50,000–65,000 (or a justified exception)</li><li>Every chapter has a payoff and fits the standard chapter format</li><li>Author bio uses verified facts only</li></ul>
+    </div>
+  </article>
+
+  <!-- PROMPT 2 -->
+  <article class="prompt-card" id="p2">
+    <div class="prompt-head"><div class="pnum">2</div><div><h3>Research — Verified Facts Only</h3><p>Deliverable: a sourced research file. Every figure carries a source name + date.</p></div></div>
+    <div class="prompt-body">
+<pre id="prompt-2">MASTER PROMPT 2 — RESEARCH (NO INVENTED DATA)
+
+Act as a research analyst for a nonfiction book on [TOPIC] for [TARGET READER]. Build the research file that all chapters will draw from.
+
+FOR EACH CHAPTER IN THE PLAN FROM PROMPT 1, SUPPLY:
+1. The 5–8 facts, figures, or rules the chapter depends on.
+2. For EVERY figure: the number, the source name (organisation / publication / official body), and the date or edition it comes from. Prefer primary sources: official documentation, regulators, industry bodies, peer-reviewed work, and the platform's own help pages (for KDP topics: kdp.amazon.com).
+3. One short "what this means for the reader" line per fact — interpretation, clearly separated from the fact itself.
+
+HARD RULES — NO EXCEPTIONS:
+- NEVER invent a statistic, citation, study, quote, case study, testimonial, or result. If you cannot verify a figure, write "UNVERIFIED — DO NOT USE" next to it.
+- NEVER present an estimate, a vendor's marketing claim, or an old figure as current fact. Label estimates as estimates and give their year.
+- If two sources disagree, show both numbers and both sources — do not silently pick one.
+- No anecdote may be written as if it happened to me or to a named person unless I supplied it in writing.
+
+OUTPUT FORMAT: a table per chapter — Claim | Figure | Source | Date | Status (Verified / Estimate / Unverified). End with a "GAPS" list: everything the book needs that research could not confirm, so I can decide to research it myself or cut it.</pre>
+      <div class="copy-row"><button class="btn btn-dark copy-btn" onclick="copyPrompt('prompt-2',this)">📋 Copy Prompt 2</button></div>
+      <ul class="checklist"><li>Every figure has a source name + date</li><li>Unverified items are labelled, never hidden</li><li>Gaps list is honest and complete</li></ul>
+    </div>
+  </article>
+
+  <!-- PROMPT 3 -->
+  <article class="prompt-card" id="p3">
+    <div class="prompt-head"><div class="pnum">3</div><div><h3>Writing — Original, Practical, Reader-First</h3><p>Deliverable: one chapter at a time, written to the standard format.</p></div></div>
+    <div class="prompt-body">
+<pre id="prompt-3">MASTER PROMPT 3 — CHAPTER WRITING
+
+Act as my co-author. Write Chapter [NUMBER]: "[CHAPTER TITLE]" for my book on [TOPIC], for [TARGET READER], using ONLY the blueprint from Prompt 1 and the verified research file from Prompt 2.
+
+TARGET: [WORD COUNT] words (±10%).
+
+WRITE IT IN THIS EXACT STRUCTURE:
+1. OPENING (150–250 words): a concrete scenario or the reader's painful moment — specific, not generic. No "In today's fast-paced world."
+2. CORE TEACHING: the concept explained plainly, in logical steps. Define every technical term the first time it appears.
+3. WORKED EXAMPLE: one realistic, fully worked example with real numbers or steps from the research file. Label any illustrative numbers as illustrative.
+4. "DO THIS NOW": 3–5 concrete actions the reader can take today, in order.
+5. COMMON MISTAKES: the 3 mistakes beginners make here, why each one hurts, and the fix.
+6. MEASURABLE OUTCOME: how the reader knows this chapter worked — a number, a result, or a test they can run.
+7. END-OF-CHAPTER CHECKLIST: 5–8 tick-box items summarising the chapter's actions.
+
+STYLE: original wording throughout — never paraphrase a single source closely. Short paragraphs (2–4 sentences). Second person. Direct and warm, like a practitioner teaching a colleague. No hype, no filler, no repeated points, no invented stories, stats, or quotes. Use ONLY facts from the research file; if a needed fact is missing, insert [FACT NEEDED: …] instead of guessing.
+
+END YOUR REPLY WITH: word count, list of facts used (with sources), and list of any [FACT NEEDED] flags.</pre>
+      <div class="copy-row"><button class="btn btn-dark copy-btn" onclick="copyPrompt('prompt-3',this)">📋 Copy Prompt 3</button></div>
+      <ul class="checklist"><li>All 7 structural parts present</li><li>No fact appears that is not in the research file</li><li>Chapter ends with a measurable outcome + checklist</li></ul>
+    </div>
+  </article>
+
+  <!-- PROMPT 4 -->
+  <article class="prompt-card" id="p4">
+    <div class="prompt-head"><div class="pnum">4</div><div><h3>Figures &amp; Visuals — Original, Numbered, Inspected</h3><p>Deliverable: figure plan + specs for every visual in the book.</p></div></div>
+    <div class="prompt-body">
+<pre id="prompt-4">MASTER PROMPT 4 — FIGURES & VISUALS
+
+Act as a book designer. Plan every visual for my book on [TOPIC] so a reader can understand each key idea at a glance.
+
+FOR THE WHOLE BOOK, DELIVER A FIGURE PLAN TABLE:
+Figure No. | Chapter | What it shows | Type (diagram / flowchart / table / screenshot-style graphic / checklist graphic) | Data source (from the Prompt 2 research file) | Caption
+
+RULES:
+1. ORIGINAL ONLY: every figure is created for this book. Never copy, trace, or closely imitate a figure from another book, course, or website. No stock photos of people.
+2. NUMBERING & CAPTIONS: number figures in reading order (Figure 1, Figure 2…). Every figure gets a caption that states what it shows and, where it uses data, the source + date. Every figure must be referenced in the chapter text ("see Figure 4").
+3. KINDLE-READABLE: design for a phone screen first — minimum font size inside figures equivalent to 10pt, high contrast, no thin lines, no information that only works in colour (must survive greyscale e-ink).
+4. SPEC EACH FIGURE: exact content (labels, values, steps), layout description, and alt text (1–2 sentences) for accessibility.
+5. TABLES COUNT AS VISUALS: where a comparison or process is clearer as a table, specify the table instead — with real column headings and only verified data.
+6. VISUAL INSPECTION STEP: after each figure is produced, inspect it visually and report: text readable? numbers match the research file? labels correct? anything overlapping or cut off? List defects found and fixed. A figure that was not inspected is marked NOT INSPECTED and does not ship.
+
+DELIVER: the figure plan table, one spec block per figure, and the inspection checklist template.</pre>
+      <div class="copy-row"><button class="btn btn-dark copy-btn" onclick="copyPrompt('prompt-4',this)">📋 Copy Prompt 4</button></div>
+      <ul class="checklist"><li>Every figure numbered, captioned, and referenced in text</li><li>Readable on a phone and in greyscale</li><li>Each figure visually inspected before it ships</li></ul>
+    </div>
+  </article>
+
+  <!-- PROMPT 5 -->
+  <article class="prompt-card" id="p5">
+    <div class="prompt-head"><div class="pnum">5</div><div><h3>Audit — The Full QA Gate</h3><p>Deliverable: audit report scored PASS / FAIL / NOT TESTED — item by item.</p></div></div>
+    <div class="prompt-body">
+<pre id="prompt-5">MASTER PROMPT 5 — FULL BOOK AUDIT
+
+Act as an independent QA auditor who did NOT write this book. Audit the complete manuscript of my book on [TOPIC]. Score EVERY item below as PASS, FAIL, or NOT TESTED — with one line of evidence for each score (page/chapter reference or quote).
+
+NEVER mark PASS for anything you did not actually check. NOT TESTED is an honest score; a guessed PASS is a failed audit.
+
+AUDIT CHECKLIST:
+A. STRUCTURE — title/subtitle match content; chapter order logical; front matter complete (copyright, dedication, TOC, introduction); back matter complete (conclusion, 90-day plan, appendices, glossary, worksheets, bio, review request); TOC matches actual chapters.
+B. FACTS — every statistic traced to the research file (source + date); no invented citations, case studies, quotes, or results; estimates labelled as estimates; numbers consistent wherever repeated (check the same figure in every chapter it appears).
+C. CHAPTER STANDARD — every chapter has: opening scenario, core teaching, worked example, "Do This Now" actions, common mistakes, measurable outcome, end-of-chapter checklist.
+D. FIGURES — all numbered in order, captioned, referenced in text, data matches research file, inspection recorded.
+E. LANGUAGE — spelling/grammar pass done; terms defined on first use and used consistently; no duplicated paragraphs or repeated points across chapters; reading level right for [TARGET READER].
+F. FILE & FORMAT — total word count reported; headings styled consistently; file opens cleanly in Kindle Previewer / EPUB check with no errors (score NOT TESTED if the tool was not run).
+G. HONESTY — author bio contains only verified facts; no fake endorsements, reviews, publisher, or awards anywhere in manuscript or metadata drafts.
+
+OUTPUT: a table — Item | Score | Evidence | Fix required. Then: total PASS / FAIL / NOT TESTED counts, the top 5 fixes in priority order, and a final verdict: READY FOR PROMPT 6 / NOT READY (with reasons).</pre>
+      <div class="copy-row"><button class="btn btn-dark copy-btn" onclick="copyPrompt('prompt-5',this)">📋 Copy Prompt 5</button></div>
+      <ul class="checklist"><li>Every item scored with evidence — zero blind PASS marks</li><li>All FAIL items fixed and re-audited before Prompt 6</li><li>Verdict is explicit: READY or NOT READY</li></ul>
+    </div>
+  </article>
+
+  <!-- PROMPT 6 -->
+  <article class="prompt-card" id="p6">
+    <div class="prompt-head"><div class="pnum">6</div><div><h3>Plagiarism Spot-Check — Honest, Never Overclaimed</h3><p>Deliverable: phrase-search log + reword record. This is a spot-check, not a professional scan.</p></div></div>
+    <div class="prompt-body">
+<pre id="prompt-6">MASTER PROMPT 6 — PLAGIARISM SPOT-CHECK
+
+Act as an originality checker for my manuscript on [TOPIC]. This is a SPOT-CHECK, not a professional plagiarism scan — run it rigorously and label it honestly.
+
+METHOD:
+1. SELECT AT LEAST 14 DISTINCTIVE PHRASES from across the manuscript — spread across chapters, choosing the most "quotable" or technical sentences (definitions, process descriptions, strong claims). List each phrase with its chapter.
+2. SEARCH EACH PHRASE VERBATIM (in quotation marks) on the web. Record: phrase | where searched | exact match found? (yes/no) | source if found.
+3. FOR EVERY MATCH OR CLOSE PARAPHRASE: rewrite the passage in genuinely original wording — restructure the sentence, change the framing, use my book's own example — then RE-SEARCH the new wording and record the result.
+4. ALSO CHECK: any passage that closely follows one source's structure (same steps, same order, same example) even if words differ — flag it for restructuring.
+
+HARD RULES:
+- NEVER write or let me write "100% plagiarism-free", "guaranteed original", or "passed plagiarism check" anywhere. The honest label is: "Spot-check completed: [N] verbatim phrase searches, [date]. This is not a professional plagiarism scan."
+- A clean spot-check lowers risk; it does not prove the whole book is original. Say exactly that in the report.
+- If a match is a common technical phrase that cannot be reworded (e.g. a platform's official term), note it as "standard terminology" with the reason.
+
+OUTPUT: the search log table, the list of passages reworded (before → after), the re-check results, and the honest label text I may use.</pre>
+      <div class="copy-row"><button class="btn btn-dark copy-btn" onclick="copyPrompt('prompt-6',this)">📋 Copy Prompt 6</button></div>
+      <ul class="checklist"><li>At least 14 verbatim phrase searches logged</li><li>Every match reworded and re-checked</li><li>Report labelled a spot-check — never "100% plagiarism-free"</li></ul>
+    </div>
+  </article>
+
+  <!-- PROMPT 7 -->
+  <article class="prompt-card" id="p7">
+    <div class="prompt-head"><div class="pnum">7</div><div><h3>Humanization — Sound Like a Practitioner, Not a Machine</h3><p>Deliverable: humanized manuscript + change log. Facts do not move.</p></div></div>
+    <div class="prompt-body">
+<pre id="prompt-7">MASTER PROMPT 7 — HUMANIZATION PASS
+
+Act as a human editor. Take the audited manuscript of my book on [TOPIC] and make it read like an experienced practitioner wrote it — without changing a single fact.
+
+REMOVE THESE AI-SOUNDING PATTERNS:
+- Robotic transitions and filler: "Moreover", "Furthermore", "In conclusion", "It is important to note", "delve", "landscape", "realm", "unlock", "supercharge", "game-changer".
+- Uniform rhythm: identical sentence lengths, every paragraph the same shape, every list exactly 3 or 5 items.
+- Empty generalities: "In today's fast-paced world", "whether you're a beginner or an expert", advice that could apply to any topic.
+- Over-explaining and repeating the same point in different words.
+
+REWRITE TOWARD A HUMAN VOICE:
+- Vary sentence length deliberately — short punches next to longer explanations.
+- Use contractions naturally ("you'll", "don't") and direct address.
+- Add practitioner texture ONLY from material I supplied: my real phrasing, my real examples, my real opinions (flag any place where my input is needed as [AUTHOR INPUT NEEDED] — never invent a personal story for me).
+- Keep the warmth and directness of someone who has done this work, teaching a colleague.
+
+ABSOLUTE LIMITS:
+- Every fact, figure, source, number, step, and instruction stays EXACTLY as audited in Prompts 5–6. If a sentence cannot be humanized without moving a fact, leave it and note why.
+- Chapter structure, checklists, and measurable outcomes stay intact.
+
+OUTPUT: the humanized text, plus a CHANGE LOG — section | what pattern was removed | what changed. End with a confirmation: "Facts changed: NONE" — or list every exception.</pre>
+      <div class="copy-row"><button class="btn btn-dark copy-btn" onclick="copyPrompt('prompt-7',this)">📋 Copy Prompt 7</button></div>
+      <ul class="checklist"><li>AI-pattern phrases removed throughout</li><li>Change log delivered with the text</li><li>"Facts changed: NONE" confirmed — or exceptions listed</li></ul>
+    </div>
+  </article>
+
+  <!-- PROMPT 8 -->
+  <article class="prompt-card" id="p8">
+    <div class="prompt-head"><div class="pnum">8</div><div><h3>KDP Publishing — Metadata, Cover, Disclosure, Pricing</h3><p>Deliverable: complete KDP metadata sheet. Nothing is uploaded without author authorization.</p></div></div>
+    <div class="prompt-body">
+<pre id="prompt-8">MASTER PROMPT 8 — KDP PUBLISHING PACK
+
+Act as a KDP publishing specialist. Prepare the COMPLETE publishing pack for my book on [TOPIC]. Prepare everything — publish nothing.
+
+1. METADATA SHEET:
+- Title + subtitle (final, from Prompt 1, exactly as they will appear).
+- Author name: [YOUR PEN NAME / REAL NAME — exactly as on your KDP account].
+- Book description: hook in the first 2 lines (the part visible before "Read more"), who it's for, what the reader gets (bullets), what's inside (chapter highlights), one honest line on who it is NOT for, soft call to action. No fake reviews, awards, rankings, or results in the description.
+- 7 KEYWORD PHRASES: phrases buyers actually type — mix of the core topic, the problem, the audience, and the format ("workbook", "step-by-step", "for beginners") where true. No competitor author names, no trademark misuse, no repetition of title words wasted.
+- CATEGORIES: primary + secondary browse categories that genuinely match the content, with the path for each. Never pick a category the book doesn't belong in.
+- Language, territory (worldwide only if I own the rights), and DRM choice — with a one-line reason for each.
+
+2. COVER SPEC (brief for the designer/tool):
+- Kindle cover: 1600 × 2560 pixels (1.6:1 ratio), JPEG/TIFF, RGB, under KDP file limits.
+- Title readable at thumbnail size; author name on cover; no fake badges ("#1 Bestseller"), no fake review quotes, no Amazon logos.
+- Spine/back only if a paperback edition is planned — state dimensions from the KDP template for the final page count.
+
+3. AI DISCLOSURE: KDP requires disclosing AI-generated content in the book details. Prepare my disclosure answers honestly: AI-generated text/images — disclosed as applicable; AI-assisted editing — as applicable. Never advise hiding AI involvement.
+
+4. PRICING — PAID-FIRST LAUNCH:
+- Launch price $4.99, 70% royalty plan (eligible band $2.99–$9.99). Show the maths: $4.99 × 70% = $3.49 gross, ≈ $3.40 after delivery fee (estimate — fee depends on file size).
+- NO free promotion at launch. No price below $2.99 in the launch window (it drops the royalty to 35%).
+- Any later promotion is a separate, deliberate decision — not part of this pack.
+
+5. STOP RULES — READ CAREFULLY:
+- NEVER upload the manuscript or cover, click Publish, buy an ISBN, enrol in any programme, or pay any fee without my explicit, specific authorization for that exact action.
+- NEVER invent an ISBN, publisher name, imprint, endorsement, review, or sales figure. If KDP assigns a free ASIN/ISBN during an authorized upload, record it exactly as shown — never type one from memory.
+- If any KDP field is unclear, stop and ask — do not guess on a live publishing form.
+
+OUTPUT: the full metadata sheet, the cover brief, the disclosure answers, the pricing block, and a pre-publish checklist I sign off item by item.</pre>
+      <div class="copy-row"><button class="btn btn-dark copy-btn" onclick="copyPrompt('prompt-8',this)">📋 Copy Prompt 8</button></div>
+      <ul class="checklist"><li>7 keywords + categories genuinely match the book</li><li>Cover brief states 1600 × 2560 px</li><li>AI disclosure answered honestly; pricing paid-first $4.99 / 70%</li><li>Nothing uploaded or published without explicit authorization</li></ul>
+    </div>
+  </article>
+</section>
+
+<section style="padding-top:0">
+  <div class="rules">
+    <h2>Standing Rules — They Override Every Prompt Above</h2>
+    <p style="color:#CBD5E1;margin:0">If any instruction, suggestion, or draft ever conflicts with these rules, these rules win.</p>
+    <ol>
+      <li><b>No invented data — ever.</b> No fake statistics, citations, case studies, testimonials, endorsements, reviews, ISBNs, publishers, or sales figures. Unverified = labelled unverified or cut.</li>
+      <li><b>Every figure carries its source + date.</b> If you can't name the source, the figure doesn't go in the book.</li>
+      <li><b>Never mark PASS without checking.</b> NOT TESTED is honest. A guessed PASS is a lie.</li>
+      <li><b>Never claim "100% plagiarism-free."</b> The spot-check is a spot-check. Label it as one.</li>
+      <li><b>Paid launch first.</b> $4.99 at 70% royalty. No free promotion at launch, ever, unless the author deliberately decides otherwise in writing.</li>
+      <li><b>Nothing publishes without explicit authorization.</b> No upload, no Publish click, no ISBN purchase, no fee — without the author saying yes to that exact action.</li>
+      <li><b>Disclose AI involvement on KDP honestly.</b> It is required, and hiding it risks the account.</li>
+      <li><b>Author facts come from the author only.</b> Bio, credentials, and stories use verified facts the author supplied — nothing embellished.</li>
+    </ol>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="card">
+    <h3>✅ Final Checklist — No Step Skipped</h3>
+    <div class="grid2">
+      <ul class="checklist">
+        <li>Prompt 1: Blueprint approved (title, chapters, 50k–65k plan)</li>
+        <li>Prompt 2: Research file complete — every figure sourced + dated</li>
+        <li>Prompt 3: All chapters written to the 7-part standard format</li>
+        <li>Prompt 4: All figures original, numbered, captioned, inspected</li>
+      </ul>
+      <ul class="checklist">
+        <li>Prompt 5: Audit done — all FAILs fixed and re-checked</li>
+        <li>Prompt 6: 14+ phrase spot-check logged, matches reworded</li>
+        <li>Prompt 7: Humanized with change log — facts unchanged</li>
+        <li>Prompt 8: Metadata + cover + disclosure ready; author authorized before any upload</li>
+      </ul>
+    </div>
+    <div class="copy-row" style="margin-top:20px">
+      <button class="btn btn-dark" onclick="downloadAll('txt')">⬇ Download All Prompts (.txt)</button>
+      <button class="btn btn-outline" onclick="downloadAll('md')">⬇ Download All Prompts (.md)</button>
+      <span style="font-size:13px;color:var(--muted);align-self:center">Tip: use your browser's Print → Save as PDF for a printable copy.</span>
+    </div>
+    <p style="font-size:13px;color:var(--muted);margin-top:14px">KDP facts on this page (cover 1600×2560, 70% royalty band $2.99–$9.99, AI-content disclosure) reflect Amazon KDP's published requirements — verify current terms at kdp.amazon.com before publishing, as platform rules change.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <b style="color:var(--ink)">Master Prompts for Kindle Book</b> — Prepared by <b style="color:var(--ink)">Muhammad Abdul Qadeer</b><br>
+    Qadeer Automations • abdulqadeerml.com<br>
+    <span style="font-size:13px">Free to share with credit to the author. Built on verified KDP requirements — no invented statistics anywhere on this page.</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Copied ✓</div>
+
+<script>
+var TITLES=["1 — Book Structure & Format","2 — Research (Verified Facts Only)","3 — Chapter Writing","4 — Figures & Visuals","5 — Full Book Audit","6 — Plagiarism Spot-Check","7 — Humanization Pass","8 — KDP Publishing Pack"];
+function showToast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},1800)}
+function copyPrompt(id,btn){
+  var text=document.getElementById(id).innerText;
+  function done(){showToast('Prompt copied — paste it anywhere ✓'); if(btn){var o=btn.textContent;btn.textContent='✓ Copied';setTimeout(function(){btn.textContent=o},1600)}}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done).catch(function(){fallback()})}else{fallback()}
+  function fallback(){var ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done()}catch(e){showToast('Copy failed — select the text manually')}document.body.removeChild(ta)}
+}
+function collectAll(){
+  var out="# Master Prompts for Kindle Book\nPrepared by Muhammad Abdul Qadeer — Qadeer Automations\n\n";
+  for(var i=1;i<=8;i++){out+="\n============================================================\nMASTER PROMPT "+TITLES[i-1]+"\n============================================================\n\n"+document.getElementById('prompt-'+i).innerText.trim()+"\n"}
+  out+="\n============================================================\nSTANDING RULES\n============================================================\n1. No invented data — ever.\n2. Every figure carries its source + date.\n3. Never mark PASS without checking.\n4. Never claim \"100% plagiarism-free\" — the spot-check is a spot-check.\n5. Paid launch first: $4.99 at 70% royalty, no free promotion at launch.\n6. Nothing publishes without explicit authorization.\n7. Disclose AI involvement on KDP honestly.\n8. Author facts come from the author only.\n";
+  return out;
+}
+function downloadAll(fmt){
+  var content=collectAll();
+  var blob=new Blob([content],{type:'text/plain;charset=utf-8'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='Master-Prompts-for-Kindle-Book.'+fmt;document.body.appendChild(a);a.click();document.body.removeChild(a);
+  showToast('Downloaded — Master Prompts for Kindle Book.'+fmt);
+}
+</script>
+</body>
+</html>
