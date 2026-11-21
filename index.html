@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <script>
     (function () {
       var done = false;
@@ -21,8 +23,6 @@
     gtag('config', 'G-YJ9JDFQB1H');
   </script>
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="dark" />
   <meta name="description" content="Qadeer Automations helps small businesses automate busywork, answer customers 24/7 and grow with practical AI. Book your free strategy call." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -65,8 +65,8 @@
       --on-ink: #EEF1FF;
       --muted-ink: rgba(226, 236, 255, .68);
       --muted-dark: rgba(226, 236, 255, .64);
-      --faint-ink: rgba(226, 236, 255, .45);
-      --faint-dark: rgba(226, 236, 255, .42);
+      --faint-ink: rgba(226, 236, 255, .62);
+      --faint-dark: rgba(226, 236, 255, .62);
       --line-ink: rgba(140, 180, 255, .16);
       --line-dark: rgba(226, 236, 255, .14);
       --font-d: "Space Grotesk", "Avenir Next", system-ui, sans-serif;
@@ -95,11 +95,11 @@
       background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); }
 
     /* ---------- NAV ---------- */
-    .nav-shell { position: sticky; top: 0; z-index: 80; background: rgba(8,9,22, .94);
+    .nav-shell { position: sticky; top: 0; z-index: 80; background: rgba(0,0,0,.94);
       border-bottom: 1px solid var(--line-dark); }
     nav { display: flex; align-items: center; gap: 30px; min-height: 74px; }
     .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
-    .brand-mark { width: 38px; height: 38px; border-radius: 9px; background: var(--accent); color: var(--ink);
+    .brand-mark { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg,#2DD4BF,#2563EB); color: #031018;
       display: flex; align-items: center; justify-content: center;
       font-family: var(--font-d); font-weight: 700; font-size: 1.05rem; letter-spacing: -.02em; }
     .brand-name { font-family: var(--font-d); font-weight: 600; font-size: 1.02rem; letter-spacing: -.01em; }
@@ -187,7 +187,7 @@
     .hero h1.reveal.visible { clip-path: inset(0 0 -10% 0); transform: none; filter: blur(0); opacity: 1; }
     /* ---------- NAV GLASS + ACTIVE ---------- */
     .nav-shell { transition: background .3s ease, box-shadow .3s ease; }
-    .nav-shell.scrolled { background: rgba(8,9,22,.94); box-shadow: 0 14px 44px rgba(0,0,0,.4); }
+    .nav-shell.scrolled { background: rgba(0,0,0,.94); box-shadow: 0 14px 44px rgba(0,0,0,.4); }
     .nav-link.active { color: var(--on-ink); }
     .nav-link.active::after { transform: scaleX(1); }
     /* ---------- BUTTON SHINE ---------- */
@@ -327,8 +327,8 @@
     .field textarea { min-height: 118px; resize: vertical; }
     .field input:focus, .field select:focus, .field textarea:focus { outline: none;
       border-color: var(--ink); box-shadow: 0 0 0 3px rgba(45,212,191, .5); }
-    .field .err { display: none; font-size: .78rem; color: #b3261e; font-weight: 600; }
-    .field.invalid input { border-color: #b3261e; }
+    .field .err { display: none; font-size: .78rem; color: #FF8A80; font-weight: 600; }
+    .field.invalid input { border-color: #FF8A80; }
     .field.invalid .err { display: block; }
     .form-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
     .form-note { margin-top: 16px; font-size: .82rem; color: var(--faint-ink); }
@@ -407,13 +407,12 @@
       .proc:nth-child(2) { border-right: 0; }
       .proc { border-bottom: 1px solid var(--line-dark); }
       .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
-      .price-grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; }
       .foot-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 760px) {
       .nav-links { display: none; }
       .nav-links.open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column;
-        align-items: stretch; gap: 0; padding: 8px 24px 24px; background: rgba(8,9,22,.98);
+        align-items: stretch; gap: 0; padding: 8px 24px 24px; background: rgba(0,0,0,.98);
         border-bottom: 1px solid var(--line-dark); }
       .nav-links.open .nav-link { padding: 15px 4px; border-bottom: 1px solid var(--line-dark); font-size: 1rem; }
       .nav-links.open .nav-link::after { display: none; }
@@ -438,7 +437,7 @@
         display: flex; justify-content: center; align-items: center; min-height: 54px;
         background: var(--accent); color: var(--ink); border-radius: 999px;
         font-weight: 800; text-decoration: none; box-shadow: 0 12px 32px rgba(45,212,191,.35); }
-      .toast { bottom: 84px; }
+      .toast { bottom: 156px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -471,21 +470,12 @@
         linear-gradient(180deg, #000000, #080808);
       color: var(--on-ink);
     }
-    /* gold identity: section accents are bright metallic gold (base .accent rule below governs) */
     .on-ivory .sec-label { color: var(--muted-dark); }
     .on-ivory .sec-label .num { background: var(--accent); color: #04050D; }
-    .sec-title .accent, #hero-title .accent { color: #FFD477; }
-    .btn-primary {
-      background: linear-gradient(120deg, #2DD4BF 0%, #8C6A2F 55%, #FFD477 115%);
-      color: #171106; border: none;
-      box-shadow: 0 14px 38px rgba(45,212,191,.4), inset 0 1px 0 rgba(255,255,255,.25);
-    }
-    .btn-primary:hover { box-shadow: 0 18px 46px rgba(255,212,119,.5), inset 0 1px 0 rgba(255,255,255,.3); }
-    .brand-mark { background: linear-gradient(120deg, #2DD4BF, #8C6A2F 55%, #FFD477 115%); color: #171106; }
     #progress { background: linear-gradient(90deg, #8C6A2F, #2DD4BF, #FFD477); }
 
     /* glass surfaces */
-    .work-card, .price-card, .svc-card, .about-card {
+    .work-card, .svc-card, .about-card {
       background: linear-gradient(165deg, rgba(45,212,191,.09), rgba(34,211,238,.05) 55%, rgba(15,13,9,.72));
       border: 1px solid rgba(45,212,191,.16);
       box-shadow: 0 24px 60px rgba(0,0,10,.35);
@@ -495,7 +485,6 @@
       border-color: rgba(255,212,119,.45);
       box-shadow: 0 30px 70px rgba(46,36,16,.45), 0 0 0 1px rgba(255,212,119,.12);
     }
-    .price-card.popular { border-color: rgba(255,212,119,.55); box-shadow: 0 30px 80px rgba(45,212,191,.28); }
     .faq-q { color: var(--on-ink); }
     .field input, .field select, .field textarea {
       background: rgba(15,13,9,.85); color: var(--on-ink);
@@ -582,7 +571,6 @@
     .ticker { color: #B8B8BE; border-top: 1px solid rgba(45,212,191,.18); border-bottom: 1px solid rgba(45,212,191,.18); }
     .case-index b { color: #FFD477; }
     .svc-more { color: #FFD477; }
-    .price-note a { color: #FFD477; }
     .form-card {
       background: linear-gradient(165deg, rgba(26,21,11,.96), rgba(10,9,7,.98));
       color: var(--on-ink); border: 1px solid rgba(45,212,191,.2);
@@ -708,22 +696,21 @@
     #scroll-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:9999;pointer-events:none;background:linear-gradient(90deg,#22D3EE,#2DD4BF,#2563EB);transform:scaleX(0);transform-origin:0 50%;will-change:transform}
   /* ===== Redesign v3: midnight blue + cyan/turquoise (Mindhyve-style), glass nav, disc wave hero ===== */
 :root{--ink:#000000;--ink-2:#050505;--ink-3:#0A0A0A;--surface:#0A0A0A;--surface-2:#111111;--accent:#2DD4BF;--accent-deep:#0F9F8F;--on-ink:#F4F8FF;
---g1:linear-gradient(100deg,#2DD4BF,#22D3EE);--gt:linear-gradient(95deg,#FFFFFF 0%,#8CF3E6 45%,#38BDF8 100%);--glass:rgba(255,255,255,.04);--gl:rgba(120,220,255,.16)}
+--g1:linear-gradient(100deg,#2DD4BF,#22D3EE);--gt:linear-gradient(92deg,#FF2BD6 0%,#7C6BFF 34%,#38BDF8 68%,#2DD4BF 100%);--glass:rgba(255,255,255,.04);--gl:rgba(120,220,255,.16)}
 body{background:radial-gradient(700px 500px at 0 40%,rgba(45,212,191,.06),transparent 60%),#000000}
 #bg-dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 main,footer{position:relative;z-index:1}
-.section.on-ink{background:transparent}.section.on-ivory{background:rgba(5,14,40,.55)}
+.section.on-ink{background:transparent}.section.on-ivory{background:rgba(255,255,255,.02)}
 .nav-shell{position:fixed;left:0;right:0;top:0;background:transparent;border:0;box-shadow:none;padding:10px 0}
 nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;gap:14px}
-.nav-links{margin-left:auto;gap:2px;background:rgba(6,16,44,.55);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid var(--gl);border-radius:999px;padding:5px 8px}
+.nav-links{margin-left:auto;gap:2px;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid var(--gl);border-radius:999px;padding:5px 8px}
 .nav-link{padding:7px 14px;border-radius:999px;font-size:.8rem;font-weight:500;color:rgba(244,248,255,.85)}
 .nav-link::after{left:50%;right:auto;width:5px;height:5px;bottom:0;border-radius:50%;background:#2DD4BF;transform:translateX(-50%) scale(0)}
 .nav-link:hover{color:#fff}.nav-link.active{color:#2DD4BF}.nav-link.active::after{transform:translateX(-50%) scale(1)}
-.brand-mark{background:linear-gradient(135deg,#2DD4BF,#2563EB)!important;color:#031018!important;border-radius:50%}
 .btn{border-radius:999px}
 .btn-primary{background:var(--g1);color:#031018;font-weight:700;border:0;box-shadow:0 10px 30px rgba(45,212,191,.28)}
 .btn-primary:hover{box-shadow:0 14px 44px rgba(45,212,191,.55)}
-.btn-ghost{background:rgba(6,16,44,.45);border:1px solid var(--gl);color:#fff}
+.btn-ghost{background:rgba(0,0,0,.45)};border:1px solid var(--gl);color:#fff}
 .hero h1 .accent,.page-hero h1 .accent,.sec-title .accent,h2 .accent{background:var(--gt);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .eyebrow{color:#2DD4BF;border:0;background:none;padding:0;letter-spacing:.18em;font-size:.74rem;font-weight:600}
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:132px 0 0;background:#000000;overflow:hidden;position:relative}
@@ -758,7 +745,7 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
 .xcard h3{font-size:1.4rem;margin:0 0 8px}.xcard p{margin:0;color:rgba(235,245,255,.65)}
 .xcard span{display:inline-block;margin-top:14px;font-weight:600;color:#2DD4BF}
 ::selection{background:#2DD4BF;color:#031018}
-@media(max-width:900px){.nav-links{background:none;border:0;padding:0}.nav-links.open{background:rgba(4,10,30,.97);border:1px solid var(--gl);border-radius:20px;margin-top:8px;padding:8px}.hero-inner{padding:0 0 10px}.scroll-cue{right:18px;bottom:22px}}
+@media(max-width:900px){.nav-links{background:none;border:0;padding:0}.nav-links.open{background:rgba(0,0,0,.97)};border:1px solid var(--gl);border-radius:20px;margin-top:8px;padding:8px}.hero-inner{padding:0 0 10px}.scroll-cue{right:18px;bottom:22px}}
 
 /* ===== Hero entrance (CSS-first): the headline stays visible even if JS fails ===== */
 @keyframes heroRise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
@@ -782,10 +769,23 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         "url": "https://abdulqadeerml.com/",
         "jobTitle": "Founder, Qadeer Automations",
         "description": "Machine learning and deep learning engineer building custom prediction models, computer vision, NLP and business automation for international clients.",
-        "knowsAbout": ["Machine Learning", "Deep Learning", "Predictive Modeling", "Demand Forecasting", "Customer Churn Prediction", "Computer Vision", "Natural Language Processing", "Business Process Automation", "n8n", "XGBoost", "Python"],
+        "knowsAbout": [
+          "Machine Learning",
+          "Deep Learning",
+          "Predictive Modeling",
+          "Demand Forecasting",
+          "Customer Churn Prediction",
+          "Computer Vision",
+          "Natural Language Processing",
+          "Business Process Automation",
+          "n8n",
+          "XGBoost",
+          "Python"
+        ],
         "sameAs": [
           "https://www.linkedin.com/in/muhammad-abdul-qadeer-8262b237b",
-          "https://github.com/hasankhan62742-beep"
+          "https://github.com/hasankhan62742-beep",
+          "https://www.facebook.com/61551129263562"
         ]
       },
       {
@@ -794,13 +794,29 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         "name": "Qadeer Automations",
         "url": "https://abdulqadeerml.com/",
         "description": "Qadeer Automations is an AI automation agency that helps small businesses automate busywork, answer customers 24/7 and grow with practical AI.",
-        "areaServed": ["United States", "United Kingdom", "United Arab Emirates", "Australia"],
-        "knowsAbout": ["AI consulting", "Business process automation", "AI chatbots", "Business dashboards"],
+        "areaServed": [
+          "United States",
+          "United Kingdom",
+          "United Arab Emirates",
+          "Australia",
+          "Canada",
+          "Pakistan"
+        ],
+        "knowsAbout": [
+          "AI consulting",
+          "Business process automation",
+          "AI chatbots",
+          "Business dashboards"
+        ],
         "sameAs": [
           "https://www.linkedin.com/in/muhammad-abdul-qadeer-8262b237b",
-          "https://github.com/hasankhan62742-beep"
+          "https://github.com/hasankhan62742-beep",
+          "https://www.facebook.com/61551129263562"
         ],
-        "founder": { "@id": "https://abdulqadeerml.com/#person" }
+        "founder": {
+          "@id": "https://abdulqadeerml.com/#person"
+        },
+        "logo": "https://abdulqadeerml.com/favicon.svg"
       },
       {
         "@type": "WebSite",
@@ -809,7 +825,9 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         "name": "Qadeer Automations — AI Automation for Small Businesses",
         "description": "Qadeer Automations helps small businesses automate busywork, answer customers 24/7 and grow with practical AI.",
         "inLanguage": "en",
-        "author": { "@id": "https://abdulqadeerml.com/#person" }
+        "author": {
+          "@id": "https://abdulqadeerml.com/#person"
+        }
       },
       {
         "@type": "ProfessionalService",
@@ -817,49 +835,117 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         "name": "Qadeer Automations — AI Automation for Small Businesses",
         "description": "Practical AI systems for small businesses — automation, AI chatbots, dashboards and custom software, connected to the tools a business already uses.",
         "url": "https://abdulqadeerml.com/",
-        "areaServed": ["United States", "United Kingdom", "United Arab Emirates", "Australia"],
-        "provider": { "@id": "https://abdulqadeerml.com/#organization" },
+        "areaServed": [
+          "United States",
+          "United Kingdom",
+          "United Arab Emirates",
+          "Australia",
+          "Canada",
+          "Pakistan"
+        ],
+        "provider": {
+          "@id": "https://abdulqadeerml.com/#organization"
+        },
         "sameAs": [
           "https://www.linkedin.com/in/muhammad-abdul-qadeer-8262b237b",
-          "https://github.com/hasankhan62742-beep"
+          "https://github.com/hasankhan62742-beep",
+          "https://www.facebook.com/61551129263562"
         ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "AI, Software & Automation Services",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Model & Data Audit", "description": "Feasibility review of data and prediction goals before any build." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Prediction Model", "description": "Churn, demand forecasting, risk scoring and custom ML models shipped as working software." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ML Partner", "description": "Ongoing machine learning support, monitoring and iteration." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Process Automation", "description": "n8n, Make and API-based workflow automation for repetitive business processes." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI-Powered Websites & Dashboards", "description": "Custom websites and analytics dashboards with intelligent features." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Application & Custom Software Development", "description": "Full-stack web applications and database-driven business software, designed and built end-to-end." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Management Systems", "description": "School management systems, admin panels, record management and reporting platforms tailored to an organization's workflow." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Dashboards & Business Intelligence", "description": "Interactive KPI dashboards, data visualization and decision-support reporting from business data." } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "API Development & Integrations", "description": "REST APIs, webhooks and third-party integrations connecting models and software to existing tools." } }
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Model & Data Audit",
+                "description": "Feasibility review of data and prediction goals before any build."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Custom Prediction Model",
+                "description": "Churn, demand forecasting, risk scoring and custom ML models shipped as working software."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "ML Partner",
+                "description": "Ongoing machine learning support, monitoring and iteration."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Business Process Automation",
+                "description": "n8n, Make and API-based workflow automation for repetitive business processes."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AI-Powered Websites & Dashboards",
+                "description": "Custom websites and analytics dashboards with intelligent features."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Web Application & Custom Software Development",
+                "description": "Full-stack web applications and database-driven business software, designed and built end-to-end."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Custom Management Systems",
+                "description": "School management systems, admin panels, record management and reporting platforms tailored to an organization's workflow."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Dashboards & Business Intelligence",
+                "description": "Interactive KPI dashboards, data visualization and decision-support reporting from business data."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "API Development & Integrations",
+                "description": "REST APIs, webhooks and third-party integrations connecting models and software to existing tools."
+              }
+            }
           ]
         }
       },
       {
-        "@type": "FAQPage",
-        "@id": "https://abdulqadeerml.com/#faq",
-        "mainEntity": [
-          { "@type": "Question", "name": "What data do I need?", "acceptedAnswer": { "@type": "Answer", "text": "Historical records tied to the outcome you care about: orders and inventory for demand, customer activity and status for churn. In the first review we check whether coverage, labels and time range are useful — before any build is discussed." } },
-          { "@type": "Question", "name": "Can you guarantee a specific accuracy?", "acceptedAnswer": { "@type": "Answer", "text": "No responsible builder promises accuracy before seeing data. I establish a baseline, choose metrics matching the business risk, validate on held-out data, and document the model's limitations." } },
-          { "@type": "Question", "name": "How long does a project take?", "acceptedAnswer": { "@type": "Answer", "text": "Depends on data readiness, integrations and delivery form. A focused prototype comes first, so you judge whether the signal is useful without committing to unnecessary scope." } },
-          { "@type": "Question", "name": "How is pricing decided?", "acceptedAnswer": { "@type": "Answer", "text": "After data and delivery needs are understood, I scope the smallest useful phase with clear deliverables. You receive the scope in writing before work begins; infrastructure costs stay visible." } },
-          { "@type": "Question", "name": "What do I receive at handoff?", "acceptedAnswer": { "@type": "Answer", "text": "The agreed working system — API, dashboard or automation — plus testing notes, documentation, deployment guidance and known limitations." } },
-          { "@type": "Question", "name": "What does an AI/ML engineer do for a business?", "acceptedAnswer": { "@type": "Answer", "text": "An AI/ML engineer turns business data into working systems: models that forecast demand or flag churn, automation that removes repetitive work, and dashboards that support decisions. The output is deployed software tied to a business outcome, not research." } },
-          { "@type": "Question", "name": "How can machine learning predict customer churn?", "acceptedAnswer": { "@type": "Answer", "text": "By learning from historical customer behavior — usage patterns, support interactions, billing history — a classification model scores which customers are likely to leave, so the business can act before they do. It needs labeled historical data and a clear definition of churn." } },
-          { "@type": "Question", "name": "What is predictive modeling, and when should a company use it?", "acceptedAnswer": { "@type": "Answer", "text": "Predictive modeling uses historical data to estimate future outcomes — demand, risk, churn. A company should use it when it has enough recorded history, the decision repeats often, and being right more often has real monetary value." } },
-          { "@type": "Question", "name": "When should a business choose n8n, Make, or Zapier?", "acceptedAnswer": { "@type": "Answer", "text": "n8n suits technical teams wanting self-hosted control and complex logic; Make fits visual multi-step workflows at moderate scale; Zapier fits simple no-code integrations quickly. The choice depends on data volume, custom logic needs, and who maintains it." } },
-          { "@type": "Question", "name": "How do you evaluate whether a model is reliable?", "acceptedAnswer": { "@type": "Answer", "text": "By validating on held-out data the model never saw during training, choosing metrics that match the business risk (e.g. recall for churn), checking stability over time, and documenting limitations. A model is only as reliable as its evaluation." } },
-          { "@type": "Question", "name": "How much does custom AI development cost?", "acceptedAnswer": { "@type": "Answer", "text": "It depends on data readiness and scope. After the first review you receive a written scope with fixed deliverables, so the price is agreed before work begins." } },
-          { "@type": "Question", "name": "What can AI do for my small business?", "acceptedAnswer": { "@type": "Answer", "text": "The practical wins: forecasting demand so you stock correctly, flagging customers likely to leave, automating repetitive admin with tools like n8n or Make, and answering common customer questions with a chatbot. Start with one painful, repeated decision \u2014 not a grand platform." } }
-        ]
+        "@type": "WebPage",
+        "@id": "https://abdulqadeerml.com/#webpage",
+        "url": "https://abdulqadeerml.com/",
+        "name": "Qadeer Automations — AI Automation for Small Businesses",
+        "isPartOf": {
+          "@id": "https://abdulqadeerml.com/#website"
+        },
+        "about": {
+          "@id": "https://abdulqadeerml.com/#organization"
+        }
       }
     ]
   }
   </script>
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body class="pg-index">
   <div id="cursor-ring" aria-hidden="true"></div>
@@ -968,6 +1054,11 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
 <a class="xcard" href="solutions.html"><h3>Solutions</h3><p>How it fits your industry, plus a two-minute AI fit check.</p><span>See solutions &rarr;</span></a>
 <a class="xcard" href="about.html"><h3>About</h3><p>Who is behind Qadeer Automations, notes and FAQ.</p><span>Read more &rarr;</span></a>
 <a class="xcard" href="contact.html"><h3>Contact</h3><p>Book a free strategy call or send a project inquiry.</p><span>Get in touch &rarr;</span></a></div></div></section>
+<section id="insights" class="section on-ink"><div class="wrap"><div class="sec-head"><span class="sec-label">INSIGHTS</span><h2 class="sec-title">Practical notes on <span class="accent">building with AI.</span></h2></div><div class="explore">
+<a class="xcard" href="/insights/how-to-automate-client-onboarding/"><h3>How to Automate Client Onboarding</h3><p>Automate the welcome email, intake form, contract and kickoff booking — and keep the human parts human.</p><span>Read the article &rarr;</span></a>
+<a class="xcard" href="/insights/how-to-automate-bookkeeping-small-business/"><h3>How to Automate Bookkeeping for a Small Business</h3><p>Connect your bank, set a few rules, and stop typing receipts by hand.</p><span>Read the article &rarr;</span></a>
+<a class="xcard" href="/insights/how-to-get-customers-to-leave-reviews/"><h3>How to Get Customers to Leave Reviews</h3><p>Ask right after a good experience, make it one tap, and reply to every review.</p><span>Read the article &rarr;</span></a>
+</div><p class="reveal" style="margin-top:28px;font-weight:600"><a href="/insights/" style="color:inherit">View all insights →</a></p></div></section>
   </main>
   <footer>
     <div class="wrap">
@@ -979,7 +1070,7 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
           </a>
           <p>Practical AI systems for small businesses — automation, chatbots and dashboards that answer customers and remove busywork.</p>
         </div>
-        <div class="foot-col"><b>NAVIGATE</b><a href="services.html#services">Services</a><a href="services.html#process">Process</a><a href="solutions.html#industries">Industries</a><a href="solutions.html#assessment">Assessment</a><a href="about.html#faq">FAQ</a><a href="/about/">About</a><a href="/privacy/">Privacy</a></div>
+        <div class="foot-col"><b>NAVIGATE</b><a href="services.html#services">Services</a><a href="services.html#process">Process</a><a href="solutions.html#industries">Industries</a><a href="solutions.html#assessment">Assessment</a><a href="about.html#faq">FAQ</a><a href="/insights/">Insights</a><a href="/about/">About</a><a href="/privacy/">Privacy</a></div>
         <div class="foot-col"><b>CONNECT</b><a href="https://calendly.com/abdulqadeerml/30min" target="_blank" rel="noopener">Book a call</a><a href="https://wa.me/923427717288" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.linkedin.com/in/muhammad-abdul-qadeer-8262b237b" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/hasankhan62742-beep" target="_blank" rel="noopener">GitHub</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></div>
       </div>
       <div class="foot-base"><span>© 2026 Qadeer Automations</span><span>AI Automation · Chatbots · Dashboards · Business Systems</span></div>
@@ -1165,9 +1256,11 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
       }
 
       /* ---------- FAQ accordion ---------- */
-      document.querySelectorAll('.faq-item').forEach(function (item) {
+      document.querySelectorAll('.faq-item').forEach(function (item, i) {
         var q = item.querySelector('.faq-q');
         var a = item.querySelector('.faq-a');
+        if (a && !a.id) a.id = 'faq-a-' + (i + 1);
+        if (q && a) q.setAttribute('aria-controls', a.id);
         q.addEventListener('click', function () {
           var isOpen = item.classList.contains('open');
           document.querySelectorAll('.faq-item.open').forEach(function (other) {
@@ -1418,6 +1511,9 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         if (win.classList.contains('open')) setTimeout(function () { input.focus(); }, 300);
       });
       (document.getElementById('chat-close')||{addEventListener:function(){}}).addEventListener('click', function () { win.classList.remove('open'); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && win.classList.contains('open')) { win.classList.remove('open'); fab.focus(); }
+      });
       sendBtn.addEventListener('click', send);
       input.addEventListener('keydown', function (e) { if (e.key === 'Enter') send(); });
     })();
@@ -1506,29 +1602,11 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
       [biz, team, challenge, outcome].forEach(function (el) { if (el) el.addEventListener('change', update); });
     })();
 
-    /* ---------- nav: glass on scroll + active section ---------- */
+    /* ---------- nav: glass on scroll ---------- */
     (function () {
       var shell = document.querySelector('.nav-shell');
       function onScroll() { shell.classList.toggle('scrolled', window.scrollY > 24); }
       window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
-      var links = document.querySelectorAll('.nav-link');
-      var map = {};
-      links.forEach(function (l) { map[l.getAttribute('href').slice(1)] = l; });
-      if ('IntersectionObserver' in window) {
-        var obs = new IntersectionObserver(function (entries) {
-          entries.forEach(function (en) {
-            if (en.isIntersecting) {
-              links.forEach(function (l) { l.classList.remove('active'); });
-              var l = map[en.target.id];
-              if (l) l.classList.add('active');
-            }
-          });
-        }, { rootMargin: '-40% 0px -55% 0px' });
-        Object.keys(map).forEach(function (id) {
-          var s = document.getElementById(id);
-          if (s) obs.observe(s);
-        });
-      }
     })();
   
 (function(){var b=document.getElementById('scroll-progress');if(!b)return;var t=false;

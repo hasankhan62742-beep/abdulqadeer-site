@@ -29,6 +29,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How to Stop Losing Inquiries to Slow Replies — Qadeer Automations" />
   <meta name="twitter:description" content="Inquiries arrive, then quietly go cold — because nobody replied in time. Here is the simple system that fixes that, and what to automate first." />
+  <meta name="twitter:image" content="https://abdulqadeerml.com/og-image.jpg" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -182,14 +183,14 @@
         </a>
         <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/services/">Services</a>
-        <a class="nav-link" href="/#process">Process</a>
-        <a class="nav-link" href="/#industries">Industries</a>
-        <a class="nav-link" href="/#assessment">Assessment</a>
+        <a class="nav-link" href="/services/#process">Process</a>
+        <a class="nav-link" href="/solutions/#industries">Industries</a>
+        <a class="nav-link" href="/solutions/#assessment">Assessment</a>
         
         
-        <a class="nav-link" href="/#faq">FAQ</a>
-        <a class="nav-link" href="/#contact">Contact</a>
-        <a class="btn btn-lime" href="/#contact">Book a free call</a>
+        <a class="nav-link" href="/about/#faq">FAQ</a>
+        <a class="nav-link" href="/contact">Contact</a>
+        <a class="btn btn-lime" href="/contact">Book a free call</a>
       </nav>
     </div>
   </div>
@@ -200,7 +201,7 @@
         <p class="crumbs"><a href="/">Home</a> → <a href="/insights/">Insights</a> → How to Stop Losing Inquiries to Slow Replies</p>
         <span class="eyebrow">LEAD FOLLOW-UP · GUIDE</span>
         <h1>How to Stop Losing Inquiries to <span class="accent">Slow Replies</span></h1>
-        <p class="lede">You paid for the ad, the customer filled in the form — and by the time you replied, they had already hired someone else. That is the follow-up problem, and it is quietly costing small businesses more sales than any advertising problem ever will.</p>
+        <p class="lede">Stop losing inquiries to slow replies by answering within minutes — the first business to reply usually wins the job, so automate the first response and follow up fast. You paid for the ad, the customer filled in the form — and by the time you replied, they had already hired someone else. That is the follow-up problem, and it is quietly costing small businesses more sales than any advertising problem ever will.</p>
         <p class="lede" style="font-size:.9rem">By <a href="/about/">Abdul Qadeer</a> · 16 November 2026 · 6 min read</p>
       </div>
     </section>
@@ -237,7 +238,12 @@
   <button class="faq-q" aria-expanded="false">What should I automate — and what should stay human?<span class="fx">+</span></button>
   <div class="faq-a"><p>Automate the chasing, not the conversation. An automated reply can acknowledge every inquiry in seconds, day or night, and a reminder can make sure no inquiry sits untouched for two days. But the acknowledgment should say plainly it is automatic, and the real conversation should still come from a human who has read what the customer actually asked.</p></div>
 </div>
-        <div style="border-top:1px solid var(--line-dark);margin-top:48px;padding-top:28px">
+                <h2 style="margin-top:44px">Related <span class="accent">reading</span></h2>
+        <ul style="color:var(--muted-dark);max-width:68ch">
+          <li><a href="/insights/ai-receptionist-answers-calls-after-hours/">How Does an AI Receptionist Answer Calls After Hours?</a></li>
+          <li><a href="/insights/how-do-i-stop-losing-leads/">How Do I Stop Losing Leads?</a></li>
+        </ul>
+<div style="border-top:1px solid var(--line-dark);margin-top:48px;padding-top:28px">
           <p style="color:var(--muted-dark);font-size:.9rem;margin:0 0 14px">Share this article</p>
           <div style="display:flex;flex-wrap:wrap;gap:10px">
             <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fabdulqadeerml.com%2Finsights%2Fstop-losing-inquiries-slow-replies%2F" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:9px 18px;border:1px solid var(--line-dark);border-radius:999px;color:var(--on-ink);text-decoration:none;font-size:.88rem;font-weight:600">Facebook</a>
@@ -261,13 +267,15 @@
 <footer>
     <div class="wrap">
       <span>© 2026 Qadeer Automations — AI Automation · Chatbots · Dashboards · Business Systems</span>
-      <span><a href="/">Home</a><a href="/services/">Services</a><a href="/about/">About</a><a href="/insights/">Insights</a><a href="/#contact">Contact</a><a href="/privacy/">Privacy</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></span>
+      <span><a href="/">Home</a><a href="/services/">Services</a><a href="/about/">About</a><a href="/insights/">Insights</a><a href="/contact">Contact</a><a href="mailto:hello@abdulqadeerml.com">Email</a><a href="https://wa.me/923427717288" target="_blank" rel="noopener">WhatsApp</a><a href="/privacy/">Privacy</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></span>
     </div>
   </footer>
 
   <script>
-    document.querySelectorAll('.faq-item').forEach(function (item) {
+    document.querySelectorAll('.faq-item').forEach(function (item, i) {
       var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+      if (a && !a.id) a.id = 'faq-a-' + (i + 1);
+      if (q && a) q.setAttribute('aria-controls', a.id);
       q.addEventListener('click', function () {
         var isOpen = item.classList.contains('open');
         document.querySelectorAll('.faq-item.open').forEach(function (other) {

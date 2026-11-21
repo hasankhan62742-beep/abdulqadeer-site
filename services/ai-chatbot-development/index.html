@@ -29,6 +29,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="AI Chatbot Development Services | Custom Business Chatbots" />
   <meta name="twitter:description" content="Custom AI chatbots trained on your business — answer customers instantly, capture leads 24/7." />
+  <meta name="twitter:image" content="https://abdulqadeerml.com/og-image.jpg" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -58,7 +59,7 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://abdulqadeerml.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://abdulqadeerml.com/services/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://abdulqadeerml.com/services" },
           { "@type": "ListItem", "position": 3, "name": "AI Chatbot Development Services", "item": "https://abdulqadeerml.com/services/ai-chatbot-development/" }
         ]
       },
@@ -169,8 +170,8 @@
         
         <a class="nav-link" href="/services/">Services</a>
         
-        <a class="nav-link" href="/#faq">FAQ</a>
-        <a class="btn btn-lime" href="/#contact">Discuss a Project</a>
+        <a class="nav-link" href="/about/#faq">FAQ</a>
+        <a class="btn btn-lime" href="/contact">Discuss a Project</a>
       </nav>
     </div>
   </div>
@@ -186,7 +187,7 @@
         <h1>Customers answered <span class="accent">instantly.</span> Leads captured <span class="accent">24/7.</span></h1>
         <p class="lede">I build custom AI chatbots trained on your business — your FAQs, your documents, your tone. They answer customer questions in seconds, capture leads while you sleep, and plug into WhatsApp and your workflows. Working software, not a demo.</p>
         <div class="hero-ctas">
-          <a class="btn btn-lime" href="/#contact">Discuss Your Chatbot</a>
+          <a class="btn btn-lime" href="/contact">Discuss Your Chatbot</a>
           <a class="btn btn-ghost" href="#faq">Common Questions</a>
         </div>
       </div>
@@ -260,7 +261,8 @@
       <div class="cta-band">
         <h2>Let's build your <span class="accent">24/7 salesperson</span></h2>
         <p>Tell me what your customers keep asking — I'll tell you honestly whether a chatbot solves it, and what it would take.</p>
-        <a class="btn btn-lime" href="/#contact">Discuss a Project</a>
+        <a class="btn btn-lime" href="https://calendly.com/abdulqadeerml/30min" target="_blank" rel="noopener">Book a Free Call</a>
+        <a class="btn btn-ghost" href="https://wa.me/923427717288" target="_blank" rel="noopener">Chat on WhatsApp</a>
       </div>
     </div>
   </main>
@@ -268,13 +270,15 @@
   <footer>
     <div class="wrap">
       <span>© 2026 Qadeer Automations — AI Automation · Chatbots · Dashboards · Business Systems</span>
-      <span><a href="/">Home</a><a href="/services/">Services</a><a href="/about/">About</a><a href="/insights/">Insights</a><a href="/#contact">Contact</a><a href="/privacy/">Privacy</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></span>
+      <span><a href="/">Home</a><a href="/services/">Services</a><a href="/about/">About</a><a href="/insights/">Insights</a><a href="/contact">Contact</a><a href="mailto:hello@abdulqadeerml.com">Email</a><a href="https://wa.me/923427717288" target="_blank" rel="noopener">WhatsApp</a><a href="/privacy/">Privacy</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></span>
     </div>
   </footer>
 
   <script>
-    document.querySelectorAll('.faq-item').forEach(function (item) {
+    document.querySelectorAll('.faq-item').forEach(function (item, i) {
       var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+      if (a && !a.id) a.id = 'faq-a-' + (i + 1);
+      if (q && a) q.setAttribute('aria-controls', a.id);
       q.addEventListener('click', function () {
         var isOpen = item.classList.contains('open');
         document.querySelectorAll('.faq-item.open').forEach(function (other) {

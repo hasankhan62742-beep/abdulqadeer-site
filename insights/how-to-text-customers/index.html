@@ -29,6 +29,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How to Text Customers — Qadeer Automations" />
   <meta name="twitter:description" content="How to text customers: permission first, short useful texts, and the five texts that earn replies — with 2026 numbers on why texting beats calling." />
+  <meta name="twitter:image" content="https://abdulqadeerml.com/og-image.jpg" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -170,14 +171,14 @@
         </a>
         <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/services/">Services</a>
-        <a class="nav-link" href="/#process">Process</a>
-        <a class="nav-link" href="/#industries">Industries</a>
-        <a class="nav-link" href="/#assessment">Assessment</a>
+        <a class="nav-link" href="/services/#process">Process</a>
+        <a class="nav-link" href="/solutions/#industries">Industries</a>
+        <a class="nav-link" href="/solutions/#assessment">Assessment</a>
         
         
-        <a class="nav-link" href="/#faq">FAQ</a>
-        <a class="nav-link" href="/#contact">Contact</a>
-        <a class="btn btn-lime" href="/#contact">Book a free call</a>
+        <a class="nav-link" href="/about/#faq">FAQ</a>
+        <a class="nav-link" href="/contact">Contact</a>
+        <a class="btn btn-lime" href="/contact">Book a free call</a>
       </nav>
     </div>
   </div>
@@ -264,7 +265,12 @@
           <button class="faq-q" aria-expanded="false">Do customers really prefer texting over calling?<span class="fx">+</span></button>
           <div class="faq-a"><p>Yes, and the gap is now measurable. According to EZ Texting's 2026 Consumer Texting Behavior Report, 46% of consumers say they usually contact a business by text, compared with 43% by phone call. Meta's State of Business Messaging 2026 report found the same direction: 71% of people prefer messaging a business over calling it.</p></div>
         </div>
-        <div style="border-top:1px solid var(--line-dark);margin-top:48px;padding-top:28px">
+                <h2 style="margin-top:44px">Related <span class="accent">reading</span></h2>
+        <ul style="color:var(--muted-dark);max-width:68ch">
+          <li><a href="/insights/how-to-get-customers-to-leave-reviews/">How to Get Customers to Leave Reviews</a></li>
+          <li><a href="/insights/reduce-no-shows-automated-appointment-reminders/">How Do I Reduce No-Shows With Automated Appointment Reminders?</a></li>
+        </ul>
+<div style="border-top:1px solid var(--line-dark);margin-top:48px;padding-top:28px">
           <p style="color:var(--muted-dark);font-size:.9rem;margin:0 0 14px">Share this article</p>
           <div style="display:flex;flex-wrap:wrap;gap:10px">
             <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fabdulqadeerml.com%2Finsights%2Fhow-to-text-customers%2F" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:9px 18px;border:1px solid var(--line-dark);border-radius:999px;color:var(--on-ink);text-decoration:none;font-size:.88rem;font-weight:600">Facebook</a>
@@ -288,13 +294,15 @@
 <footer>
     <div class="wrap">
       <span>© 2026 Qadeer Automations — AI Automation · Chatbots · Dashboards · Business Systems</span>
-      <span><a href="/">Home</a><a href="/services/">Services</a><a href="/about/">About</a><a href="/insights/">Insights</a><a href="/#contact">Contact</a><a href="/privacy/">Privacy</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></span>
+      <span><a href="/">Home</a><a href="/services/">Services</a><a href="/about/">About</a><a href="/insights/">Insights</a><a href="/contact">Contact</a><a href="mailto:hello@abdulqadeerml.com">Email</a><a href="https://wa.me/923427717288" target="_blank" rel="noopener">WhatsApp</a><a href="/privacy/">Privacy</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></span>
     </div>
   </footer>
 
   <script>
-    document.querySelectorAll('.faq-item').forEach(function (item) {
+    document.querySelectorAll('.faq-item').forEach(function (item, i) {
       var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+      if (a && !a.id) a.id = 'faq-a-' + (i + 1);
+      if (q && a) q.setAttribute('aria-controls', a.id);
       q.addEventListener('click', function () {
         var isOpen = item.classList.contains('open');
         document.querySelectorAll('.faq-item.open').forEach(function (other) {

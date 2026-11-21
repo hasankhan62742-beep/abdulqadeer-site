@@ -29,6 +29,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="What Is AI Automation? — Qadeer Automations" />
   <meta name="twitter:description" content="AI automation, explained in plain English: what it really is, how it differs from a chatbot and from rules-based automation, and how to start this week." />
+  <meta name="twitter:image" content="https://abdulqadeerml.com/og-image.jpg" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -182,14 +183,14 @@
         </a>
         <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/services/">Services</a>
-        <a class="nav-link" href="/#process">Process</a>
-        <a class="nav-link" href="/#industries">Industries</a>
-        <a class="nav-link" href="/#assessment">Assessment</a>
+        <a class="nav-link" href="/services/#process">Process</a>
+        <a class="nav-link" href="/solutions/#industries">Industries</a>
+        <a class="nav-link" href="/solutions/#assessment">Assessment</a>
         
         
-        <a class="nav-link" href="/#faq">FAQ</a>
-        <a class="nav-link" href="/#contact">Contact</a>
-        <a class="btn btn-lime" href="/#contact">Book a free call</a>
+        <a class="nav-link" href="/about/#faq">FAQ</a>
+        <a class="nav-link" href="/contact">Contact</a>
+        <a class="btn btn-lime" href="/contact">Book a free call</a>
       </nav>
     </div>
   </div>
@@ -200,7 +201,7 @@
         <p class="crumbs"><a href="/">Home</a> → <a href="/insights/">Insights</a> → What Is AI Automation?</p>
         <span class="eyebrow">AUTOMATION · PLAIN-ENGLISH GUIDE</span>
         <h1>What Is <span class="accent">AI Automation?</span></h1>
-        <p class="lede">You've heard the phrase a dozen times this month — in an ad, in your inbox, from a vendor on the phone. AI automation. It sounds expensive and complicated, built for companies much bigger than yours. It isn't. Here's what it actually means, in plain language, and how to tell whether any of it is worth your time.</p>
+        <p class="lede">AI automation is software that finishes a whole job for you: it reads an inquiry, decides what the customer wants, books the appointment, updates the record, and tells you — without someone doing each step by hand. You've heard the phrase a dozen times this month — in an ad, in your inbox, from a vendor on the phone. AI automation. It sounds expensive and complicated, built for companies much bigger than yours. It isn't. Here's what it actually means, in plain language, and how to tell whether any of it is worth your time.</p>
         <p class="lede" style="font-size:.9rem">By <a href="/about/">Abdul Qadeer</a> · 19 November 2026 · 7 min read</p>
       </div>
     </section>
@@ -248,7 +249,12 @@
   <button class="faq-q" aria-expanded="false">Where should I start with AI automation?<span class="fx">+</span></button>
   <div class="faq-a"><p>Pick one job — the one that eats an hour of someone's day and happens the same way every time. Write down what “done” looks like and who checks the work. Then run it for two weeks with a person checking every single output.</p></div>
 </div>
-        <div style="border-top:1px solid var(--line-dark);margin-top:48px;padding-top:28px">
+                <h2 style="margin-top:44px">Related <span class="accent">reading</span></h2>
+        <ul style="color:var(--muted-dark);max-width:68ch">
+          <li><a href="/insights/what-is-an-ai-agent-for-small-business/">What Is an AI Agent for a Small Business?</a></li>
+          <li><a href="/insights/best-ai-tools-for-small-business/">Best AI Tools for Small Business</a></li>
+        </ul>
+<div style="border-top:1px solid var(--line-dark);margin-top:48px;padding-top:28px">
           <p style="color:var(--muted-dark);font-size:.9rem;margin:0 0 14px">Share this article</p>
           <div style="display:flex;flex-wrap:wrap;gap:10px">
             <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fabdulqadeerml.com%2Finsights%2Fwhat-is-ai-automation%2F" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:9px 18px;border:1px solid var(--line-dark);border-radius:999px;color:var(--on-ink);text-decoration:none;font-size:.88rem;font-weight:600">Facebook</a>
@@ -272,13 +278,15 @@
 <footer>
     <div class="wrap">
       <span>© 2026 Qadeer Automations — AI Automation · Chatbots · Dashboards · Business Systems</span>
-      <span><a href="/">Home</a><a href="/services/">Services</a><a href="/about/">About</a><a href="/insights/">Insights</a><a href="/#contact">Contact</a><a href="/privacy/">Privacy</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></span>
+      <span><a href="/">Home</a><a href="/services/">Services</a><a href="/about/">About</a><a href="/insights/">Insights</a><a href="/contact">Contact</a><a href="mailto:hello@abdulqadeerml.com">Email</a><a href="https://wa.me/923427717288" target="_blank" rel="noopener">WhatsApp</a><a href="/privacy/">Privacy</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></span>
     </div>
   </footer>
 
   <script>
-    document.querySelectorAll('.faq-item').forEach(function (item) {
+    document.querySelectorAll('.faq-item').forEach(function (item, i) {
       var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+      if (a && !a.id) a.id = 'faq-a-' + (i + 1);
+      if (q && a) q.setAttribute('aria-controls', a.id);
       q.addEventListener('click', function () {
         var isOpen = item.classList.contains('open');
         document.querySelectorAll('.faq-item.open').forEach(function (other) {

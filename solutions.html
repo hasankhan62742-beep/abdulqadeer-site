@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <script>
     (function () {
       var done = false;
@@ -21,8 +23,6 @@
     gtag('config', 'G-YJ9JDFQB1H');
   </script>
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="dark" />
   <meta name="description" content="See how practical AI automation fits your industry, then take the two-minute AI fit check." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -65,8 +65,8 @@
       --on-ink: #EEF1FF;
       --muted-ink: rgba(226, 236, 255, .68);
       --muted-dark: rgba(226, 236, 255, .64);
-      --faint-ink: rgba(226, 236, 255, .45);
-      --faint-dark: rgba(226, 236, 255, .42);
+      --faint-ink: rgba(226, 236, 255, .62);
+      --faint-dark: rgba(226, 236, 255, .62);
       --line-ink: rgba(140, 180, 255, .16);
       --line-dark: rgba(226, 236, 255, .14);
       --font-d: "Space Grotesk", "Avenir Next", system-ui, sans-serif;
@@ -95,11 +95,11 @@
       background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); }
 
     /* ---------- NAV ---------- */
-    .nav-shell { position: sticky; top: 0; z-index: 80; background: rgba(8,9,22, .94);
+    .nav-shell { position: sticky; top: 0; z-index: 80; background: rgba(0,0,0,.94);
       border-bottom: 1px solid var(--line-dark); }
     nav { display: flex; align-items: center; gap: 30px; min-height: 74px; }
     .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
-    .brand-mark { width: 38px; height: 38px; border-radius: 9px; background: var(--accent); color: var(--ink);
+    .brand-mark { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg,#2DD4BF,#2563EB); color: #031018;
       display: flex; align-items: center; justify-content: center;
       font-family: var(--font-d); font-weight: 700; font-size: 1.05rem; letter-spacing: -.02em; }
     .brand-name { font-family: var(--font-d); font-weight: 600; font-size: 1.02rem; letter-spacing: -.01em; }
@@ -195,7 +195,7 @@
     .hero h1.reveal.visible { clip-path: inset(0 0 -10% 0); transform: none; filter: blur(0); opacity: 1; }
     /* ---------- NAV GLASS + ACTIVE ---------- */
     .nav-shell { transition: background .3s ease, box-shadow .3s ease; }
-    .nav-shell.scrolled { background: rgba(8,9,22,.94); box-shadow: 0 14px 44px rgba(0,0,0,.4); }
+    .nav-shell.scrolled { background: rgba(0,0,0,.94); box-shadow: 0 14px 44px rgba(0,0,0,.4); }
     .nav-link.active { color: var(--on-ink); }
     .nav-link.active::after { transform: scaleX(1); }
     /* ---------- BUTTON SHINE ---------- */
@@ -335,8 +335,8 @@
     .field textarea { min-height: 118px; resize: vertical; }
     .field input:focus, .field select:focus, .field textarea:focus { outline: none;
       border-color: var(--ink); box-shadow: 0 0 0 3px rgba(45,212,191, .5); }
-    .field .err { display: none; font-size: .78rem; color: #b3261e; font-weight: 600; }
-    .field.invalid input { border-color: #b3261e; }
+    .field .err { display: none; font-size: .78rem; color: #FF8A80; font-weight: 600; }
+    .field.invalid input { border-color: #FF8A80; }
     .field.invalid .err { display: block; }
     .form-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
     .form-note { margin-top: 16px; font-size: .82rem; color: var(--faint-ink); }
@@ -415,13 +415,12 @@
       .proc:nth-child(2) { border-right: 0; }
       .proc { border-bottom: 1px solid var(--line-dark); }
       .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
-      .price-grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; }
       .foot-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 760px) {
       .nav-links { display: none; }
       .nav-links.open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column;
-        align-items: stretch; gap: 0; padding: 8px 24px 24px; background: rgba(8,9,22,.98);
+        align-items: stretch; gap: 0; padding: 8px 24px 24px; background: rgba(0,0,0,.98);
         border-bottom: 1px solid var(--line-dark); }
       .nav-links.open .nav-link { padding: 15px 4px; border-bottom: 1px solid var(--line-dark); font-size: 1rem; }
       .nav-links.open .nav-link::after { display: none; }
@@ -446,7 +445,7 @@
         display: flex; justify-content: center; align-items: center; min-height: 54px;
         background: var(--accent); color: var(--ink); border-radius: 999px;
         font-weight: 800; text-decoration: none; box-shadow: 0 12px 32px rgba(45,212,191,.35); }
-      .toast { bottom: 84px; }
+      .toast { bottom: 156px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -480,21 +479,12 @@
         linear-gradient(180deg, #000000, #080808);
       color: var(--on-ink);
     }
-    /* gold identity: section accents are bright metallic gold (base .accent rule below governs) */
     .on-ivory .sec-label { color: var(--muted-dark); }
     .on-ivory .sec-label .num { background: var(--accent); color: #04050D; }
-    .sec-title .accent, #hero-title .accent { color: #FFD477; }
-    .btn-primary {
-      background: linear-gradient(120deg, #2DD4BF 0%, #8C6A2F 55%, #FFD477 115%);
-      color: #171106; border: none;
-      box-shadow: 0 14px 38px rgba(45,212,191,.4), inset 0 1px 0 rgba(255,255,255,.25);
-    }
-    .btn-primary:hover { box-shadow: 0 18px 46px rgba(255,212,119,.5), inset 0 1px 0 rgba(255,255,255,.3); }
-    .brand-mark { background: linear-gradient(120deg, #2DD4BF, #8C6A2F 55%, #FFD477 115%); color: #171106; }
     #progress { background: linear-gradient(90deg, #8C6A2F, #2DD4BF, #FFD477); }
 
     /* glass surfaces */
-    .work-card, .price-card, .svc-card, .about-card {
+    .work-card, .svc-card, .about-card {
       background: linear-gradient(165deg, rgba(45,212,191,.09), rgba(34,211,238,.05) 55%, rgba(15,13,9,.72));
       border: 1px solid rgba(45,212,191,.16);
       box-shadow: 0 24px 60px rgba(0,0,10,.35);
@@ -504,7 +494,6 @@
       border-color: rgba(255,212,119,.45);
       box-shadow: 0 30px 70px rgba(46,36,16,.45), 0 0 0 1px rgba(255,212,119,.12);
     }
-    .price-card.popular { border-color: rgba(255,212,119,.55); box-shadow: 0 30px 80px rgba(45,212,191,.28); }
     .faq-q { color: var(--on-ink); }
     .field input, .field select, .field textarea {
       background: rgba(15,13,9,.85); color: var(--on-ink);
@@ -591,7 +580,6 @@
     .ticker { color: #B8B8BE; border-top: 1px solid rgba(45,212,191,.18); border-bottom: 1px solid rgba(45,212,191,.18); }
     .case-index b { color: #FFD477; }
     .svc-more { color: #FFD477; }
-    .price-note a { color: #FFD477; }
     .form-card {
       background: linear-gradient(165deg, rgba(26,21,11,.96), rgba(10,9,7,.98));
       color: var(--on-ink); border: 1px solid rgba(45,212,191,.2);
@@ -721,18 +709,17 @@
 body{background:radial-gradient(700px 500px at 0 40%,rgba(45,212,191,.06),transparent 60%),#000000}
 #bg-dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 main,footer{position:relative;z-index:1}
-.section.on-ink{background:transparent}.section.on-ivory{background:rgba(5,14,40,.55)}
+.section.on-ink{background:transparent}.section.on-ivory{background:rgba(255,255,255,.02)}
 .nav-shell{position:fixed;left:0;right:0;top:0;background:transparent;border:0;box-shadow:none;padding:10px 0}
 nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;gap:14px}
-.nav-links{margin-left:auto;gap:2px;background:rgba(6,16,44,.55);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid var(--gl);border-radius:999px;padding:5px 8px}
+.nav-links{margin-left:auto;gap:2px;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid var(--gl);border-radius:999px;padding:5px 8px}
 .nav-link{padding:7px 14px;border-radius:999px;font-size:.8rem;font-weight:500;color:rgba(244,248,255,.85)}
 .nav-link::after{left:50%;right:auto;width:5px;height:5px;bottom:0;border-radius:50%;background:#2DD4BF;transform:translateX(-50%) scale(0)}
 .nav-link:hover{color:#fff}.nav-link.active{color:#2DD4BF}.nav-link.active::after{transform:translateX(-50%) scale(1)}
-.brand-mark{background:linear-gradient(135deg,#2DD4BF,#2563EB)!important;color:#031018!important;border-radius:50%}
 .btn{border-radius:999px}
 .btn-primary{background:var(--g1);color:#031018;font-weight:700;border:0;box-shadow:0 10px 30px rgba(45,212,191,.28)}
 .btn-primary:hover{box-shadow:0 14px 44px rgba(45,212,191,.55)}
-.btn-ghost{background:rgba(6,16,44,.45);border:1px solid var(--gl);color:#fff}
+.btn-ghost{background:rgba(0,0,0,.45)};border:1px solid var(--gl);color:#fff}
 .hero h1 .accent,.page-hero h1 .accent,.sec-title .accent,h2 .accent{background:var(--gt);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .eyebrow{color:#2DD4BF;border:0;background:none;padding:0;letter-spacing:.18em;font-size:.74rem;font-weight:600}
 .hero{min-height:100svh;display:flex;padding:0;background:#000000;overflow:hidden}
@@ -764,7 +751,7 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
 .xcard h3{font-size:1.4rem;margin:0 0 8px}.xcard p{margin:0;color:rgba(235,245,255,.65)}
 .xcard span{display:inline-block;margin-top:14px;font-weight:600;color:#2DD4BF}
 ::selection{background:#2DD4BF;color:#031018}
-@media(max-width:900px){.nav-links{background:none;border:0;padding:0}.nav-links.open{background:rgba(4,10,30,.97);border:1px solid var(--gl);border-radius:20px;margin-top:8px;padding:8px}.hero-inner{padding:110px 0 90px}.scroll-cue{right:18px;bottom:22px}}
+@media(max-width:900px){.nav-links{background:none;border:0;padding:0}.nav-links.open{background:rgba(0,0,0,.97)};border:1px solid var(--gl);border-radius:20px;margin-top:8px;padding:8px}.hero-inner{padding:110px 0 90px}.scroll-cue{right:18px;bottom:22px}}
 .neural{padding:90px 0 0;background:#000!important;position:relative;overflow:hidden}
 .neural-head{text-align:center;max-width:760px}
 .neural-head .sec-title{margin:14px auto;color:#fff}.neural-head .sec-lede{margin:0 auto;color:rgba(235,245,255,.7)}
@@ -781,6 +768,43 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
 @media (prefers-reduced-motion: reduce){.page-hero .eyebrow,.page-hero h1,.page-hero p{animation:none}}
 </style>
   
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://abdulqadeerml.com/solutions#webpage",
+        "url": "https://abdulqadeerml.com/solutions",
+        "name": "Solutions — Qadeer Automations",
+        "isPartOf": {
+          "@id": "https://abdulqadeerml.com/#website"
+        },
+        "about": {
+          "@id": "https://abdulqadeerml.com/#organization"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://abdulqadeerml.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Solutions",
+            "item": "https://abdulqadeerml.com/solutions"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="pg-solutions">
   <div id="cursor-ring" aria-hidden="true"></div>
@@ -802,42 +826,47 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
           <p class="sec-lede">Select a component to see its role. An illustrative architecture: each connection is configured for your tools, not switched on by default.</p>
         </div>
         <div class="tabs reveal" role="tablist" aria-label="Ecosystem components">
-          <button class="tab active" role="tab" aria-selected="true" data-tab="eco-receptionist">AI Receptionist</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="eco-chatbots">Intelligent Chatbots</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="eco-automation">AI Automation</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="eco-marketing">AI Marketing</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="eco-dashboard">Business Dashboard</button>
+          <button class="tab active" role="tab" aria-selected="true" data-tab="eco-receptionist" id="tab-eco-receptionist" aria-controls="eco-receptionist">AI Receptionist</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="eco-chatbots" id="tab-eco-chatbots" aria-controls="eco-chatbots">Intelligent Chatbots</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="eco-automation" id="tab-eco-automation" aria-controls="eco-automation">AI Automation</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="eco-marketing" id="tab-eco-marketing" aria-controls="eco-marketing">AI Marketing</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="eco-dashboard" id="tab-eco-dashboard" aria-controls="eco-dashboard">Business Dashboard</button>
         </div>
         <div class="tab-panels reveal">
-          <div class="tab-panel active" id="eco-receptionist" role="tabpanel">
+          <div class="tab-panel active" id="eco-receptionist" role="tabpanel" aria-labelledby="tab-eco-receptionist">
             <h3>AI Receptionist</h3>
             <p>Answers every call, books appointments and hands off to your team — 24/7, even when the office is closed.</p>
             <p class="tab-flow-label">EXAMPLE FLOW — ILLUSTRATIVE</p>
             <div class="tab-flow"><span>Inbound call</span><i>→</i><span>Receptionist answers</span><i>→</i><span>Appointment booked</span><i>→</i><span>Your team notified</span></div>
+            <p style="margin-top:18px"><a class="svc-more" href="/services/ai-chatbot-development/">Explore AI chatbots &amp; receptionist →</a></p>
           </div>
-          <div class="tab-panel" id="eco-chatbots" role="tabpanel">
+          <div class="tab-panel" id="eco-chatbots" role="tabpanel" aria-labelledby="tab-eco-chatbots">
             <h3>Intelligent Chatbots</h3>
             <p>Answers questions on your website around the clock, qualifies new inquiries against your criteria and hands warm leads to your team with full context.</p>
             <p class="tab-flow-label">EXAMPLE FLOW — ILLUSTRATIVE</p>
             <div class="tab-flow"><span>Website visitor asks</span><i>→</i><span>Chatbot answers &amp; qualifies</span><i>→</i><span>Warm lead handed to your team</span><i>→</i><span>Follow-up scheduled</span></div>
+            <p style="margin-top:18px"><a class="svc-more" href="/services/ai-chatbot-development/">Explore AI chatbots →</a></p>
           </div>
-          <div class="tab-panel" id="eco-automation" role="tabpanel">
+          <div class="tab-panel" id="eco-automation" role="tabpanel" aria-labelledby="tab-eco-automation">
             <h3>AI Automation</h3>
             <p>Moves lead handling, follow-ups, reporting and routine admin from your to-do list into reliable workflows you can review.</p>
             <p class="tab-flow-label">EXAMPLE FLOW — ILLUSTRATIVE</p>
             <div class="tab-flow"><span>New lead arrives</span><i>→</i><span>Automation updates your CRM</span><i>→</i><span>Follow-up sent</span><i>→</i><span>Dashboard reflects the activity</span></div>
+            <p style="margin-top:18px"><a class="svc-more" href="/services/business-automation/">Explore business automation →</a></p>
           </div>
-          <div class="tab-panel" id="eco-marketing" role="tabpanel">
+          <div class="tab-panel" id="eco-marketing" role="tabpanel" aria-labelledby="tab-eco-marketing">
             <h3>AI Marketing</h3>
             <p>Content calendars, drafted captions and scheduled posts in one steady rhythm — with you approving the final cut.</p>
             <p class="tab-flow-label">EXAMPLE FLOW — ILLUSTRATIVE</p>
             <div class="tab-flow"><span>Topic planned</span><i>→</i><span>Draft written</span><i>→</i><span>You approve</span><i>→</i><span>Post scheduled &amp; tracked</span></div>
+            <p style="margin-top:18px"><a class="svc-more" href="/services/ai-marketing/">Explore AI marketing →</a></p>
           </div>
-          <div class="tab-panel" id="eco-dashboard" role="tabpanel">
+          <div class="tab-panel" id="eco-dashboard" role="tabpanel" aria-labelledby="tab-eco-dashboard">
             <h3>Business Dashboard</h3>
             <p>Sales, leads, campaigns and automation status in one interface, with plain-language summaries that tell you what changed and why it matters.</p>
             <p class="tab-flow-label">EXAMPLE FLOW — ILLUSTRATIVE</p>
             <div class="tab-flow"><span>Data connected</span><i>→</i><span>Activity tracked</span><i>→</i><span>Summary written in plain words</span><i>→</i><span>You decide what matters</span></div>
+            <p style="margin-top:18px"><a class="svc-more" href="/services/dashboards-business-intelligence/">Explore dashboards &amp; BI →</a></p>
           </div>
         </div>
       </div>
@@ -849,50 +878,50 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
           <p class="sec-lede">Pick your industry to see where AI tends to help first. Every engagement starts with your specific workflow.</p>
         </div>
         <div class="tabs reveal" role="tablist" aria-label="Industries">
-          <button class="tab active" role="tab" aria-selected="true" data-tab="ind-home">Home Services</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="ind-retail">Retail &amp; E-commerce</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="ind-professional">Professional Services</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="ind-healthcare">Healthcare &amp; Wellness</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="ind-realestate">Real Estate</button>
-          <button class="tab" role="tab" aria-selected="false" data-tab="ind-restaurants">Restaurants &amp; Hospitality</button>
+          <button class="tab active" role="tab" aria-selected="true" data-tab="ind-home" id="tab-ind-home" aria-controls="ind-home">Home Services</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="ind-retail" id="tab-ind-retail" aria-controls="ind-retail">Retail &amp; E-commerce</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="ind-professional" id="tab-ind-professional" aria-controls="ind-professional">Professional Services</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="ind-healthcare" id="tab-ind-healthcare" aria-controls="ind-healthcare">Healthcare &amp; Wellness</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="ind-realestate" id="tab-ind-realestate" aria-controls="ind-realestate">Real Estate</button>
+          <button class="tab" role="tab" aria-selected="false" data-tab="ind-restaurants" id="tab-ind-restaurants" aria-controls="ind-restaurants">Restaurants &amp; Hospitality</button>
         </div>
         <div class="tab-panels reveal">
-          <div class="tab-panel active" id="ind-home" role="tabpanel">
+          <div class="tab-panel active" id="ind-home" role="tabpanel" aria-labelledby="tab-ind-home">
             <div class="use-grid">
               <div class="use-case"><span class="use-num">USE CASE 01</span><h3>Inquiry qualification</h3><p>Capture job details and urgency from every call or form before you pick up the phone.</p></div>
               <div class="use-case"><span class="use-num">USE CASE 02</span><h3>Estimate follow-ups</h3><p>Automatic, friendly reminders on open quotes so fewer jobs slip away.</p></div>
               <div class="use-case"><span class="use-num">USE CASE 03</span><h3>Appointment coordination</h3><p>Offer open slots, confirm visits and send reminders without phone tag.</p></div>
             </div>
           </div>
-          <div class="tab-panel" id="ind-retail" role="tabpanel">
+          <div class="tab-panel" id="ind-retail" role="tabpanel" aria-labelledby="tab-ind-retail">
             <div class="use-grid">
               <div class="use-case"><span class="use-num">USE CASE 01</span><h3>Demand forecasting</h3><p>Know what to stock before the rush — forecasts built from your own sales history.</p></div>
               <div class="use-case"><span class="use-num">USE CASE 02</span><h3>Churn flags</h3><p>Spot customers drifting away early, so you can win them back in time.</p></div>
               <div class="use-case"><span class="use-num">USE CASE 03</span><h3>Customer replies</h3><p>Common questions answered instantly, day or night, while your team handles the rest.</p></div>
             </div>
           </div>
-          <div class="tab-panel" id="ind-professional" role="tabpanel">
+          <div class="tab-panel" id="ind-professional" role="tabpanel" aria-labelledby="tab-ind-professional">
             <div class="use-grid">
               <div class="use-case"><span class="use-num">USE CASE 01</span><h3>Lead qualification</h3><p>Every inquiry answered, qualified and routed to the right person.</p></div>
               <div class="use-case"><span class="use-num">USE CASE 02</span><h3>Follow-up automation</h3><p>Proposals and reminders chased automatically — nothing falls through the cracks.</p></div>
               <div class="use-case"><span class="use-num">USE CASE 03</span><h3>Reporting dashboard</h3><p>Fees, pipeline and workload in one plain-language view.</p></div>
             </div>
           </div>
-          <div class="tab-panel" id="ind-healthcare" role="tabpanel">
+          <div class="tab-panel" id="ind-healthcare" role="tabpanel" aria-labelledby="tab-ind-healthcare">
             <div class="use-grid">
               <div class="use-case"><span class="use-num">USE CASE 01</span><h3>Appointment booking</h3><p>Patients book, confirm and reschedule without phone tag.</p></div>
               <div class="use-case"><span class="use-num">USE CASE 02</span><h3>Reminders</h3><p>Automatic reminders cut no-shows and free up reception time.</p></div>
               <div class="use-case"><span class="use-num">USE CASE 03</span><h3>Patient questions</h3><p>Common questions answered instantly, with a person handed over when it matters.</p></div>
             </div>
           </div>
-          <div class="tab-panel" id="ind-realestate" role="tabpanel">
+          <div class="tab-panel" id="ind-realestate" role="tabpanel" aria-labelledby="tab-ind-realestate">
             <div class="use-grid">
               <div class="use-case"><span class="use-num">USE CASE 01</span><h3>Inquiry response</h3><p>Every listing inquiry answered in minutes, even after hours.</p></div>
               <div class="use-case"><span class="use-num">USE CASE 02</span><h3>Viewing coordination</h3><p>Open slots offered, viewings confirmed and reminders sent automatically.</p></div>
               <div class="use-case"><span class="use-num">USE CASE 03</span><h3>Follow-ups</h3><p>Buyers and sellers nudged at the right time, without manual chasing.</p></div>
             </div>
           </div>
-          <div class="tab-panel" id="ind-restaurants" role="tabpanel">
+          <div class="tab-panel" id="ind-restaurants" role="tabpanel" aria-labelledby="tab-ind-restaurants">
             <div class="use-grid">
               <div class="use-case"><span class="use-num">USE CASE 01</span><h3>Reservation handling</h3><p>Bookings taken and confirmed around the clock.</p></div>
               <div class="use-case"><span class="use-num">USE CASE 02</span><h3>Guest questions</h3><p>Menus, hours and directions answered instantly.</p></div>
@@ -917,7 +946,7 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
           </div>
           <div class="assess-result">
             <p class="assess-result-label">PRELIMINARY SUMMARY</p>
-            <p id="assess-summary">Answer the four questions and your recommendation appears here.</p>
+            <p id="assess-summary" aria-live="polite">Answer the four questions and your recommendation appears here.</p>
             <a class="btn btn-primary" href="https://calendly.com/abdulqadeerml/30min" target="_blank" rel="noopener">Book Your Free Strategy Call</a>
             <p class="assess-note">An initial recommendation only — not a technical audit or a savings estimate.</p>
           </div>
@@ -935,7 +964,7 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
           </a>
           <p>Practical AI systems for small businesses — automation, chatbots and dashboards that answer customers and remove busywork.</p>
         </div>
-        <div class="foot-col"><b>NAVIGATE</b><a href="services.html#services">Services</a><a href="services.html#process">Process</a><a href="solutions.html#industries">Industries</a><a href="solutions.html#assessment">Assessment</a><a href="about.html#faq">FAQ</a><a href="/about/">About</a><a href="/privacy/">Privacy</a></div>
+        <div class="foot-col"><b>NAVIGATE</b><a href="services.html#services">Services</a><a href="services.html#process">Process</a><a href="solutions.html#industries">Industries</a><a href="solutions.html#assessment">Assessment</a><a href="about.html#faq">FAQ</a><a href="/insights/">Insights</a><a href="/about/">About</a><a href="/privacy/">Privacy</a></div>
         <div class="foot-col"><b>CONNECT</b><a href="https://calendly.com/abdulqadeerml/30min" target="_blank" rel="noopener">Book a call</a><a href="https://wa.me/923427717288" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.linkedin.com/in/muhammad-abdul-qadeer-8262b237b" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/hasankhan62742-beep" target="_blank" rel="noopener">GitHub</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></div>
       </div>
       <div class="foot-base"><span>© 2026 Qadeer Automations</span><span>AI Automation · Chatbots · Dashboards · Business Systems</span></div>
@@ -1155,9 +1184,11 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
       }
 
       /* ---------- FAQ accordion ---------- */
-      document.querySelectorAll('.faq-item').forEach(function (item) {
+      document.querySelectorAll('.faq-item').forEach(function (item, i) {
         var q = item.querySelector('.faq-q');
         var a = item.querySelector('.faq-a');
+        if (a && !a.id) a.id = 'faq-a-' + (i + 1);
+        if (q && a) q.setAttribute('aria-controls', a.id);
         q.addEventListener('click', function () {
           var isOpen = item.classList.contains('open');
           document.querySelectorAll('.faq-item.open').forEach(function (other) {
@@ -1408,6 +1439,9 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         if (win.classList.contains('open')) setTimeout(function () { input.focus(); }, 300);
       });
       (document.getElementById('chat-close')||{addEventListener:function(){}}).addEventListener('click', function () { win.classList.remove('open'); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && win.classList.contains('open')) { win.classList.remove('open'); fab.focus(); }
+      });
       sendBtn.addEventListener('click', send);
       input.addEventListener('keydown', function (e) { if (e.key === 'Enter') send(); });
     })();
@@ -1445,6 +1479,19 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
           btn.setAttribute('aria-selected', 'true');
           panels.forEach(function (p) { p.classList.toggle('active', p.id === btn.getAttribute('data-tab')); });
         });
+        group.addEventListener('keydown', function (e) {
+          if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft' && e.key !== 'Home' && e.key !== 'End') return;
+          var tabs = Array.prototype.slice.call(group.querySelectorAll('.tab'));
+          var i = tabs.indexOf(document.activeElement);
+          if (i < 0) return;
+          e.preventDefault();
+          var n = i;
+          if (e.key === 'ArrowRight') n = (i + 1) % tabs.length;
+          if (e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+          if (e.key === 'Home') n = 0;
+          if (e.key === 'End') n = tabs.length - 1;
+          tabs[n].focus(); tabs[n].click();
+        });
       });
     })();
 
@@ -1461,19 +1508,23 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         automation: { name: 'Business Automation', blurb: 'for follow-ups and routine admin' },
         predictive: { name: 'Predictive Analytics', blurb: 'to know what will sell' },
         dashboards: { name: 'Dashboards & Business Intelligence', blurb: 'for one clear view of the business' },
-        api: { name: 'API Integrations', blurb: 'to connect the tools you already use' }
+        api: { name: 'API Integrations', blurb: 'to connect the tools you already use' },
+        ml: { name: 'AI & Machine Learning', blurb: 'for a custom prediction model' },
+        webapps: { name: 'Custom Web Apps', blurb: 'to replace manual steps with software' },
+        management: { name: 'a Management System', blurb: 'to run records and reporting in one place' },
+        marketing: { name: 'AI Marketing', blurb: 'for a steady content and campaign rhythm' }
       };
       var byChallenge = {
         'Missed calls & messages': ['chatbots', 'automation'],
         'Slow lead follow-up': ['automation', 'chatbots'],
-        'Repetitive admin': ['automation', 'api'],
+        'Repetitive admin': ['automation', 'management'],
         'No visibility on sales & leads': ['dashboards', 'predictive'],
-        'Marketing takes too long': ['automation', 'dashboards']
+        'Marketing takes too long': ['marketing', 'automation']
       };
       var byOutcome = {
         'Respond to customers faster': ['chatbots', 'automation'],
-        'Save time on admin': ['automation', 'api'],
-        'Know what will sell': ['predictive', 'dashboards'],
+        'Save time on admin': ['webapps', 'api'],
+        'Know what will sell': ['predictive', 'ml'],
         'See the whole business clearly': ['dashboards', 'predictive']
       };
       function update() {
@@ -1496,29 +1547,11 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
       [biz, team, challenge, outcome].forEach(function (el) { if (el) el.addEventListener('change', update); });
     })();
 
-    /* ---------- nav: glass on scroll + active section ---------- */
+    /* ---------- nav: glass on scroll ---------- */
     (function () {
       var shell = document.querySelector('.nav-shell');
       function onScroll() { shell.classList.toggle('scrolled', window.scrollY > 24); }
       window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
-      var links = document.querySelectorAll('.nav-link');
-      var map = {};
-      links.forEach(function (l) { map[l.getAttribute('href').slice(1)] = l; });
-      if ('IntersectionObserver' in window) {
-        var obs = new IntersectionObserver(function (entries) {
-          entries.forEach(function (en) {
-            if (en.isIntersecting) {
-              links.forEach(function (l) { l.classList.remove('active'); });
-              var l = map[en.target.id];
-              if (l) l.classList.add('active');
-            }
-          });
-        }, { rootMargin: '-40% 0px -55% 0px' });
-        Object.keys(map).forEach(function (id) {
-          var s = document.getElementById(id);
-          if (s) obs.observe(s);
-        });
-      }
     })();
   
 (function(){var b=document.getElementById('scroll-progress');if(!b)return;var t=false;

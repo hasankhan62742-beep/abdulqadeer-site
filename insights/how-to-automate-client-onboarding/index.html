@@ -30,6 +30,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How to Automate Client Onboarding — Qadeer Automations" />
   <meta name="twitter:description" content="Automate the welcome email, intake form, contract and kickoff booking — and keep the human parts human. A practical setup for small service businesses." />
+  <meta name="twitter:image" content="https://abdulqadeerml.com/og-image.jpg" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -153,15 +154,15 @@
           <span class="brand-name">Qadeer Automations<small>AI AUTOMATION AGENCY</small></span>
         </a>
         <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/#services">Services</a>
-        <a class="nav-link" href="/#process">Process</a>
-        <a class="nav-link" href="/#industries">Industries</a>
-        <a class="nav-link" href="/#assessment">Assessment</a>
+        <a class="nav-link" href="/services/#services">Services</a>
+        <a class="nav-link" href="/services/#process">Process</a>
+        <a class="nav-link" href="/solutions/#industries">Industries</a>
+        <a class="nav-link" href="/solutions/#assessment">Assessment</a>
         
         
-        <a class="nav-link" href="/#faq">FAQ</a>
-        <a class="nav-link" href="/#contact">Contact</a>
-        <a class="btn btn-lime" href="/#contact">Book a free call</a>
+        <a class="nav-link" href="/about/#faq">FAQ</a>
+        <a class="nav-link" href="/contact">Contact</a>
+        <a class="btn btn-lime" href="/contact">Book a free call</a>
       </nav>
     </div>
   </div>
@@ -186,7 +187,7 @@
         <p style="color:var(--muted-dark);max-width:68ch">Most onboarding does not fail at any single step. It fails in the gaps between steps, the handoffs where nobody is watching. The welcome email goes out, and then everyone waits — because the next move depends on the client doing something, and nobody is watching for the silence. The intake form gets sent, but chasing it is manual, so it sits in an inbox until someone remembers. The kickoff call needs a time, so three emails go back and forth and the week slips by. Meanwhile the client is forming a first impression of how you work: slow, scattered, a bit disorganized. The work is not late — but the client starts wondering whether they picked the right firm. Fix the handoffs and the rest of onboarding gets dramatically easier.</p>
         <h2 style="margin-top:44px">The five steps <span class="accent">worth automating</span></h2>
         <div class="steps">
-          <div class="step"><div class="num">1</div><div><h3>The welcome email</h3><p>The moment the contract is signed or the deposit lands, the client gets a welcome email: what happens next, what you need from them, and the links to everything. Written once, sent automatically, personalised with their name and service.</p></div></div>
+          <div class="step"><div class="num">1</div><div><h3>The welcome email</h3><p>The moment the contract is signed or the deposit lands, the client gets a welcome email: what happens next, what you need from them, and the links to everything. Written once, sent automatically, personalized with their name and service.</p></div></div>
           <div class="step"><div class="num">2</div><div><h3>The intake form</h3><p>One form, sent automatically, that collects everything you always ask for: business details, goals, logins, files. No more gathering the same answers over a phone call — and if it has not come back in three days, a polite reminder goes out on its own.</p></div></div>
           <div class="step"><div class="num">3</div><div><h3>The contract and the payment</h3><p>A reusable contract template, filled in from the intake form and signed digitally in minutes. Connect the signature to the invoice, and the payment to the next step, so each one fires the next on its own.</p></div></div>
           <div class="step"><div class="num">4</div><div><h3>The kickoff booking</h3><p>Put a booking link in the welcome email instead of emailing back and forth. The client picks a time, the calendar event appears, and both of you get the link. Add two or three questions to the booking form so you arrive prepared.</p></div></div>
@@ -244,13 +245,15 @@
 <footer>
     <div class="wrap">
       <span>© 2026 Qadeer Automations — AI Automation · Chatbots · Dashboards · Business Systems</span>
-      <span><a href="/">Home</a><a href="/#services">Services</a><a href="/about/">About</a><a href="/insights/">Insights</a><a href="/#contact">Contact</a><a href="/privacy/">Privacy</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></span>
+      <span><a href="/">Home</a><a href="/services/#services">Services</a><a href="/about/">About</a><a href="/insights/">Insights</a><a href="/contact">Contact</a><a href="mailto:hello@abdulqadeerml.com">Email</a><a href="https://wa.me/923427717288" target="_blank" rel="noopener">WhatsApp</a><a href="/privacy/">Privacy</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></span>
     </div>
   </footer>
 
   <script>
-    document.querySelectorAll('.faq-item').forEach(function (item) {
+    document.querySelectorAll('.faq-item').forEach(function (item, i) {
       var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+      if (a && !a.id) a.id = 'faq-a-' + (i + 1);
+      if (q && a) q.setAttribute('aria-controls', a.id);
       q.addEventListener('click', function () {
         var isOpen = item.classList.contains('open');
         document.querySelectorAll('.faq-item.open').forEach(function (other) {

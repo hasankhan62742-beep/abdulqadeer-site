@@ -29,6 +29,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="How Do I Stop Losing Leads? — Qadeer Automations" />
   <meta name="twitter:description" content="Most small businesses lose leads they never hear about — missed calls, empty voicemails, slow form replies. Here is how to find the leaks and plug them." />
+  <meta name="twitter:image" content="https://abdulqadeerml.com/og-image.jpg" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -182,14 +183,14 @@
         </a>
         <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/services/">Services</a>
-        <a class="nav-link" href="/#process">Process</a>
-        <a class="nav-link" href="/#industries">Industries</a>
-        <a class="nav-link" href="/#assessment">Assessment</a>
+        <a class="nav-link" href="/services/#process">Process</a>
+        <a class="nav-link" href="/solutions/#industries">Industries</a>
+        <a class="nav-link" href="/solutions/#assessment">Assessment</a>
         
         
-        <a class="nav-link" href="/#faq">FAQ</a>
-        <a class="nav-link" href="/#contact">Contact</a>
-        <a class="btn btn-lime" href="/#contact">Book a free call</a>
+        <a class="nav-link" href="/about/#faq">FAQ</a>
+        <a class="nav-link" href="/contact">Contact</a>
+        <a class="btn btn-lime" href="/contact">Book a free call</a>
       </nav>
     </div>
   </div>
@@ -200,7 +201,7 @@
         <p class="crumbs"><a href="/">Home</a> → <a href="/insights/">Insights</a> → How Do I Stop Losing Leads?</p>
         <span class="eyebrow">LEAD CAPTURE · GUIDE</span>
         <h1>How Do I <span class="accent">Stop Losing Leads?</span></h1>
-        <p class="lede">Your phone rings while you are under a sink, on a ladder, or with a customer already in front of you. By the time you check it, there is no message — and by tomorrow, that caller has hired someone else. That quiet loss happens more often than most owners realize, and it rarely shows up in any report.</p>
+        <p class="lede">Stop losing leads by answering every inquiry within minutes — an AI receptionist or chatbot picks up the calls and messages you miss while you are on a job, books the caller in, and hands you a warm lead. Your phone rings while you are under a sink, on a ladder, or with a customer already in front of you. By the time you check it, there is no message — and by tomorrow, that caller has hired someone else. That quiet loss happens more often than most owners realize, and it rarely shows up in any report.</p>
         <p class="lede" style="font-size:.9rem">By <a href="/about/">Abdul Qadeer</a> · 19 November 2026 · 6 min read</p>
       </div>
     </section>
@@ -249,7 +250,12 @@
   <button class="faq-q" aria-expanded="false">How do I know if the fix is working?<span class="fx">+</span></button>
   <div class="faq-a"><p>Count first. Pull last week's call log and note calls answered, calls missed, and voicemails left, then check how long your website forms and email inquiries waited for a reply. Do the count once a week for a month and you will see exactly where the work is going.</p></div>
 </div>
-        <div style="border-top:1px solid var(--line-dark);margin-top:48px;padding-top:28px">
+                <h2 style="margin-top:44px">Related <span class="accent">reading</span></h2>
+        <ul style="color:var(--muted-dark);max-width:68ch">
+          <li><a href="/insights/stop-losing-inquiries-slow-replies/">How to Stop Losing Inquiries to Slow Replies</a></li>
+          <li><a href="/insights/why-customers-dont-reply-to-quotes/">Why Don't Customers Reply to My Quotes?</a></li>
+        </ul>
+<div style="border-top:1px solid var(--line-dark);margin-top:48px;padding-top:28px">
           <p style="color:var(--muted-dark);font-size:.9rem;margin:0 0 14px">Share this article</p>
           <div style="display:flex;flex-wrap:wrap;gap:10px">
             <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fabdulqadeerml.com%2Finsights%2Fhow-do-i-stop-losing-leads%2F" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:9px 18px;border:1px solid var(--line-dark);border-radius:999px;color:var(--on-ink);text-decoration:none;font-size:.88rem;font-weight:600">Facebook</a>
@@ -273,13 +279,15 @@
 <footer>
     <div class="wrap">
       <span>© 2026 Qadeer Automations — AI Automation · Chatbots · Dashboards · Business Systems</span>
-      <span><a href="/">Home</a><a href="/services/">Services</a><a href="/about/">About</a><a href="/insights/">Insights</a><a href="/#contact">Contact</a><a href="/privacy/">Privacy</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></span>
+      <span><a href="/">Home</a><a href="/services/">Services</a><a href="/about/">About</a><a href="/insights/">Insights</a><a href="/contact">Contact</a><a href="mailto:hello@abdulqadeerml.com">Email</a><a href="https://wa.me/923427717288" target="_blank" rel="noopener">WhatsApp</a><a href="/privacy/">Privacy</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></span>
     </div>
   </footer>
 
   <script>
-    document.querySelectorAll('.faq-item').forEach(function (item) {
+    document.querySelectorAll('.faq-item').forEach(function (item, i) {
       var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+      if (a && !a.id) a.id = 'faq-a-' + (i + 1);
+      if (q && a) q.setAttribute('aria-controls', a.id);
       q.addEventListener('click', function () {
         var isOpen = item.classList.contains('open');
         document.querySelectorAll('.faq-item.open').forEach(function (other) {

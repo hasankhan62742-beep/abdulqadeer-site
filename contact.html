@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <script>
     (function () {
       var done = false;
@@ -21,8 +23,6 @@
     gtag('config', 'G-YJ9JDFQB1H');
   </script>
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="dark" />
   <meta name="description" content="Book a free strategy call or send a project inquiry to Qadeer Automations by WhatsApp or email." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -65,8 +65,8 @@
       --on-ink: #EEF1FF;
       --muted-ink: rgba(226, 236, 255, .68);
       --muted-dark: rgba(226, 236, 255, .64);
-      --faint-ink: rgba(226, 236, 255, .45);
-      --faint-dark: rgba(226, 236, 255, .42);
+      --faint-ink: rgba(226, 236, 255, .62);
+      --faint-dark: rgba(226, 236, 255, .62);
       --line-ink: rgba(140, 180, 255, .16);
       --line-dark: rgba(226, 236, 255, .14);
       --font-d: "Space Grotesk", "Avenir Next", system-ui, sans-serif;
@@ -95,11 +95,11 @@
       background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); }
 
     /* ---------- NAV ---------- */
-    .nav-shell { position: sticky; top: 0; z-index: 80; background: rgba(8,9,22, .94);
+    .nav-shell { position: sticky; top: 0; z-index: 80; background: rgba(0,0,0,.94);
       border-bottom: 1px solid var(--line-dark); }
     nav { display: flex; align-items: center; gap: 30px; min-height: 74px; }
     .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
-    .brand-mark { width: 38px; height: 38px; border-radius: 9px; background: var(--accent); color: var(--ink);
+    .brand-mark { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg,#2DD4BF,#2563EB); color: #031018;
       display: flex; align-items: center; justify-content: center;
       font-family: var(--font-d); font-weight: 700; font-size: 1.05rem; letter-spacing: -.02em; }
     .brand-name { font-family: var(--font-d); font-weight: 600; font-size: 1.02rem; letter-spacing: -.01em; }
@@ -195,7 +195,7 @@
     .hero h1.reveal.visible { clip-path: inset(0 0 -10% 0); transform: none; filter: blur(0); opacity: 1; }
     /* ---------- NAV GLASS + ACTIVE ---------- */
     .nav-shell { transition: background .3s ease, box-shadow .3s ease; }
-    .nav-shell.scrolled { background: rgba(8,9,22,.94); box-shadow: 0 14px 44px rgba(0,0,0,.4); }
+    .nav-shell.scrolled { background: rgba(0,0,0,.94); box-shadow: 0 14px 44px rgba(0,0,0,.4); }
     .nav-link.active { color: var(--on-ink); }
     .nav-link.active::after { transform: scaleX(1); }
     /* ---------- BUTTON SHINE ---------- */
@@ -318,6 +318,7 @@
     .contact-row { display: flex; align-items: center; justify-content: space-between; gap: 18px;
       padding: 20px 4px; border-bottom: 1px solid var(--line-dark); text-decoration: none;
       transition: padding .2s ease; }
+    .contact-row span{overflow-wrap:anywhere}
     a.contact-row:hover { padding-left: 14px; }
     .contact-row b { font-size: .72rem; letter-spacing: .14em; color: var(--faint-dark); }
     .contact-row span { font-weight: 600; }
@@ -335,8 +336,8 @@
     .field textarea { min-height: 118px; resize: vertical; }
     .field input:focus, .field select:focus, .field textarea:focus { outline: none;
       border-color: var(--ink); box-shadow: 0 0 0 3px rgba(45,212,191, .5); }
-    .field .err { display: none; font-size: .78rem; color: #b3261e; font-weight: 600; }
-    .field.invalid input { border-color: #b3261e; }
+    .field .err { display: none; font-size: .78rem; color: #FF8A80; font-weight: 600; }
+    .field.invalid input { border-color: #FF8A80; }
     .field.invalid .err { display: block; }
     .form-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
     .form-note { margin-top: 16px; font-size: .82rem; color: var(--faint-ink); }
@@ -415,13 +416,12 @@
       .proc:nth-child(2) { border-right: 0; }
       .proc { border-bottom: 1px solid var(--line-dark); }
       .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
-      .price-grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; }
       .foot-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 760px) {
       .nav-links { display: none; }
       .nav-links.open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column;
-        align-items: stretch; gap: 0; padding: 8px 24px 24px; background: rgba(8,9,22,.98);
+        align-items: stretch; gap: 0; padding: 8px 24px 24px; background: rgba(0,0,0,.98);
         border-bottom: 1px solid var(--line-dark); }
       .nav-links.open .nav-link { padding: 15px 4px; border-bottom: 1px solid var(--line-dark); font-size: 1rem; }
       .nav-links.open .nav-link::after { display: none; }
@@ -446,7 +446,7 @@
         display: flex; justify-content: center; align-items: center; min-height: 54px;
         background: var(--accent); color: var(--ink); border-radius: 999px;
         font-weight: 800; text-decoration: none; box-shadow: 0 12px 32px rgba(45,212,191,.35); }
-      .toast { bottom: 84px; }
+      .toast { bottom: 156px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -480,21 +480,12 @@
         linear-gradient(180deg, #000000, #080808);
       color: var(--on-ink);
     }
-    /* gold identity: section accents are bright metallic gold (base .accent rule below governs) */
     .on-ivory .sec-label { color: var(--muted-dark); }
     .on-ivory .sec-label .num { background: var(--accent); color: #04050D; }
-    .sec-title .accent, #hero-title .accent { color: #FFD477; }
-    .btn-primary {
-      background: linear-gradient(120deg, #2DD4BF 0%, #8C6A2F 55%, #FFD477 115%);
-      color: #171106; border: none;
-      box-shadow: 0 14px 38px rgba(45,212,191,.4), inset 0 1px 0 rgba(255,255,255,.25);
-    }
-    .btn-primary:hover { box-shadow: 0 18px 46px rgba(255,212,119,.5), inset 0 1px 0 rgba(255,255,255,.3); }
-    .brand-mark { background: linear-gradient(120deg, #2DD4BF, #8C6A2F 55%, #FFD477 115%); color: #171106; }
     #progress { background: linear-gradient(90deg, #8C6A2F, #2DD4BF, #FFD477); }
 
     /* glass surfaces */
-    .work-card, .price-card, .svc-card, .about-card {
+    .work-card, .svc-card, .about-card {
       background: linear-gradient(165deg, rgba(45,212,191,.09), rgba(34,211,238,.05) 55%, rgba(15,13,9,.72));
       border: 1px solid rgba(45,212,191,.16);
       box-shadow: 0 24px 60px rgba(0,0,10,.35);
@@ -504,7 +495,6 @@
       border-color: rgba(255,212,119,.45);
       box-shadow: 0 30px 70px rgba(46,36,16,.45), 0 0 0 1px rgba(255,212,119,.12);
     }
-    .price-card.popular { border-color: rgba(255,212,119,.55); box-shadow: 0 30px 80px rgba(45,212,191,.28); }
     .faq-q { color: var(--on-ink); }
     .field input, .field select, .field textarea {
       background: rgba(15,13,9,.85); color: var(--on-ink);
@@ -591,7 +581,6 @@
     .ticker { color: #B8B8BE; border-top: 1px solid rgba(45,212,191,.18); border-bottom: 1px solid rgba(45,212,191,.18); }
     .case-index b { color: #FFD477; }
     .svc-more { color: #FFD477; }
-    .price-note a { color: #FFD477; }
     .form-card {
       background: linear-gradient(165deg, rgba(26,21,11,.96), rgba(10,9,7,.98));
       color: var(--on-ink); border: 1px solid rgba(45,212,191,.2);
@@ -721,18 +710,17 @@
 body{background:radial-gradient(700px 500px at 0 40%,rgba(45,212,191,.06),transparent 60%),#000000}
 #bg-dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 main,footer{position:relative;z-index:1}
-.section.on-ink{background:transparent}.section.on-ivory{background:rgba(5,14,40,.55)}
+.section.on-ink{background:transparent}.section.on-ivory{background:rgba(255,255,255,.02)}
 .nav-shell{position:fixed;left:0;right:0;top:0;background:transparent;border:0;box-shadow:none;padding:10px 0}
 nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;gap:14px}
-.nav-links{margin-left:auto;gap:2px;background:rgba(6,16,44,.55);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid var(--gl);border-radius:999px;padding:5px 8px}
+.nav-links{margin-left:auto;gap:2px;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid var(--gl);border-radius:999px;padding:5px 8px}
 .nav-link{padding:7px 14px;border-radius:999px;font-size:.8rem;font-weight:500;color:rgba(244,248,255,.85)}
 .nav-link::after{left:50%;right:auto;width:5px;height:5px;bottom:0;border-radius:50%;background:#2DD4BF;transform:translateX(-50%) scale(0)}
 .nav-link:hover{color:#fff}.nav-link.active{color:#2DD4BF}.nav-link.active::after{transform:translateX(-50%) scale(1)}
-.brand-mark{background:linear-gradient(135deg,#2DD4BF,#2563EB)!important;color:#031018!important;border-radius:50%}
 .btn{border-radius:999px}
 .btn-primary{background:var(--g1);color:#031018;font-weight:700;border:0;box-shadow:0 10px 30px rgba(45,212,191,.28)}
 .btn-primary:hover{box-shadow:0 14px 44px rgba(45,212,191,.55)}
-.btn-ghost{background:rgba(6,16,44,.45);border:1px solid var(--gl);color:#fff}
+.btn-ghost{background:rgba(0,0,0,.45)};border:1px solid var(--gl);color:#fff}
 .hero h1 .accent,.page-hero h1 .accent,.sec-title .accent,h2 .accent{background:var(--gt);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .eyebrow{color:#2DD4BF;border:0;background:none;padding:0;letter-spacing:.18em;font-size:.74rem;font-weight:600}
 .hero{min-height:100svh;display:flex;padding:0;background:#000000;overflow:hidden}
@@ -764,7 +752,7 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
 .xcard h3{font-size:1.4rem;margin:0 0 8px}.xcard p{margin:0;color:rgba(235,245,255,.65)}
 .xcard span{display:inline-block;margin-top:14px;font-weight:600;color:#2DD4BF}
 ::selection{background:#2DD4BF;color:#031018}
-@media(max-width:900px){.nav-links{background:none;border:0;padding:0}.nav-links.open{background:rgba(4,10,30,.97);border:1px solid var(--gl);border-radius:20px;margin-top:8px;padding:8px}.hero-inner{padding:110px 0 90px}.scroll-cue{right:18px;bottom:22px}}
+@media(max-width:900px){.nav-links{background:none;border:0;padding:0}.nav-links.open{background:rgba(0,0,0,.97)};border:1px solid var(--gl);border-radius:20px;margin-top:8px;padding:8px}.hero-inner{padding:110px 0 90px}.scroll-cue{right:18px;bottom:22px}}
 .neural{padding:90px 0 0;background:#000!important;position:relative;overflow:hidden}
 .neural-head{text-align:center;max-width:760px}
 .neural-head .sec-title{margin:14px auto;color:#fff}.neural-head .sec-lede{margin:0 auto;color:rgba(235,245,255,.7)}
@@ -792,6 +780,43 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
 
 </style>
   
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://abdulqadeerml.com/contact#webpage",
+        "url": "https://abdulqadeerml.com/contact",
+        "name": "Contact — Qadeer Automations",
+        "isPartOf": {
+          "@id": "https://abdulqadeerml.com/#website"
+        },
+        "about": {
+          "@id": "https://abdulqadeerml.com/#organization"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://abdulqadeerml.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact",
+            "item": "https://abdulqadeerml.com/contact"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="pg-contact">
   <div id="cursor-ring" aria-hidden="true"></div>
@@ -819,15 +844,15 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         </div>
         <div class="form-card reveal reveal-d1">
           <h3>Tell me about your business</h3>
-          <p>A few quick questions — opens WhatsApp with everything filled in. You press send, nothing auto-submits.</p>
+          <p>A few quick questions — pressing a button saves your inquiry and opens WhatsApp with everything filled in. You press send in WhatsApp.</p>
           <form id="intake-form" onsubmit="return false;" novalidate>
             <div class="f-grid">
               <div class="field" data-req="1"><label for="f-name">Your name *</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your full name" /><span class="err">Please add your name.</span></div>
               <div class="field" data-req="1"><label for="f-email">Email *</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@company.com" /><span class="err">Please add a valid email.</span></div>
-              <div class="field"><label for="f-biz">Business type</label><select id="f-biz" name="business"><option>Home services</option><option>Retail / e-commerce</option><option>Professional services</option><option>Healthcare</option><option>Restaurant / hospitality</option><option>Other</option></select></div>
-              <div class="field"><label for="f-goal">What should AI do for you?</label><select id="f-goal" name="goal"><option>Answer customers 24/7</option><option>Automate follow-ups &amp; admin</option><option>Know demand &amp; stop losing customers</option><option>Dashboards &amp; reporting</option><option>Website / web app</option><option>Something else</option></select></div>
-              <div class="field"><label for="f-budget">Investment</label><select id="f-budget" name="budget"><option>One workflow to start</option><option>A connected system</option><option>Ongoing improvements</option><option>Not sure yet — let&rsquo;s talk</option></select></div>
-              <div class="field"><label for="f-timeline">Timeline</label><select id="f-timeline" name="timeline"><option>As soon as possible</option><option>Within a month</option><option>2–3 months</option><option>Just exploring</option></select></div>
+              <div class="field"><label for="f-biz">Business type</label><select id="f-biz" name="business"><option value="">Select…</option><option>Home services</option><option>Retail / e-commerce</option><option>Professional services</option><option>Healthcare</option><option>Restaurant / hospitality</option><option>Other</option></select></div>
+              <div class="field"><label for="f-goal">What should AI do for you?</label><select id="f-goal" name="goal"><option value="">Select…</option><option>Answer customers 24/7</option><option>Automate follow-ups &amp; admin</option><option>Know demand &amp; stop losing customers</option><option>Dashboards &amp; reporting</option><option>Website / web app</option><option>Something else</option></select></div>
+              <div class="field"><label for="f-budget">Investment</label><select id="f-budget" name="budget"><option value="">Select…</option><option>One workflow to start</option><option>A connected system</option><option>Ongoing improvements</option><option>Not sure yet — let&rsquo;s talk</option></select></div>
+              <div class="field"><label for="f-timeline">Timeline</label><select id="f-timeline" name="timeline"><option value="">Select…</option><option>As soon as possible</option><option>Within a month</option><option>2–3 months</option><option>Just exploring</option></select></div>
               <div class="field full"><label for="f-details">Tell us more</label><textarea id="f-details" name="details" placeholder="What eats your team&rsquo;s time? Missed calls, follow-ups, admin — tell me in your own words."></textarea></div>
             </div>
             <div class="form-actions">
@@ -835,7 +860,7 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
               <button class="btn btn-ghost" type="button" id="intake-email">Send via email</button>
             </div>
             <div aria-hidden="true" style="position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden"><label>Leave this empty<input id="f-hp" type="text" tabindex="-1" autocomplete="off" /></label></div>
-            <p class="form-note">No account, no spam — your answers only go to me, when you press send.</p>
+            <p class="form-note">No account, no spam — your answers go only to me.</p>
           </form>
         </div>
       </div>
@@ -863,7 +888,7 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
           </a>
           <p>Practical AI systems for small businesses — automation, chatbots and dashboards that answer customers and remove busywork.</p>
         </div>
-        <div class="foot-col"><b>NAVIGATE</b><a href="services.html#services">Services</a><a href="services.html#process">Process</a><a href="solutions.html#industries">Industries</a><a href="solutions.html#assessment">Assessment</a><a href="about.html#faq">FAQ</a><a href="/about/">About</a><a href="/privacy/">Privacy</a></div>
+        <div class="foot-col"><b>NAVIGATE</b><a href="services.html#services">Services</a><a href="services.html#process">Process</a><a href="solutions.html#industries">Industries</a><a href="solutions.html#assessment">Assessment</a><a href="about.html#faq">FAQ</a><a href="/insights/">Insights</a><a href="/about/">About</a><a href="/privacy/">Privacy</a></div>
         <div class="foot-col"><b>CONNECT</b><a href="https://calendly.com/abdulqadeerml/30min" target="_blank" rel="noopener">Book a call</a><a href="https://wa.me/923427717288" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.linkedin.com/in/muhammad-abdul-qadeer-8262b237b" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/hasankhan62742-beep" target="_blank" rel="noopener">GitHub</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></div>
       </div>
       <div class="foot-base"><span>© 2026 Qadeer Automations</span><span>AI Automation · Chatbots · Dashboards · Business Systems</span></div>
@@ -1083,9 +1108,11 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
       }
 
       /* ---------- FAQ accordion ---------- */
-      document.querySelectorAll('.faq-item').forEach(function (item) {
+      document.querySelectorAll('.faq-item').forEach(function (item, i) {
         var q = item.querySelector('.faq-q');
         var a = item.querySelector('.faq-a');
+        if (a && !a.id) a.id = 'faq-a-' + (i + 1);
+        if (q && a) q.setAttribute('aria-controls', a.id);
         q.addEventListener('click', function () {
           var isOpen = item.classList.contains('open');
           document.querySelectorAll('.faq-item.open').forEach(function (other) {
@@ -1132,9 +1159,11 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         var ok = true;
         var name = fieldVal('f-name');
         var email = fieldVal('f-email');
-        ok = markInvalid('f-name', !name) && ok;
-        ok = markInvalid('f-email', !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) && ok;
-        if (!ok) showToast('Please add your name and a valid email');
+        var nameBad = !name;
+        var emailBad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        ok = markInvalid('f-name', nameBad) && ok;
+        ok = markInvalid('f-email', emailBad) && ok;
+        if (!ok) showToast(nameBad && emailBad ? 'Please add your name and a valid email' : (nameBad ? 'Please add your name' : 'Please add a valid email'));
         return ok;
       }
       ['f-name', 'f-email'].forEach(function (id) {
@@ -1144,6 +1173,9 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
           var wrap = el.closest('.field');
           if (wrap) wrap.classList.remove('invalid');
         });
+      });
+      document.getElementById('intake-form').addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') { e.preventDefault(); document.getElementById('intake-wa').click(); }
       });
       function intakeMessage() {
         var text = 'Hi! I\'m ' + fieldVal('f-name') + ' (' + fieldVal('f-email') + '), via your website.\n'
@@ -1336,6 +1368,9 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         if (win.classList.contains('open')) setTimeout(function () { input.focus(); }, 300);
       });
       (document.getElementById('chat-close')||{addEventListener:function(){}}).addEventListener('click', function () { win.classList.remove('open'); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && win.classList.contains('open')) { win.classList.remove('open'); fab.focus(); }
+      });
       sendBtn.addEventListener('click', send);
       input.addEventListener('keydown', function (e) { if (e.key === 'Enter') send(); });
     })();
@@ -1424,29 +1459,11 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
       [biz, team, challenge, outcome].forEach(function (el) { if (el) el.addEventListener('change', update); });
     })();
 
-    /* ---------- nav: glass on scroll + active section ---------- */
+    /* ---------- nav: glass on scroll ---------- */
     (function () {
       var shell = document.querySelector('.nav-shell');
       function onScroll() { shell.classList.toggle('scrolled', window.scrollY > 24); }
       window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
-      var links = document.querySelectorAll('.nav-link');
-      var map = {};
-      links.forEach(function (l) { map[l.getAttribute('href').slice(1)] = l; });
-      if ('IntersectionObserver' in window) {
-        var obs = new IntersectionObserver(function (entries) {
-          entries.forEach(function (en) {
-            if (en.isIntersecting) {
-              links.forEach(function (l) { l.classList.remove('active'); });
-              var l = map[en.target.id];
-              if (l) l.classList.add('active');
-            }
-          });
-        }, { rootMargin: '-40% 0px -55% 0px' });
-        Object.keys(map).forEach(function (id) {
-          var s = document.getElementById(id);
-          if (s) obs.observe(s);
-        });
-      }
     })();
   
 (function(){var b=document.getElementById('scroll-progress');if(!b)return;var t=false;

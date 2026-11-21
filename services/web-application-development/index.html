@@ -29,6 +29,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Web Application Development Services — Abdul Qadeer" />
   <meta name="twitter:description" content="Web applications built around your business — records organized, documented, yours to own." />
+  <meta name="twitter:image" content="https://abdulqadeerml.com/og-image.jpg" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -58,7 +59,7 @@
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://abdulqadeerml.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://abdulqadeerml.com/services/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://abdulqadeerml.com/services" },
           { "@type": "ListItem", "position": 3, "name": "Web Application Development", "item": "https://abdulqadeerml.com/services/web-application-development/" }
         ]
       },
@@ -169,8 +170,8 @@
         
         <a class="nav-link" href="/services/">Services</a>
         
-        <a class="nav-link" href="/#faq">FAQ</a>
-        <a class="btn btn-lime" href="/#contact">Discuss a Project</a>
+        <a class="nav-link" href="/about/#faq">FAQ</a>
+        <a class="btn btn-lime" href="/contact">Discuss a Project</a>
       </nav>
     </div>
   </div>
@@ -290,13 +291,15 @@
   <footer>
     <div class="wrap">
       <span>© 2026 Qadeer Automations — AI Automation · Chatbots · Dashboards · Business Systems</span>
-      <span><a href="/">Home</a><a href="/services/">Services</a><a href="/about/">About</a><a href="/insights/">Insights</a><a href="/#contact">Contact</a><a href="/privacy/">Privacy</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></span>
+      <span><a href="/">Home</a><a href="/services/">Services</a><a href="/about/">About</a><a href="/insights/">Insights</a><a href="/contact">Contact</a><a href="mailto:hello@abdulqadeerml.com">Email</a><a href="https://wa.me/923427717288" target="_blank" rel="noopener">WhatsApp</a><a href="/privacy/">Privacy</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></span>
     </div>
   </footer>
 
   <script>
-    document.querySelectorAll('.faq-item').forEach(function (item) {
+    document.querySelectorAll('.faq-item').forEach(function (item, i) {
       var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+      if (a && !a.id) a.id = 'faq-a-' + (i + 1);
+      if (q && a) q.setAttribute('aria-controls', a.id);
       q.addEventListener('click', function () {
         var isOpen = item.classList.contains('open');
         document.querySelectorAll('.faq-item.open').forEach(function (other) {

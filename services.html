@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <script>
     (function () {
       var done = false;
@@ -21,8 +23,6 @@
     gtag('config', 'G-YJ9JDFQB1H');
   </script>
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="dark" />
   <meta name="description" content="Chatbots, workflow automation, dashboards and custom software for small businesses. See how Qadeer Automations builds practical AI systems." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -65,8 +65,8 @@
       --on-ink: #EEF1FF;
       --muted-ink: rgba(226, 236, 255, .68);
       --muted-dark: rgba(226, 236, 255, .64);
-      --faint-ink: rgba(226, 236, 255, .45);
-      --faint-dark: rgba(226, 236, 255, .42);
+      --faint-ink: rgba(226, 236, 255, .62);
+      --faint-dark: rgba(226, 236, 255, .62);
       --line-ink: rgba(140, 180, 255, .16);
       --line-dark: rgba(226, 236, 255, .14);
       --font-d: "Space Grotesk", "Avenir Next", system-ui, sans-serif;
@@ -95,11 +95,11 @@
       background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); }
 
     /* ---------- NAV ---------- */
-    .nav-shell { position: sticky; top: 0; z-index: 80; background: rgba(8,9,22, .94);
+    .nav-shell { position: sticky; top: 0; z-index: 80; background: rgba(0,0,0,.94);
       border-bottom: 1px solid var(--line-dark); }
     nav { display: flex; align-items: center; gap: 30px; min-height: 74px; }
     .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; }
-    .brand-mark { width: 38px; height: 38px; border-radius: 9px; background: var(--accent); color: var(--ink);
+    .brand-mark { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg,#2DD4BF,#2563EB); color: #031018;
       display: flex; align-items: center; justify-content: center;
       font-family: var(--font-d); font-weight: 700; font-size: 1.05rem; letter-spacing: -.02em; }
     .brand-name { font-family: var(--font-d); font-weight: 600; font-size: 1.02rem; letter-spacing: -.01em; }
@@ -195,7 +195,7 @@
     .hero h1.reveal.visible { clip-path: inset(0 0 -10% 0); transform: none; filter: blur(0); opacity: 1; }
     /* ---------- NAV GLASS + ACTIVE ---------- */
     .nav-shell { transition: background .3s ease, box-shadow .3s ease; }
-    .nav-shell.scrolled { background: rgba(8,9,22,.94); box-shadow: 0 14px 44px rgba(0,0,0,.4); }
+    .nav-shell.scrolled { background: rgba(0,0,0,.94); box-shadow: 0 14px 44px rgba(0,0,0,.4); }
     .nav-link.active { color: var(--on-ink); }
     .nav-link.active::after { transform: scaleX(1); }
     /* ---------- BUTTON SHINE ---------- */
@@ -335,8 +335,8 @@
     .field textarea { min-height: 118px; resize: vertical; }
     .field input:focus, .field select:focus, .field textarea:focus { outline: none;
       border-color: var(--ink); box-shadow: 0 0 0 3px rgba(45,212,191, .5); }
-    .field .err { display: none; font-size: .78rem; color: #b3261e; font-weight: 600; }
-    .field.invalid input { border-color: #b3261e; }
+    .field .err { display: none; font-size: .78rem; color: #FF8A80; font-weight: 600; }
+    .field.invalid input { border-color: #FF8A80; }
     .field.invalid .err { display: block; }
     .form-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
     .form-note { margin-top: 16px; font-size: .82rem; color: var(--faint-ink); }
@@ -415,13 +415,12 @@
       .proc:nth-child(2) { border-right: 0; }
       .proc { border-bottom: 1px solid var(--line-dark); }
       .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 44px; }
-      .price-grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; }
       .foot-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 760px) {
       .nav-links { display: none; }
       .nav-links.open { display: flex; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column;
-        align-items: stretch; gap: 0; padding: 8px 24px 24px; background: rgba(8,9,22,.98);
+        align-items: stretch; gap: 0; padding: 8px 24px 24px; background: rgba(0,0,0,.98);
         border-bottom: 1px solid var(--line-dark); }
       .nav-links.open .nav-link { padding: 15px 4px; border-bottom: 1px solid var(--line-dark); font-size: 1rem; }
       .nav-links.open .nav-link::after { display: none; }
@@ -446,7 +445,7 @@
         display: flex; justify-content: center; align-items: center; min-height: 54px;
         background: var(--accent); color: var(--ink); border-radius: 999px;
         font-weight: 800; text-decoration: none; box-shadow: 0 12px 32px rgba(45,212,191,.35); }
-      .toast { bottom: 84px; }
+      .toast { bottom: 156px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -480,21 +479,12 @@
         linear-gradient(180deg, #000000, #080808);
       color: var(--on-ink);
     }
-    /* gold identity: section accents are bright metallic gold (base .accent rule below governs) */
     .on-ivory .sec-label { color: var(--muted-dark); }
     .on-ivory .sec-label .num { background: var(--accent); color: #04050D; }
-    .sec-title .accent, #hero-title .accent { color: #FFD477; }
-    .btn-primary {
-      background: linear-gradient(120deg, #2DD4BF 0%, #8C6A2F 55%, #FFD477 115%);
-      color: #171106; border: none;
-      box-shadow: 0 14px 38px rgba(45,212,191,.4), inset 0 1px 0 rgba(255,255,255,.25);
-    }
-    .btn-primary:hover { box-shadow: 0 18px 46px rgba(255,212,119,.5), inset 0 1px 0 rgba(255,255,255,.3); }
-    .brand-mark { background: linear-gradient(120deg, #2DD4BF, #8C6A2F 55%, #FFD477 115%); color: #171106; }
     #progress { background: linear-gradient(90deg, #8C6A2F, #2DD4BF, #FFD477); }
 
     /* glass surfaces */
-    .work-card, .price-card, .svc-card, .about-card {
+    .work-card, .svc-card, .about-card {
       background: linear-gradient(165deg, rgba(45,212,191,.09), rgba(34,211,238,.05) 55%, rgba(15,13,9,.72));
       border: 1px solid rgba(45,212,191,.16);
       box-shadow: 0 24px 60px rgba(0,0,10,.35);
@@ -504,7 +494,6 @@
       border-color: rgba(255,212,119,.45);
       box-shadow: 0 30px 70px rgba(46,36,16,.45), 0 0 0 1px rgba(255,212,119,.12);
     }
-    .price-card.popular { border-color: rgba(255,212,119,.55); box-shadow: 0 30px 80px rgba(45,212,191,.28); }
     .faq-q { color: var(--on-ink); }
     .field input, .field select, .field textarea {
       background: rgba(15,13,9,.85); color: var(--on-ink);
@@ -591,7 +580,6 @@
     .ticker { color: #B8B8BE; border-top: 1px solid rgba(45,212,191,.18); border-bottom: 1px solid rgba(45,212,191,.18); }
     .case-index b { color: #FFD477; }
     .svc-more { color: #FFD477; }
-    .price-note a { color: #FFD477; }
     .form-card {
       background: linear-gradient(165deg, rgba(26,21,11,.96), rgba(10,9,7,.98));
       color: var(--on-ink); border: 1px solid rgba(45,212,191,.2);
@@ -721,18 +709,17 @@
 body{background:radial-gradient(700px 500px at 0 40%,rgba(45,212,191,.06),transparent 60%),#000000}
 #bg-dust{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
 main,footer{position:relative;z-index:1}
-.section.on-ink{background:transparent}.section.on-ivory{background:rgba(5,14,40,.55)}
+.section.on-ink{background:transparent}.section.on-ivory{background:rgba(255,255,255,.02)}
 .nav-shell{position:fixed;left:0;right:0;top:0;background:transparent;border:0;box-shadow:none;padding:10px 0}
 nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;gap:14px}
-.nav-links{margin-left:auto;gap:2px;background:rgba(6,16,44,.55);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid var(--gl);border-radius:999px;padding:5px 8px}
+.nav-links{margin-left:auto;gap:2px;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid var(--gl);border-radius:999px;padding:5px 8px}
 .nav-link{padding:7px 14px;border-radius:999px;font-size:.8rem;font-weight:500;color:rgba(244,248,255,.85)}
 .nav-link::after{left:50%;right:auto;width:5px;height:5px;bottom:0;border-radius:50%;background:#2DD4BF;transform:translateX(-50%) scale(0)}
 .nav-link:hover{color:#fff}.nav-link.active{color:#2DD4BF}.nav-link.active::after{transform:translateX(-50%) scale(1)}
-.brand-mark{background:linear-gradient(135deg,#2DD4BF,#2563EB)!important;color:#031018!important;border-radius:50%}
 .btn{border-radius:999px}
 .btn-primary{background:var(--g1);color:#031018;font-weight:700;border:0;box-shadow:0 10px 30px rgba(45,212,191,.28)}
 .btn-primary:hover{box-shadow:0 14px 44px rgba(45,212,191,.55)}
-.btn-ghost{background:rgba(6,16,44,.45);border:1px solid var(--gl);color:#fff}
+.btn-ghost{background:rgba(0,0,0,.45)};border:1px solid var(--gl);color:#fff}
 .hero h1 .accent,.page-hero h1 .accent,.sec-title .accent,h2 .accent{background:var(--gt);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .eyebrow{color:#2DD4BF;border:0;background:none;padding:0;letter-spacing:.18em;font-size:.74rem;font-weight:600}
 .hero{min-height:100svh;display:flex;padding:0;background:#000000;overflow:hidden}
@@ -764,7 +751,7 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
 .xcard h3{font-size:1.4rem;margin:0 0 8px}.xcard p{margin:0;color:rgba(235,245,255,.65)}
 .xcard span{display:inline-block;margin-top:14px;font-weight:600;color:#2DD4BF}
 ::selection{background:#2DD4BF;color:#031018}
-@media(max-width:900px){.nav-links{background:none;border:0;padding:0}.nav-links.open{background:rgba(4,10,30,.97);border:1px solid var(--gl);border-radius:20px;margin-top:8px;padding:8px}.hero-inner{padding:110px 0 90px}.scroll-cue{right:18px;bottom:22px}}
+@media(max-width:900px){.nav-links{background:none;border:0;padding:0}.nav-links.open{background:rgba(0,0,0,.97)};border:1px solid var(--gl);border-radius:20px;margin-top:8px;padding:8px}.hero-inner{padding:110px 0 90px}.scroll-cue{right:18px;bottom:22px}}
 .neural{padding:90px 0 0;background:#000!important;position:relative;overflow:hidden}
 .neural-head{text-align:center;max-width:760px}
 .neural-head .sec-title{margin:14px auto;color:#fff}.neural-head .sec-lede{margin:0 auto;color:rgba(235,245,255,.7)}
@@ -791,13 +778,110 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
 .svc-hub{position:absolute;left:50%;top:50%;z-index:2;width:132px;height:132px;transform:translate(-50%,-50%);display:grid;place-items:center;border-radius:50%;background:radial-gradient(circle,rgba(124,107,255,.30),rgba(45,212,191,.12) 55%,transparent 72%);filter:drop-shadow(0 0 18px rgba(45,212,191,.45))}
 .svc-hub svg{width:118px;height:118px;display:block;animation:hubPulse 3.2s ease-in-out infinite}
 @keyframes hubPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.05);opacity:.85}}
-.svc-chip{position:absolute;left:50%;top:50%;z-index:1;max-width:118px;min-height:38px;display:flex;align-items:center;justify-content:center;padding:8px 13px;border-radius:999px;background:rgba(8,12,32,.88);border:1px solid rgba(124,107,255,.38);color:#EEF1FF;font-size:.82rem;font-weight:600;line-height:1.25;text-align:center;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,10,.45);transform:translate(-50%,-50%) rotate(calc(var(--a0) + var(--spin))) translateX(var(--r)) rotate(calc((var(--a0) + var(--spin)) * -1)) scale(var(--chip-scale));opacity:var(--fade)}
+.svc-chip{position:absolute;left:50%;top:50%;z-index:1;max-width:118px;min-height:44px;display:flex;align-items:center;justify-content:center;padding:8px 13px;border-radius:999px;background:rgba(8,12,32,.88);border:1px solid rgba(124,107,255,.38);color:#EEF1FF;font-size:.82rem;font-weight:600;line-height:1.25;text-align:center;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,10,.45);transform:translate(-50%,-50%) rotate(calc(var(--a0) + var(--spin))) translateX(var(--r)) rotate(calc((var(--a0) + var(--spin)) * -1)) scale(var(--chip-scale));opacity:var(--fade)}
 .svc-chip:hover,.svc-chip:focus-visible{border-color:#2DD4BF;box-shadow:0 8px 28px rgba(45,212,191,.28);outline:none}
-@media (max-width:560px){.svc-wheel{--r-full:calc(var(--wheel-size)*.28)}.svc-chip{max-width:102px;font-size:.76rem;padding:7px 10px;min-height:36px}.svc-hub{width:104px;height:104px}.svc-hub svg{width:94px;height:94px}}
+@media (max-width:560px){.svc-wheel{--r-full:calc(var(--wheel-size)*.28)}.svc-chip{max-width:102px;font-size:.76rem;padding:7px 10px;min-height:44px}.svc-hub{width:104px;height:104px}.svc-hub svg{width:94px;height:94px}}
 @media (prefers-reduced-motion: reduce){.svc-hub svg{animation:none}.svc-wheel{--spin:0deg;--r:var(--r-full);--fade:1;--chip-scale:1}}
 
 </style>
   
+  <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://abdulqadeerml.com/services#webpage",
+        "url": "https://abdulqadeerml.com/services",
+        "name": "AI Systems That Remove Busywork — Qadeer Automations",
+        "isPartOf": {
+          "@id": "https://abdulqadeerml.com/#website"
+        },
+        "about": {
+          "@id": "https://abdulqadeerml.com/#organization"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://abdulqadeerml.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://abdulqadeerml.com/services"
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "name": "Qadeer Automations services",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Business Automation",
+            "item": "https://abdulqadeerml.com/services/business-automation/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "AI Chatbots",
+            "item": "https://abdulqadeerml.com/services/ai-chatbot-development/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Predictive Analytics",
+            "item": "https://abdulqadeerml.com/services/predictive-analytics/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "AI & Machine Learning",
+            "item": "https://abdulqadeerml.com/services/ai-machine-learning/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Dashboards & BI",
+            "item": "https://abdulqadeerml.com/services/dashboards-business-intelligence/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "Web Apps",
+            "item": "https://abdulqadeerml.com/services/web-application-development/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "name": "Management Systems",
+            "item": "https://abdulqadeerml.com/services/management-systems/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "name": "API Integrations",
+            "item": "https://abdulqadeerml.com/services/api-integrations/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "name": "AI Marketing",
+            "item": "https://abdulqadeerml.com/services/ai-marketing/"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="pg-services">
   <div id="cursor-ring" aria-hidden="true"></div>
@@ -828,7 +912,7 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
       <div class="wrap">
         <div class="sec-head">
           <div class="sec-label"><span class="num">02</span>OUR AI SOLUTIONS</div>
-          <h2 class="sec-title" id="services-title">Six capabilities. <span class="accent">One operating advantage.</span></h2>
+          <h2 class="sec-title" id="services-title">Nine capabilities. <span class="accent">One operating advantage.</span></h2>
           <p class="sec-lede">Everything a small business needs to answer customers faster, stop losing leads and see clearly what is happening — connected into one system, not a pile of tools.</p>
         </div>
         <div class="svc-list">
@@ -836,8 +920,11 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
           <article class="svc reveal"><span class="svc-num">/02</span><h3>Business Automation</h3><div class="svc-viz" aria-hidden="true"><svg viewBox="0 0 124 66"><path d="M18 33 H106" class="sv-edge"/><circle cx="18" cy="33" r="7" class="sv-node"/><circle cx="62" cy="33" r="7" class="sv-node"/><circle cx="106" cy="33" r="7" class="sv-node sv-out"/><circle r="4.5" class="sv-packet"><animateMotion dur="2.2s" repeatCount="indefinite" path="M18 33 H106"/></circle></svg></div><p>Lead handling, follow-ups, reporting and routine admin — moved from your to-do list into reliable workflows you can review.</p><span class="svc-arrow" aria-hidden="true">→</span><a class="svc-more" href="/services/business-automation/">Explore business automation →</a></article>
           <article class="svc reveal"><span class="svc-num">/03</span><h3>Predictive Analytics</h3><div class="svc-viz" aria-hidden="true"><svg viewBox="0 0 124 66"><path d="M8 52 L38 46 L68 48 L94 28" class="sv-line sv-draw"/><path d="M94 28 L116 16" class="sv-line sv-fc sv-draw sv-draw2"/></svg></div><p>Know what happens next: what will sell, which customers are drifting away, and where to focus — explained in plain words, not charts you need a degree to read.</p><span class="svc-arrow" aria-hidden="true">→</span><a class="svc-more" href="/services/predictive-analytics/">Explore predictive analytics →</a></article>
           <article class="svc reveal"><span class="svc-num">/04</span><h3>Dashboards &amp; Business Intelligence</h3><div class="svc-viz" aria-hidden="true"><svg viewBox="0 0 124 66"><rect x="18" y="14" width="12" height="42" class="sv-bar" style="--d:0s"/><rect x="38" y="14" width="12" height="42" class="sv-bar" style="--d:.25s"/><rect x="58" y="14" width="12" height="42" class="sv-bar" style="--d:.5s"/><rect x="78" y="14" width="12" height="42" class="sv-bar" style="--d:.75s"/><rect x="98" y="14" width="12" height="42" class="sv-bar" style="--d:1s"/></svg></div><p>Sales, leads, campaigns and automation status in one view — with plain-language summaries that tell you what changed and why it matters.</p><span class="svc-arrow" aria-hidden="true">→</span><a class="svc-more" href="/services/dashboards-business-intelligence/">Explore dashboards &amp; BI →</a></article>
-          <article class="svc reveal"><span class="svc-num">/05</span><h3>Custom Web Apps &amp; Management Systems</h3><div class="svc-viz" aria-hidden="true"><svg viewBox="0 0 124 66"><rect x="32" y="44" width="60" height="11" rx="2" class="sv-layer" style="--d:0s"/><rect x="32" y="29" width="60" height="11" rx="2" class="sv-layer" style="--d:.35s"/><rect x="32" y="14" width="60" height="11" rx="2" class="sv-layer" style="--d:.7s"/></svg></div><p>Websites, web applications and <a href="/services/management-systems/" style="color:#FFD477;text-decoration:underline;text-underline-offset:3px">management systems</a> built around how your business actually runs.</p><span class="svc-arrow" aria-hidden="true">→</span><a class="svc-more" href="/services/web-application-development/">Explore web apps &amp; systems →</a></article>
-          <article class="svc reveal"><span class="svc-num">/06</span><h3>API Integrations</h3><div class="svc-viz" aria-hidden="true"><svg viewBox="0 0 124 66"><path d="M32 12 h22 M32 12 v16 M92 12 h-22 M92 12 v16 M32 54 h22 M32 54 v-16 M92 54 h-22 M92 54 v-16" class="sv-corner"/><rect x="32" y="12" width="60" height="3" class="sv-scan"><animate attributeName="y" values="12;51;12" dur="3.2s" repeatCount="indefinite"/></rect><circle cx="62" cy="33" r="4" class="sv-node"/></svg></div><p>Connects the tools you already use — CRM, calendar, WhatsApp, accounting — so information flows on its own instead of being re-typed.</p><span class="svc-arrow" aria-hidden="true">→</span><a class="svc-more" href="/services/api-integrations/">Explore API integrations →</a></article>
+          <article class="svc reveal"><span class="svc-num">/05</span><h3>Custom Web Apps</h3><div class="svc-viz" aria-hidden="true"><svg viewBox="0 0 124 66"><rect x="32" y="44" width="60" height="11" rx="2" class="sv-layer" style="--d:0s"/><rect x="32" y="29" width="60" height="11" rx="2" class="sv-layer" style="--d:.35s"/><rect x="32" y="14" width="60" height="11" rx="2" class="sv-layer" style="--d:.7s"/></svg></div><p>Websites and web applications built around how your business actually runs — not a template with your logo on it.</p><span class="svc-arrow" aria-hidden="true">→</span><a class="svc-more" href="/services/web-application-development/">Explore web apps →</a></article>
+          <article class="svc reveal"><span class="svc-num">/06</span><h3>Management Systems</h3><div class="svc-viz" aria-hidden="true"><svg viewBox="0 0 124 66"><rect x="18" y="14" width="88" height="10" rx="2" class="sv-layer" style="--d:0s"/><rect x="18" y="28" width="88" height="10" rx="2" class="sv-layer" style="--d:.35s"/><rect x="18" y="42" width="88" height="10" rx="2" class="sv-layer" style="--d:.7s"/></svg></div><p>Admin panels, records and reporting matched to your workflows — searchable, controlled, and ready for your team.</p><span class="svc-arrow" aria-hidden="true">→</span><a class="svc-more" href="/services/management-systems/">Explore management systems →</a></article>
+          <article class="svc reveal"><span class="svc-num">/07</span><h3>API Integrations</h3><div class="svc-viz" aria-hidden="true"><svg viewBox="0 0 124 66"><path d="M32 12 h22 M32 12 v16 M92 12 h-22 M92 12 v16 M32 54 h22 M32 54 v-16 M92 54 h-22 M92 54 v-16" class="sv-corner"/><rect x="32" y="12" width="60" height="3" class="sv-scan"><animate attributeName="y" values="12;51;12" dur="3.2s" repeatCount="indefinite"/></rect><circle cx="62" cy="33" r="4" class="sv-node"/></svg></div><p>Connects the tools you already use — CRM, calendar, WhatsApp, accounting — so information flows on its own instead of being re-typed.</p><span class="svc-arrow" aria-hidden="true">→</span><a class="svc-more" href="/services/api-integrations/">Explore API integrations →</a></article>
+          <article class="svc reveal"><span class="svc-num">/08</span><h3>AI &amp; Machine Learning</h3><div class="svc-viz" aria-hidden="true"><svg viewBox="0 0 124 66"><path d="M18 33 L48 14 M18 33 L48 52 M48 14 L84 33 M48 52 L84 33 M84 33 L108 18 M84 33 L108 48" class="sv-edge"/><circle cx="18" cy="33" r="6" class="sv-node"/><circle cx="48" cy="14" r="6" class="sv-node"/><circle cx="48" cy="52" r="6" class="sv-node"/><circle cx="84" cy="33" r="6" class="sv-node"/><circle cx="108" cy="18" r="5" class="sv-node sv-out"/><circle cx="108" cy="48" r="5" class="sv-node sv-out"/></svg></div><p>Custom prediction models — churn, demand, risk — built on your data and shipped as working software.</p><span class="svc-arrow" aria-hidden="true">→</span><a class="svc-more" href="/services/ai-machine-learning/">Explore AI &amp; machine learning →</a></article>
+          <article class="svc reveal"><span class="svc-num">/09</span><h3>AI Marketing</h3><div class="svc-viz" aria-hidden="true"><svg viewBox="0 0 124 66"><rect x="18" y="30" width="12" height="26" class="sv-bar" style="--d:0s"/><rect x="38" y="22" width="12" height="34" class="sv-bar" style="--d:.25s"/><rect x="58" y="34" width="12" height="22" class="sv-bar" style="--d:.5s"/><rect x="78" y="16" width="12" height="40" class="sv-bar" style="--d:.75s"/><rect x="98" y="26" width="12" height="30" class="sv-bar" style="--d:1s"/></svg></div><p>Content, campaigns and follow-ups in a steady rhythm — drafted for you, with you approving the final cut.</p><span class="svc-arrow" aria-hidden="true">→</span><a class="svc-more" href="/services/ai-marketing/">Explore AI marketing →</a></article>
         </div>
       </div>
     </section><section id="process" class="section on-ivory" aria-labelledby="proc-title">
@@ -866,7 +953,7 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
           </a>
           <p>Practical AI systems for small businesses — automation, chatbots and dashboards that answer customers and remove busywork.</p>
         </div>
-        <div class="foot-col"><b>NAVIGATE</b><a href="services.html#services">Services</a><a href="services.html#process">Process</a><a href="solutions.html#industries">Industries</a><a href="solutions.html#assessment">Assessment</a><a href="about.html#faq">FAQ</a><a href="/about/">About</a><a href="/privacy/">Privacy</a></div>
+        <div class="foot-col"><b>NAVIGATE</b><a href="services.html#services">Services</a><a href="services.html#process">Process</a><a href="solutions.html#industries">Industries</a><a href="solutions.html#assessment">Assessment</a><a href="about.html#faq">FAQ</a><a href="/insights/">Insights</a><a href="/about/">About</a><a href="/privacy/">Privacy</a></div>
         <div class="foot-col"><b>CONNECT</b><a href="https://calendly.com/abdulqadeerml/30min" target="_blank" rel="noopener">Book a call</a><a href="https://wa.me/923427717288" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.linkedin.com/in/muhammad-abdul-qadeer-8262b237b" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/hasankhan62742-beep" target="_blank" rel="noopener">GitHub</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></div>
       </div>
       <div class="foot-base"><span>© 2026 Qadeer Automations</span><span>AI Automation · Chatbots · Dashboards · Business Systems</span></div>
@@ -1086,9 +1173,11 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
       }
 
       /* ---------- FAQ accordion ---------- */
-      document.querySelectorAll('.faq-item').forEach(function (item) {
+      document.querySelectorAll('.faq-item').forEach(function (item, i) {
         var q = item.querySelector('.faq-q');
         var a = item.querySelector('.faq-a');
+        if (a && !a.id) a.id = 'faq-a-' + (i + 1);
+        if (q && a) q.setAttribute('aria-controls', a.id);
         q.addEventListener('click', function () {
           var isOpen = item.classList.contains('open');
           document.querySelectorAll('.faq-item.open').forEach(function (other) {
@@ -1339,6 +1428,9 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         if (win.classList.contains('open')) setTimeout(function () { input.focus(); }, 300);
       });
       (document.getElementById('chat-close')||{addEventListener:function(){}}).addEventListener('click', function () { win.classList.remove('open'); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && win.classList.contains('open')) { win.classList.remove('open'); fab.focus(); }
+      });
       sendBtn.addEventListener('click', send);
       input.addEventListener('keydown', function (e) { if (e.key === 'Enter') send(); });
     })();
@@ -1427,29 +1519,11 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
       [biz, team, challenge, outcome].forEach(function (el) { if (el) el.addEventListener('change', update); });
     })();
 
-    /* ---------- nav: glass on scroll + active section ---------- */
+    /* ---------- nav: glass on scroll ---------- */
     (function () {
       var shell = document.querySelector('.nav-shell');
       function onScroll() { shell.classList.toggle('scrolled', window.scrollY > 24); }
       window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
-      var links = document.querySelectorAll('.nav-link');
-      var map = {};
-      links.forEach(function (l) { map[l.getAttribute('href').slice(1)] = l; });
-      if ('IntersectionObserver' in window) {
-        var obs = new IntersectionObserver(function (entries) {
-          entries.forEach(function (en) {
-            if (en.isIntersecting) {
-              links.forEach(function (l) { l.classList.remove('active'); });
-              var l = map[en.target.id];
-              if (l) l.classList.add('active');
-            }
-          });
-        }, { rootMargin: '-40% 0px -55% 0px' });
-        Object.keys(map).forEach(function (id) {
-          var s = document.getElementById(id);
-          if (s) obs.observe(s);
-        });
-      }
     })();
   
 (function(){var b=document.getElementById('scroll-progress');if(!b)return;var t=false;
