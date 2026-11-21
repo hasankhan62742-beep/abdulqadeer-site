@@ -1,11 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://abdulqadeerml.com/</loc>
-    <lastmod>2026-11-21</lastmod>
-  </url>
-  <url>
-    <loc>https://abdulqadeerml.com/services/</loc>
     <lastmod>2026-11-21</lastmod>
   </url>
   <url>
@@ -113,15 +109,7 @@
     <lastmod>2026-11-21</lastmod>
   </url>
   <url>
-    <loc>https://abdulqadeerml.com/about/</loc>
-    <lastmod>2026-11-21</lastmod>
-  </url>
-  <url>
     <loc>https://abdulqadeerml.com/privacy/</loc>
     <lastmod>2026-10-24</lastmod>
   </url>
-  <url><loc>https://abdulqadeerml.com/services.html</loc><lastmod>2026-11-21</lastmod></url>
-  <url><loc>https://abdulqadeerml.com/solutions.html</loc><lastmod>2026-11-21</lastmod></url>
-  <url><loc>https://abdulqadeerml.com/about.html</loc><lastmod>2026-11-21</lastmod></url>
-  <url><loc>https://abdulqadeerml.com/contact.html</loc><lastmod>2026-11-21</lastmod></url>
-</urlset>
+  <url><loc>https://abdulqadeerml.com/services</loc><lastmod>2026-11-21</lastmod></url><url><loc>https://abdulqadeerml.com/solutions</loc><lastmod>2026-11-21</lastmod></url><url><loc>https://abdulqadeerml.com/about</loc><lastmod>2026-11-21</lastmod></url><url><loc>https://abdulqadeerml.com/contact</loc><lastmod>2026-11-21</lastmod></url></urlset>
