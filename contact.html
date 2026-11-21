@@ -1236,14 +1236,14 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         { label: 'Book a free call' }
       ];
       function greet() {
-        addMsg('Assalam-o-Alaikum! 👋 I&rsquo;m the site assistant — ask me anything about <b>services</b> or <b>booking a free call</b>. I answer from this site, and for anything personal, Abdul replies on WhatsApp.', 'bot');
+        addMsg('Hi! 👋 I&rsquo;m the site assistant — ask me anything about <b>services</b> or <b>booking a free call</b>. I answer from this site, and for anything personal, Abdul replies on WhatsApp.', 'bot');
         addChips(QUICK);
       }
       /* Offline fallback: same quick answers as before, used only when the
          AI Worker is not configured or unreachable. */
       var RULES = [
         { k: ['price', 'pricing', 'cost', 'charge', 'fee', 'rate', 'much'], h: 'Cost depends on scope. After a free strategy call you receive a written scope with fixed deliverables, so the price is agreed before work begins. <a href="#contact">Book a free call →</a>' },
-        { k: ['service', 'offer', 'capabilit', 'what do you do', 'what can you'], h: 'I can help with: <b>1)</b> AI chatbots &amp; receptionists that answer customers 24/7, <b>2)</b> business automation for follow-ups and admin, <b>3)</b> predictive analytics — what will sell, who might leave, <b>4)</b> dashboards that explain your business in plain words, <b>5)</b> custom web apps &amp; management systems, <b>6)</b> API integrations that connect your tools. Which fits your problem?' },
+        { k: ['service', 'offer', 'capabilit', 'what do you do', 'what can you'], h: 'I can help with: <b>1)</b> AI chatbots &amp; receptionists that answer customers 24/7, <b>2)</b> business automation for follow-ups and admin, <b>3)</b> predictive analytics — what will sell, who might leave, <b>4)</b> AI &amp; machine learning that learns from your data, <b>5)</b> dashboards that explain your business in plain words, <b>6)</b> custom web apps built around how you operate, <b>7)</b> management systems for schools and businesses, <b>8)</b> API integrations that connect your tools, <b>9)</b> AI marketing — ads, emails and posts sent on schedule. Which fits your problem?' },
         { k: ['book', 'call', 'meeting', 'schedule', 'appointment', 'talk', 'review', 'discuss', 'project'], h: 'Grab a free 30-minute slot — no pitch, just a practical look at your data: <a href="' + CAL + '" target="_blank" rel="noopener">Book on Calendly →</a>' },
         { k: ['whatsapp', 'message you', 'chat with you'], h: 'Fastest way — message me directly: <a href="' + WA + '" target="_blank" rel="noopener">WhatsApp →</a>' },
         { k: ['timeline', 'how long', 'duration', 'fast'], h: 'A focused first project usually takes <b>2–4 weeks</b> after the free strategy call.' },
