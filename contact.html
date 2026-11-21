@@ -622,7 +622,7 @@
     /* QA fix 2: outer pricing-card CTA was near-invisible (ivory var became a dark surface) */
     .btn-ink { background: transparent; color: #F3EFE6; border: 1px solid rgba(45,212,191,.55); }
     .btn-ink:hover { background: rgba(45,212,191,.14); box-shadow: 0 14px 34px rgba(0,0,0,.4); }
-    /* emerald accent (his choice 2026-10-22): hero secondary CTA carries the third colour */
+    /* emerald accent (his choice 2026-10-22): hero secondary CTA carries the third color */
     .hero .btn-ghost { border-color: rgba(52,211,153,.45); }
     .hero .btn-ghost:hover { background: rgba(14,159,110,.12); }
     @media (max-width: 900px) { .proc-grid { grid-template-columns: 1fr 1fr; } }
@@ -751,7 +751,7 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
 .field input,.field select,.field textarea{background:rgba(255,255,255,.05);border:1px solid var(--gl);color:var(--on-ink);border-radius:12px}
 .svc:hover{background:linear-gradient(120deg,rgba(45,212,191,.12),rgba(37,99,235,.08))}
 .page-hero{padding:140px 0 30px;text-align:center}
-.page-hero h1{font-size:clamp(2.3rem,5.4vw,4.4rem);max-width:18ch;margin:16px auto;color:#fff;font-weight:500}
+.page-hero h1{font-size:clamp(2.7rem,6.4vw,5.2rem);max-width:18ch;margin:16px auto;color:#fff;font-weight:800}
 .page-hero p{max-width:56ch;margin:0 auto;color:rgba(235,245,255,.72)}
 .pg-services .page-hero{text-align:left;background:linear-gradient(115deg,rgba(45,212,191,.14),transparent 50%)}
 .pg-services .page-hero h1,.pg-services .page-hero p,.pg-about .page-hero h1,.pg-about .page-hero p{margin-left:0}
@@ -770,6 +770,15 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
 .neural-head .sec-title{margin:14px auto;color:#fff}.neural-head .sec-lede{margin:0 auto;color:rgba(235,245,255,.7)}
 .neural-stage{position:relative;height:clamp(340px,52vw,620px);margin-top:10px;background:radial-gradient(60% 50% at 25% 62%,rgba(255,43,214,.18),transparent 70%),radial-gradient(60% 50% at 75% 66%,rgba(34,225,255,.18),transparent 70%)}
 .neural-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+
+/* ===== Page-hero entrance (CSS-first): the headline stays visible even if JS fails ===== */
+@keyframes heroRise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.page-hero .eyebrow{display:inline-block}
+.page-hero .eyebrow,.page-hero h1,.page-hero p{animation:heroRise .9s cubic-bezier(.22,.8,.3,1) backwards}
+.page-hero .eyebrow{animation-delay:.05s}
+.page-hero h1{animation-delay:.16s}
+.page-hero p{animation-delay:.32s}
+@media (prefers-reduced-motion: reduce){.page-hero .eyebrow,.page-hero h1,.page-hero p{animation:none}}
 </style>
   
 </head>

@@ -142,12 +142,6 @@
       background: radial-gradient(circle, rgba(45,212,191,.06) 0%, transparent 62%);
       animation: ambient-drift 22s ease-in-out infinite alternate-reverse; }
     @keyframes ambient-drift { from { transform: translate3d(0,0,0) scale(1); } to { transform: translate3d(-46px,38px,0) scale(1.12); } }
-    /* ---------- HERO NETWORK (2026-11-16, user-approved) ---------- */
-    /* Faint gold dots + thin lines, hero only. Canvas sits under the text
-       (hero-inner is z-index 1) and never receives pointer events, so the
-       H1 and CTAs stay fully readable and clickable. */
-    .hero-net { position: absolute; inset: 0; width: 100%; height: 100%;
-      pointer-events: none; z-index: 0; opacity: .8; }
     /* ---------- CURSOR RING (desktop fine-pointer only, 2026-11-16) ---------- */
     #cursor-ring { position: fixed; left: 0; top: 0; width: 34px; height: 34px; margin: -17px 0 0 -17px;
       border: 1.5px solid rgba(255,212,119,.6); border-radius: 50%; pointer-events: none; z-index: 9999;
@@ -163,8 +157,6 @@
       border-top: 1px solid rgba(45,212,191,.18); font-size: .72rem; color: #B8B8BE; letter-spacing: .04em; }
     .core-status-dot { width: 8px; height: 8px; flex: none; border-radius: 50%; background: #34D399;
       box-shadow: 0 0 10px #34D399; animation: hvGlow 2s ease-in-out infinite; }
-    #core-status-text { transition: opacity .4s ease; }
-    #core-status-text.fading { opacity: 0; }
     /* ---------- SERVICE CARD MINI-VISUALS ---------- */
     .svc-viz { margin: 16px 0 2px; height: 66px; }
     .svc-viz svg { width: 124px; height: 66px; display: block; }
@@ -453,7 +445,6 @@
       *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
       .reveal { opacity: 1 !important; transform: none !important; }
       .ticker-track, .scan { animation: none !important; }
-      .hero-net { display: none !important; }
       .svc-viz svg { display: none; }
       .draw { stroke-dashoffset: 0 !important; }
     }
@@ -622,7 +613,7 @@
     /* QA fix 2: outer pricing-card CTA was near-invisible (ivory var became a dark surface) */
     .btn-ink { background: transparent; color: #F3EFE6; border: 1px solid rgba(45,212,191,.55); }
     .btn-ink:hover { background: rgba(45,212,191,.14); box-shadow: 0 14px 34px rgba(0,0,0,.4); }
-    /* emerald accent (his choice 2026-10-22): hero secondary CTA carries the third colour */
+    /* emerald accent (his choice 2026-10-22): hero secondary CTA carries the third color */
     .hero .btn-ghost { border-color: rgba(52,211,153,.45); }
     .hero .btn-ghost:hover { background: rgba(14,159,110,.12); }
     @media (max-width: 900px) { .proc-grid { grid-template-columns: 1fr 1fr; } }
@@ -715,7 +706,7 @@
     }
   
     #scroll-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:9999;pointer-events:none;background:linear-gradient(90deg,#22D3EE,#2DD4BF,#2563EB);transform:scaleX(0);transform-origin:0 50%;will-change:transform}
-  /* ===== Redesign v3: midnight blue + cyan/turquoise (Mindhyve-style), glass nav, living neural tree ===== */
+  /* ===== Redesign v3: midnight blue + cyan/turquoise (Mindhyve-style), glass nav, disc wave hero ===== */
 :root{--ink:#020611;--ink-2:#030818;--ink-3:#061029;--surface:#050B1F;--surface-2:#081431;--accent:#2DD4BF;--accent-deep:#0F9F8F;--on-ink:#F4F8FF;
 --g1:linear-gradient(100deg,#2DD4BF,#22D3EE);--gt:linear-gradient(95deg,#FFFFFF 0%,#8CF3E6 45%,#38BDF8 100%);--glass:rgba(255,255,255,.04);--gl:rgba(120,220,255,.16)}
 body{background:radial-gradient(900px 600px at 82% -10%,rgba(29,78,216,.25),transparent 60%),radial-gradient(700px 500px at 0 40%,rgba(45,212,191,.08),transparent 60%),#020611}
@@ -735,23 +726,26 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
 .btn-ghost{background:rgba(6,16,44,.45);border:1px solid var(--gl);color:#fff}
 .hero h1 .accent,.page-hero h1 .accent,.sec-title .accent,h2 .accent{background:var(--gt);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .eyebrow{color:#2DD4BF;border:0;background:none;padding:0;letter-spacing:.18em;font-size:.74rem;font-weight:600}
-.hero{min-height:100svh;display:flex;padding:0;background:#020611;overflow:hidden}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:132px 0 0;background:#020611;overflow:hidden;position:relative}
 .hero-grid-bg,.hero-ambient,.hv-chip,.hero-core{display:none!important}
-.hero-stage{position:absolute;inset:0;margin:0;height:auto}
-.hero-net{position:absolute!important;inset:0;width:100%;height:100%;display:block;pointer-events:none;opacity:1}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,6,17,.72),rgba(2,6,17,0) 62%),linear-gradient(0deg,rgba(2,6,17,.55),transparent 35%);pointer-events:none}
-.hero-inner{position:relative;z-index:2;display:flex!important;align-items:flex-end;min-height:100svh;padding:120px 0 72px;text-align:left}
-.hero-inner>div:first-child{max-width:640px}
-.hero h1{margin:14px 0 16px;max-width:13ch;font-size:clamp(2.5rem,5.8vw,5rem);font-weight:500;color:#fff;letter-spacing:-.035em}
-.hero-lede{margin:0 0 26px;max-width:50ch;color:rgba(235,245,255,.78)}
-.hero-ctas{justify-content:flex-start}
+.hero-inner{position:relative;z-index:2;display:block!important;max-width:940px;margin:0 auto;text-align:center;padding:0 24px}
+.hero-inner>div:first-child{max-width:940px;margin:0 auto}
+.hero .eyebrow{display:inline-block}
+.hero h1{margin:16px auto 18px;max-width:16ch;font-size:clamp(2.9rem,7vw,5.9rem);font-weight:800;color:#fff;letter-spacing:-.04em;line-height:1.02}
+.hero h1 .accent{background:linear-gradient(92deg,#FF2BD6 0%,#7C6BFF 34%,#38BDF8 68%,#2DD4BF 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.hero-lede{margin:0 auto 30px;max-width:56ch;color:rgba(235,245,255,.82);font-size:1.08rem}
+.hero-ctas{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.hero .btn-primary{background:linear-gradient(#fff,#fff) padding-box,linear-gradient(92deg,#FF2BD6,#7C6BFF,#38BDF8,#2DD4BF) border-box;border:2px solid transparent;color:#031018;box-shadow:0 12px 34px rgba(124,107,255,.35)}
+.hero .btn-primary:hover{box-shadow:0 16px 48px rgba(255,43,214,.42)}
+.hero-discs{position:relative;z-index:1;width:100%;height:clamp(240px,38vh,420px);margin-top:36px}
+.hero-discs canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 .scroll-cue{position:absolute;z-index:3;right:28px;bottom:34px;font-size:.78rem;color:rgba(244,248,255,.8);text-decoration:none;display:flex;gap:8px;align-items:center}
 .core-panel,.core-feed,.core-card{background:var(--glass);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1px solid var(--gl);border-radius:18px}
 .use-case,.why-card,.insight-card,.ba-card,.form-card,.faq-item,.proc,.assess-form,.assess-result{background:var(--glass);border:1px solid var(--gl);border-radius:18px;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .field input,.field select,.field textarea{background:rgba(255,255,255,.05);border:1px solid var(--gl);color:var(--on-ink);border-radius:12px}
 .svc:hover{background:linear-gradient(120deg,rgba(45,212,191,.12),rgba(37,99,235,.08))}
 .page-hero{padding:140px 0 30px;text-align:center}
-.page-hero h1{font-size:clamp(2.3rem,5.4vw,4.4rem);max-width:18ch;margin:16px auto;color:#fff;font-weight:500}
+.page-hero h1{font-size:clamp(2.7rem,6.4vw,5.2rem);max-width:18ch;margin:16px auto;color:#fff;font-weight:800}
 .page-hero p{max-width:56ch;margin:0 auto;color:rgba(235,245,255,.72)}
 .pg-services .page-hero{text-align:left;background:linear-gradient(115deg,rgba(45,212,191,.14),transparent 50%)}
 .pg-services .page-hero h1,.pg-services .page-hero p,.pg-about .page-hero h1,.pg-about .page-hero p{margin-left:0}
@@ -764,12 +758,16 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
 .xcard h3{font-size:1.4rem;margin:0 0 8px}.xcard p{margin:0;color:rgba(235,245,255,.65)}
 .xcard span{display:inline-block;margin-top:14px;font-weight:600;color:#2DD4BF}
 ::selection{background:#2DD4BF;color:#031018}
-@media(max-width:900px){.nav-links{background:none;border:0;padding:0}.nav-links.open{background:rgba(4,10,30,.97);border:1px solid var(--gl);border-radius:20px;margin-top:8px;padding:8px}.hero-inner{padding:110px 0 90px}.scroll-cue{right:18px;bottom:22px}}
-.neural{padding:90px 0 0;background:#000!important;position:relative;overflow:hidden}
-.neural-head{text-align:center;max-width:760px}
-.neural-head .sec-title{margin:14px auto;color:#fff}.neural-head .sec-lede{margin:0 auto;color:rgba(235,245,255,.7)}
-.neural-stage{position:relative;height:clamp(340px,52vw,620px);margin-top:10px;background:radial-gradient(60% 50% at 25% 62%,rgba(255,43,214,.18),transparent 70%),radial-gradient(60% 50% at 75% 66%,rgba(34,225,255,.18),transparent 70%)}
-.neural-stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+@media(max-width:900px){.nav-links{background:none;border:0;padding:0}.nav-links.open{background:rgba(4,10,30,.97);border:1px solid var(--gl);border-radius:20px;margin-top:8px;padding:8px}.hero-inner{padding:0 0 10px}.scroll-cue{right:18px;bottom:22px}}
+
+/* ===== Hero entrance (CSS-first): the headline stays visible even if JS fails ===== */
+@keyframes heroRise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+.hero .eyebrow,.hero h1,.hero-lede,.hero-ctas{animation:heroRise .9s cubic-bezier(.22,.8,.3,1) backwards}
+.hero .eyebrow{animation-delay:.05s}
+.hero h1{animation-delay:.16s}
+.hero-lede{animation-delay:.32s}
+.hero-ctas{animation-delay:.48s}
+@media (prefers-reduced-motion: reduce){.hero .eyebrow,.hero h1,.hero-lede,.hero-ctas{animation:none}}
 </style>
   <script type="application/ld+json">
   {
@@ -883,40 +881,16 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
           <h1 id="hero-title">Your Business. Working <span class="accent">While You Sleep.</span></h1>
           <p class="hero-lede">Small businesses lose customers to slow replies, missed calls and manual work. Practical AI fixes that — answering customers, chasing follow-ups and keeping your business moving around the clock. No hype, no jargon.</p>
           <div class="hero-ctas">
-            <a class="btn btn-lime" href="https://calendly.com/abdulqadeerml/30min" target="_blank" rel="noopener">Book Your Free Strategy Call
+            <a class="btn btn-primary" href="https://calendly.com/abdulqadeerml/30min" target="_blank" rel="noopener">Book Your Free Strategy Call
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
             <a class="btn btn-ghost" href="services.html#services">Explore Our Solutions</a>
           </div>
         </div>
-        <div class="hero-stage"><canvas id="hero-net" class="hero-net" aria-hidden="true"></canvas></div>
-        <div class="hero-core">
-          <div class="hv-chip hv-chip-a" aria-hidden="true"><span class="core-dot"></span>Customers answered 24/7</div>
-          <div class="core-panel">
-            <div class="core-head"><span class="hv-dot"></span><span>QA AI CORE</span><span class="core-live"><i></i>Illustrative</span></div>
-            <div class="core-grid">
-              <div class="core-card"><b>Automation</b><span>Follow-ups &amp; admin, handled</span></div>
-              <div class="core-card"><b>Chatbots</b><span>Customers answered 24/7</span></div>
-              <div class="core-card"><b>Dashboards</b><span>Sales &amp; leads, one view</span></div>
-              <div class="core-card"><b>Intelligence</b><span>Plain-language summaries</span></div>
-            </div>
-            <div class="core-status"><span class="core-status-dot"></span><span id="core-status-text">Replying to a customer…</span></div>
-          </div>
-          <div class="core-feed">
-            <div class="core-feed-head"><span class="hv-dot"></span><span>WHILE YOU SLEEP</span></div>
-            <ul>
-              <li><b>9:41 PM</b><span>New inquiry answered and qualified</span></li>
-              <li><b>11:05 PM</b><span>Follow-ups sent, CRM updated</span></li>
-              <li><b>6:00 AM</b><span>Morning summary ready on your dashboard</span></li>
-            </ul>
-            <p class="core-note">ILLUSTRATIVE SYSTEM VIEW</p>
-          </div>
-          <div class="hv-chip hv-chip-b" aria-hidden="true"><span class="core-dot violet"></span>Follow-ups automated</div>
-        </div>
       </div>
+      <div class="hero-discs"><canvas id="hero-discs" aria-hidden="true"></canvas></div>
     <a class="scroll-cue" href="index.html#problem">Scroll to Discover <span aria-hidden="true">&#8964;</span></a>
     </section>
-<section id="neural" class="section neural on-ink" aria-labelledby="neural-title"><div class="wrap neural-head"><span class="eyebrow">NEURAL CORE</span><h2 class="sec-title" id="neural-title">Intelligence flowing through <span class="accent">every workflow.</span></h2><p class="sec-lede">An illustrative real-time 3D view of how data can circulate through connected automations, chatbots and dashboards.</p></div><div class="neural-stage"><canvas id="neural-3d" aria-hidden="true"></canvas></div></section>
 <!-- TICKER -->
     <div class="ticker" aria-hidden="true">
       <div class="ticker-track">
@@ -1106,14 +1080,8 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         var fine = window.matchMedia('(pointer:fine)').matches;
         var desktop = window.innerWidth >= 769;
 
-        /* --- hero load choreography (reading order, expo-out) --- */
-        splitWords(document.getElementById('hero-title'));
-        var tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
-        tl.from('.hero .eyebrow', { y: 26, opacity: 0, duration: 0.65 })
-          .from('#hero-title .w', { yPercent: 118, duration: 0.9, stagger: 0.04 }, '-=0.6')
-          .from('.hero-lede', { y: 30, opacity: 0, duration: 0.75 }, '-=0.75')
-          .from('.hero-ctas .btn', { y: 26, opacity: 0, duration: 0.55, stagger: 0.07 }, '-=0.65')
-          .from('.hero-core', { y: 46, opacity: 0, scale: 0.96, duration: 0.9 }, '-=0.9');
+        /* hero entrance is CSS-first now (see heroRise keyframes), so the headline
+           can never be left hidden if JS fails or GSAP is slow to load */
 
         /* hero parallax REMOVED 2026-11-16: scrub rewrote transform+opacity on the whole
            hero every scroll frame and made scrolling stutter on phones. Hero stays put. */
@@ -1173,34 +1141,6 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         if (!reduceMotion && window.gsap && window.ScrollTrigger) { initGsapCinematic(); }
         else if (window.__initRevealsFallback) { window.__initRevealsFallback(); }
       });
-
-      /* ---------- WHILE YOU SLEEP loop + AI CORE live status ---------- */
-      /* Generic illustrative statuses only — no numbers, no claims. */
-      if (!reduceMotion) {
-        var feedItems = Array.prototype.slice.call(document.querySelectorAll('.core-feed li'));
-        var feedIdx = 0;
-        if (feedItems.length > 1) {
-          feedItems.forEach(function (li, i) { li.classList.toggle('feed-dim', i !== 0); li.classList.toggle('feed-active', i === 0); });
-          setInterval(function () {
-            feedItems[feedIdx].classList.remove('feed-active'); feedItems[feedIdx].classList.add('feed-dim');
-            feedIdx = (feedIdx + 1) % feedItems.length;
-            feedItems[feedIdx].classList.add('feed-active'); feedItems[feedIdx].classList.remove('feed-dim');
-          }, 2800);
-        }
-        var coreStatuses = ['Replying to a customer\u2026', 'Follow-up sent \u2014 CRM updated', 'New inquiry qualified', 'Morning summary ready'];
-        var coreStatusEl = document.getElementById('core-status-text');
-        var coreIdx = 0;
-        if (coreStatusEl) {
-          setInterval(function () {
-            coreStatusEl.classList.add('fading');
-            setTimeout(function () {
-              coreIdx = (coreIdx + 1) % coreStatuses.length;
-              coreStatusEl.textContent = coreStatuses[coreIdx];
-              coreStatusEl.classList.remove('fading');
-            }, 400);
-          }, 3500);
-        }
-      }
 
       /* ---------- custom cursor ring (fine pointer only) ---------- */
       if (!reduceMotion && window.matchMedia('(pointer:fine)').matches && window.innerWidth >= 769) {
@@ -1596,117 +1536,92 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
   window.addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(u);}},{passive:true});u();})();
   </script>
 <script>
-/* Living AI neural tree: glowing branches with pulsing energy, flowing particles, canopy sparkles,
-   fireflies, water reflection and ripples. Mouse sways it on desktop. Lighter on mobile; static for reduced motion. */
-(function(){
-var cv=document.getElementById('hero-net');if(!cv||!cv.getContext)return;
-var st=cv.parentElement,hero=cv.closest('.hero'),ctx=cv.getContext('2d');if(!ctx)return;
-var rm=matchMedia('(prefers-reduced-motion: reduce)').matches,small=innerWidth<760,dpr=Math.min(devicePixelRatio||1,small?1:1.5),
-MD=small?6:7,W=1,H=1,t=0,mx=0,tx=0,raf=null,vis=true,seg=[],tips=[],leaf=[],par=[],fly=[],bx=0,by=0,Rh=0;
-function R(a,b){return a+Math.random()*(b-a);}
-function build(){seg=[{p:-1,a:0,l:.27,d:0,c:.03,ph:0}];tips=[];leaf=[];par=[];fly=[];var i,k,s,n,sp;
-for(i=0;i<seg.length;i++){s=seg[i];if(s.d>=MD){tips.push(i);continue;}
-n=s.d<2?2:(Math.random()<.25?3:2);
-for(k=0;k<n;k++){sp=(k-(n-1)/2)*R(.5,.8)*(1-s.d*.06)+R(-.12,.12);seg.push({p:i,a:sp,l:s.l*R(.7,.8),d:s.d+1,c:R(-.06,.06),ph:R(0,6.28)});}}
-for(i=0;i<tips.length;i++)for(k=0;k<(small?1:2);k++)leaf.push({s:tips[i],ox:R(-.05,.05),oy:R(-.05,.05),r:R(.6,1.6),ph:R(0,6.28)});
-for(i=0;i<(small?22:56);i++)par.push(np());
-var C=['94,234,212','56,189,248','255,255,255','244,114,182','139,92,246'],n2=small?36:80;
-for(i=0;i<n2;i++)fly.push({x:Math.random(),y:Math.random(),r:R(.5,1.6),s:R(.00004,.00016),c:C[(Math.random()*Math.random()*5)|0],ph:R(0,6.28)});
-for(i=0;i<(small?8:18);i++)fly.push({x:R(.74,.97),y:R(.7,.86),r:R(.8,1.8),s:.00003,c:Math.random()<.6?'236,72,153':'167,139,250',ph:R(0,6.28)});}
-function np(){var ch=[],i=tips[(Math.random()*tips.length)|0];while(i>=0){ch.unshift(i);i=seg[i].p;}return{ch:ch,k:0,u:Math.random(),v:R(.012,.03),pk:Math.random()<.12};}
-function size(){var r=st.getBoundingClientRect();W=Math.max(1,r.width);H=Math.max(1,r.height);cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);}
-function layout(){Rh=H*(small?.5:.56);bx=W*(W>900?.64:.5)+tx*14;by=H*.8;var i,s,p,L;
-for(i=0;i<seg.length;i++){s=seg[i];
-if(s.p<0){s.A=tx*.02;s.x0=bx;s.y0=by;}else{p=seg[s.p];s.A=p.A+s.a+(Math.sin(t*.0009+s.ph)*.012+tx*.01)*s.d*.3;s.x0=p.x1;s.y0=p.y1;}
-L=s.l*Rh;s.x1=s.x0+Math.sin(s.A)*L;s.y1=s.y0-Math.cos(s.A)*L;s.cx=(s.x0+s.x1)/2+Math.cos(s.A)*L*s.c*3;s.cy=(s.y0+s.y1)/2+Math.sin(s.A)*L*s.c*3;}}
-function tree(a,full){var i,s,k;
-for(i=0;i<seg.length;i++){s=seg[i];k=s.d/MD;
-ctx.strokeStyle='rgba('+((30+k*170)|0)+','+((150+k*105)|0)+','+((170+k*70)|0)+','+(a*(.42+.4*Math.sin(t*.002-s.d*.9+s.ph*.2)))+')';
-ctx.lineWidth=Math.max(.6,(MD+1-s.d)*(small?.9:1.15));ctx.beginPath();ctx.moveTo(s.x0,s.y0);ctx.quadraticCurveTo(s.cx,s.cy,s.x1,s.y1);ctx.stroke();}
-if(!full)return;
-for(i=0;i<tips.length;i++){s=seg[tips[i]];ctx.fillStyle='rgba(120,255,235,'+(.25+.2*Math.sin(t*.003+s.ph))+')';ctx.beginPath();ctx.arc(s.x1,s.y1,4,0,6.2832);ctx.fill();ctx.fillStyle='rgba(255,255,255,.9)';ctx.beginPath();ctx.arc(s.x1,s.y1,1.5,0,6.2832);ctx.fill();}
-for(i=0;i<leaf.length;i++){var l=leaf[i];s=seg[l.s];ctx.fillStyle='rgba(200,255,245,'+(.35+.4*Math.sin(t*.003+l.ph))+')';ctx.beginPath();ctx.arc(s.x1+l.ox*Rh,s.y1+l.oy*Rh,l.r,0,6.2832);ctx.fill();}}
-function draw(){var g=ctx.createLinearGradient(0,0,0,H),i,s,p,q,u,w,x,y,gl;
-g.addColorStop(0,'#05163a');g.addColorStop(.55,'#020b26');g.addColorStop(.8,'#010616');g.addColorStop(1,'#00030b');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
-layout();
-function glow(cx,cy,r,c){var q=ctx.createRadialGradient(cx,cy,0,cx,cy,r);q.addColorStop(0,'rgba('+c+',1)');q.addColorStop(1,'rgba('+c+',0)');ctx.fillStyle=q;ctx.fillRect(cx-r,cy-r,2*r,2*r);}
-ctx.globalAlpha=.28;glow(W*.15,H*.2,W*.5,'37,99,235');ctx.globalAlpha=.2;glow(bx,by-Rh*.75,Rh*.85,'45,212,191');ctx.globalAlpha=.16;glow(W*.95,H*.1,W*.4,'109,40,217');ctx.globalAlpha=1;
-ctx.globalCompositeOperation='lighter';
-ctx.save();ctx.translate(0,2*by);ctx.scale(1,-1);ctx.transform(1,0,Math.sin(t*.0015)*.015,1,0,0);tree(.3,false);ctx.restore();
-ctx.globalCompositeOperation='source-over';
-var wg=ctx.createLinearGradient(0,by,0,H);wg.addColorStop(0,'rgba(2,10,40,.2)');wg.addColorStop(1,'rgba(1,4,14,.88)');ctx.fillStyle=wg;ctx.fillRect(0,by,W,H-by);
-ctx.globalCompositeOperation='lighter';ctx.lineWidth=1;
-for(i=0;i<12;i++){y=by+8+i*i*1.6*(H/700);x=bx+Math.sin(t*.0006+i)*W*.06-W*.12;ctx.strokeStyle='rgba(120,230,255,'+(.14-i*.01)+')';ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+W*(.1+i*.012),y);ctx.stroke();}
-tree(1,true);
-for(i=0;i<par.length;i++){p=par[i];if(!rm){p.u+=p.v;if(p.u>=1){p.u=0;p.k++;if(p.k>=p.ch.length){var o=np();p.ch=o.ch;p.k=0;p.pk=o.pk;}}}
-s=seg[p.ch[p.k]];u=p.u;w=1-u;x=w*w*s.x0+2*w*u*s.cx+u*u*s.x1;y=w*w*s.y0+2*w*u*s.cy+u*u*s.y1;
-ctx.fillStyle=p.pk?'rgba(244,114,182,.3)':'rgba(94,234,212,.3)';ctx.beginPath();ctx.arc(x,y,4.5,0,6.2832);ctx.fill();
-ctx.fillStyle=p.pk?'rgba(255,190,225,.95)':'rgba(220,255,250,.95)';ctx.beginPath();ctx.arc(x,y,1.5,0,6.2832);ctx.fill();}
-for(i=0;i<fly.length;i++){q=fly[i];if(!rm){q.y-=q.s;q.x+=Math.sin(t*.0004+q.ph)*.00006;if(q.y<0)q.y=1;}
-ctx.fillStyle='rgba('+q.c+','+(.3+.25*Math.sin(t*.002+q.ph))+')';ctx.beginPath();ctx.arc(q.x*W,q.y*H,q.r,0,6.2832);ctx.fill();}
-ctx.globalCompositeOperation='source-over';}
-function loop(){raf=null;if(!vis||document.hidden)return;t+=16;tx+=(mx-tx)*.04;draw();raf=requestAnimationFrame(loop);}
-function start(){if(raf===null&&!rm)raf=requestAnimationFrame(loop);}
-function stop(){if(raf!==null){cancelAnimationFrame(raf);raf=null;}}
-if(!small&&hero)hero.addEventListener('mousemove',function(ev){var r=hero.getBoundingClientRect();mx=(ev.clientX-r.left)/r.width*2-1;});
-if('IntersectionObserver' in window)new IntersectionObserver(function(en){vis=en[0].isIntersecting;vis?start():stop();}).observe(st);
-document.addEventListener('visibilitychange',function(){document.hidden?stop():start();});
-addEventListener('resize',function(){small=innerWidth<760;size();if(rm)draw();});
-build();size();if(rm){t=4000;draw();}else start();
-})();
-</script>
-<script>
-/* 3D neural ribbon (Three.js, lazy-loaded): glowing glass/metal discs on a flowing wave path, travelling energy,
-   pulsing rims, flowing particles, mirrored floor reflection. Mouse sways it on desktop; paused off-screen. */
-(function(){
-var cv=document.getElementById('neural-3d');if(!cv)return;
-var sec=cv.closest('section'),small=innerWidth<760,rm=matchMedia('(prefers-reduced-motion: reduce)').matches,loaded=false;
-function load(){if(loaded)return;loaded=true;if(window.THREE)return init();var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';s.onload=init;s.onerror=function(){};document.head.appendChild(s);}
-if('IntersectionObserver' in window)new IntersectionObserver(function(e,o){if(e[0].isIntersecting){o.disconnect();load();}},{rootMargin:'600px'}).observe(sec);else load();
-function init(){
-var T=window.THREE,r;try{r=new T.WebGLRenderer({canvas:cv,antialias:!small,alpha:false,powerPreference:'high-performance'});}catch(e){return;}
-r.setPixelRatio(Math.min(devicePixelRatio||1,small?1.25:1.75));r.setClearColor(0x000000,1);
-var sc=new T.Scene(),cam=new T.PerspectiveCamera(40,1,.1,60),N=small?24:40,M=small?70:140,L=11,FL=-1.5,
-PAL=[[255,43,214],[110,70,255],[45,60,170],[34,225,255],[70,120,255],[255,70,150]];
-function pc(u){var f=Math.min(.999,u)*5,i=f|0,k=f-i,A=PAL[i],B=PAL[i+1];return new T.Color((A[0]+(B[0]-A[0])*k)/255,(A[1]+(B[1]-A[1])*k)/255,(A[2]+(B[2]-A[2])*k)/255);}
-sc.add(new T.AmbientLight(0x223366,.7));
-[[0xff2bd6,-4,2,3],[0x22e1ff,4,1,3],[0x4668ff,0,3,-2]].forEach(function(l){var p=new T.PointLight(l[0],2,16);p.position.set(l[1],l[2],l[3]);sc.add(p);});
-var ringG=new T.TorusGeometry(1,.018,6,64),discG=new T.CylinderGeometry(1,1,.06,40,1);
-function mk(op){var g=new T.Group(),a=[],i,c,d,m;
-for(i=0;i<N;i++){c=pc(i/(N-1));
-d=new T.Mesh(discG,new T.MeshStandardMaterial({color:c.clone().multiplyScalar(.4),emissive:c.clone().multiplyScalar(.28),metalness:.6,roughness:.28,transparent:true,opacity:.72*op}));
-m=new T.Mesh(ringG,new T.MeshBasicMaterial({color:c,transparent:true,opacity:.9*op,blending:T.AdditiveBlending,depthWrite:false}));
-m.rotation.x=Math.PI/2;d.add(m);g.add(d);a.push(d);}
-sc.add(g);return{g:g,a:a};}
-var H1=mk(1),H2=mk(.22);H2.g.position.y=2*FL;
-var pg=new T.BufferGeometry(),pp=new Float32Array(M*3),pcol=new Float32Array(M*3),pu=[],i,c;
-for(i=0;i<M;i++){pu.push({u:Math.random(),v:.0015+Math.random()*.003,o:Math.random()*6.28});c=pc(Math.random());pcol[i*3]=c.r;pcol[i*3+1]=c.g;pcol[i*3+2]=c.b;}
-pg.setAttribute('position',new T.BufferAttribute(pp,3));pg.setAttribute('color',new T.BufferAttribute(pcol,3));
-var pts=new T.Points(pg,new T.PointsMaterial({size:.07,vertexColors:true,transparent:true,opacity:.95,blending:T.AdditiveBlending,depthWrite:false}));sc.add(pts);
-var fc=document.createElement('canvas');fc.width=512;fc.height=256;var x=fc.getContext('2d'),q;
-if(x){q=x.createRadialGradient(130,128,0,130,128,170);q.addColorStop(0,'rgba(255,43,214,.7)');q.addColorStop(1,'rgba(255,43,214,0)');x.fillStyle=q;x.fillRect(0,0,512,256);
-q=x.createRadialGradient(390,128,0,390,128,170);q.addColorStop(0,'rgba(34,225,255,.6)');q.addColorStop(1,'rgba(34,225,255,0)');x.fillStyle=q;x.fillRect(0,0,512,256);}
-var fl=new T.Mesh(new T.PlaneGeometry(14,5),new T.MeshBasicMaterial({map:new T.CanvasTexture(fc),transparent:true,blending:T.AdditiveBlending,depthWrite:false}));fl.rotation.x=-Math.PI/2;fl.position.set(0,FL+.01,.5);sc.add(fl);
-function P(u,t){var ph=u*Math.PI*2.2+t*.45;return[(u-.5)*L,Math.sin(ph)*.55+Math.sin(u*5-t*.8)*.12,Math.cos(ph)*.9];}
-var up=new T.Vector3(0,1,0),n=new T.Vector3(),qt=new T.Quaternion(),t=0,mx=0,tx=0,raf=null,vis=true;
-function upd(h,t,k){for(var i=0;i<N;i++){var u=i/(N-1),p=P(u,t),e=Math.pow(Math.abs(u-.5)*2,1.1),ph=u*Math.PI*2.2+t*.45,d=h.a[i];
-d.position.set(p[0],p[1],p[2]);n.set(1,.25*Math.sin(ph),.9*Math.cos(ph*.5+u*3)).normalize();qt.setFromUnitVectors(up,n);d.quaternion.copy(qt);
-d.scale.setScalar(.35+.75*e);d.children[0].material.opacity=(.45+.5*Math.sin(t*2.2-u*9))*k;}}
-function frame(){upd(H1,t,.95);upd(H2,t,.22);
-for(var i=0;i<M;i++){var s=pu[i];if(!rm){s.u+=s.v;if(s.u>1)s.u=0;}var p=P(s.u,t);pp[i*3]=p[0]+Math.cos(s.o+t)*.12;pp[i*3+1]=p[1]+Math.sin(s.o+t)*.12;pp[i*3+2]=p[2];}
-pg.attributes.position.needsUpdate=true;
-H1.g.rotation.y=H2.g.rotation.y=pts.rotation.y=Math.sin(t*.25)*.25+tx*.3;
-cam.position.set(tx*.5,.6,7.5);cam.lookAt(0,.1,0);r.render(sc,cam);}
-function size(){var b=cv.getBoundingClientRect(),W=Math.max(1,b.width),H=Math.max(1,b.height);r.setSize(W,H,false);cam.aspect=W/H;cam.updateProjectionMatrix();
-var vw=2*7.5*Math.tan(20*Math.PI/180)*cam.aspect,s=Math.min(1.2,vw*1.12/L);H1.g.scale.set(s,s,s);H2.g.scale.set(s,-s,s);pts.scale.set(s,s,s);}
-function loop(){raf=null;if(!vis||document.hidden)return;t+=.016;tx+=(mx-tx)*.04;frame();raf=requestAnimationFrame(loop);}
-function start(){if(raf===null&&!rm)raf=requestAnimationFrame(loop);}
-function stop(){if(raf!==null){cancelAnimationFrame(raf);raf=null;}}
-if(!small)sec.addEventListener('mousemove',function(e){var b=sec.getBoundingClientRect();mx=(e.clientX-b.left)/b.width*2-1;});
-new IntersectionObserver(function(e){vis=e[0].isIntersecting;vis?start():stop();}).observe(sec);
-document.addEventListener('visibilitychange',function(){document.hidden?stop():start();});
-addEventListener('resize',function(){small=innerWidth<760;size();if(rm)frame();});
-size();if(rm){t=3;frame();}else start();}
+/* ---------- hero disc wave: flowing glowing discs (canvas 2D, no libraries) ----------
+   A row of discs on a smooth sine wave, pink -> violet -> blue -> cyan, with a soft
+   reflection below. Pauses off-screen / when the tab is hidden; one static frame
+   for reduced motion. */
+(function () {
+  'use strict';
+  var cv = document.getElementById('hero-discs');
+  if (!cv || !cv.getContext) return;
+  var hero = cv.closest('.hero');
+  var ctx = cv.getContext('2d');
+  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var small = window.innerWidth < 760;
+  var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+  var W = 1, H = 1, t = 0, raf = null, vis = true;
+  var PAL = [[255, 43, 214], [124, 107, 255], [59, 130, 246], [56, 189, 248], [45, 212, 191]];
+  function colAt(u) {
+    var f = Math.min(0.999, Math.max(0, u)) * (PAL.length - 1);
+    var i = Math.floor(f), k = f - i, a = PAL[i], b = PAL[i + 1];
+    return [Math.round(a[0] + (b[0] - a[0]) * k), Math.round(a[1] + (b[1] - a[1]) * k), Math.round(a[2] + (b[2] - a[2]) * k)];
+  }
+  function size() {
+    var r = cv.parentElement.getBoundingClientRect();
+    W = Math.max(1, r.width); H = Math.max(1, r.height);
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function waveY(u, tt) {
+    return H * 0.52 + Math.sin(u * Math.PI * 2.1 + tt * 0.55) * H * 0.16 + Math.sin(u * 5 - tt * 0.9) * H * 0.05;
+  }
+  function disc(x, y, rx, ry, c, alpha) {
+    var g = ctx.createRadialGradient(x, y, 0, x, y, rx * 2);
+    g.addColorStop(0, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + (0.32 * alpha) + ')');
+    g.addColorStop(1, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0)');
+    ctx.fillStyle = g;
+    ctx.beginPath(); ctx.arc(x, y, rx * 2, 0, 6.2832); ctx.fill();
+    var lg = ctx.createLinearGradient(x, y - ry, x, y + ry);
+    lg.addColorStop(0, 'rgba(255,255,255,' + (0.85 * alpha) + ')');
+    lg.addColorStop(0.28, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + (0.95 * alpha) + ')');
+    lg.addColorStop(1, 'rgba(' + Math.round(c[0] * 0.25) + ',' + Math.round(c[1] * 0.25) + ',' + Math.round(c[2] * 0.4) + ',' + (0.9 * alpha) + ')');
+    ctx.fillStyle = lg;
+    ctx.beginPath(); ctx.ellipse(x, y, rx, ry, 0, 0, 6.2832); ctx.fill();
+    ctx.strokeStyle = 'rgba(255,255,255,' + (0.5 * alpha) + ')';
+    ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.ellipse(x, y, rx, ry, 0, 0, 6.2832); ctx.stroke();
+  }
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    var n = Math.max(22, Math.min(64, Math.round(W / 24)));
+    var floor = H * 0.88;
+    var i, u, x, y, e, s, c;
+    for (i = 0; i < n; i++) {
+      u = i / (n - 1); x = u * W; y = waveY(u, t);
+      e = Math.pow(Math.abs(u - 0.5) * 2, 1.15);
+      s = (H * 0.07 + e * H * 0.08) * (small ? 0.8 : 1);
+      c = colAt(u);
+      disc(x, floor + (floor - y) * 0.5, s * 0.5, s * 1.85, c, 0.15);
+    }
+    var fg = ctx.createLinearGradient(0, floor - 34, 0, floor + 30);
+    fg.addColorStop(0, 'rgba(124,107,255,0)');
+    fg.addColorStop(0.5, 'rgba(124,107,255,0.18)');
+    fg.addColorStop(1, 'rgba(45,212,191,0)');
+    ctx.fillStyle = fg; ctx.fillRect(0, floor - 34, W, 64);
+    for (i = 0; i < n; i++) {
+      u = i / (n - 1); x = u * W; y = waveY(u, t);
+      e = Math.pow(Math.abs(u - 0.5) * 2, 1.15);
+      s = (H * 0.07 + e * H * 0.08) * (small ? 0.8 : 1);
+      c = colAt(u);
+      disc(x, y, s * 0.5, s * 1.85, c, 1);
+    }
+  }
+  function loop() {
+    raf = null;
+    if (!vis || document.hidden) return;
+    t += 0.016;
+    draw();
+    raf = requestAnimationFrame(loop);
+  }
+  function start() { if (raf === null && !rm) raf = requestAnimationFrame(loop); }
+  function stop() { if (raf !== null) { cancelAnimationFrame(raf); raf = null; } }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (en) { vis = en[0].isIntersecting; if (vis) start(); else stop(); }).observe(hero || cv);
+  }
+  document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
+  window.addEventListener('resize', function () { small = window.innerWidth < 760; size(); if (rm) draw(); });
+  size();
+  if (rm) { t = 2.4; draw(); } else { draw(); start(); }
 })();
 </script>
 </body>
