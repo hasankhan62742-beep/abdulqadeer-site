@@ -779,6 +779,17 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
 .page-hero h1{animation-delay:.16s}
 .page-hero p{animation-delay:.32s}
 @media (prefers-reduced-motion: reduce){.page-hero .eyebrow,.page-hero h1,.page-hero p{animation:none}}
+/* ===== Message bubbles band (contact, above footer) ===== */
+.msg-band{position:relative;height:clamp(150px,22vw,210px);overflow:hidden;background:radial-gradient(60% 90% at 50% 120%,rgba(45,212,191,.10),transparent 70%),#04050D}
+.msg-bubble{position:absolute;left:var(--x);bottom:-70px;width:var(--size);height:var(--size);display:flex;align-items:center;justify-content:center;gap:4px;border-radius:50% 50% 50% 10px;background:rgba(45,212,191,.12);border:1px solid rgba(45,212,191,.35);box-shadow:0 0 22px rgba(45,212,191,.22);animation:bubbleRise var(--dur) linear var(--delay) infinite;will-change:transform,opacity}
+.msg-bubble i{width:5px;height:5px;border-radius:50%;background:#2DD4BF;animation:dotPulse 1.2s ease-in-out infinite}
+.msg-bubble i:nth-child(2){animation-delay:.18s;background:#38BDF8}
+.msg-bubble i:nth-child(3){animation-delay:.36s;background:#7C6BFF}
+@keyframes bubbleRise{0%{transform:translate(-50%,0);opacity:0}8%{opacity:.9}80%{opacity:.9}100%{transform:translate(calc(-50% + var(--sway,0px)),-260px);opacity:0}}
+@keyframes dotPulse{0%,100%{transform:scale(1);opacity:.55}50%{transform:scale(1.35);opacity:1}}
+.msg-band.is-paused .msg-bubble,.msg-band.is-paused .msg-bubble i{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){.msg-bubble,.msg-bubble i{animation:none}.msg-bubble{bottom:50%;transform:translate(-50%,50%);opacity:.7}}
+
 </style>
   
 </head>
@@ -829,6 +840,18 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         </div>
       </div>
     </section>
+<section class="msg-band" aria-hidden="true">
+  <span class="msg-bubble" style="--x:5%;--size:46px;--dur:14s;--delay:-3s;--sway:12px"><i></i><i></i><i></i></span>
+  <span class="msg-bubble" style="--x:14%;--size:32px;--dur:11s;--delay:-8s;--sway:-10px"><i></i><i></i><i></i></span>
+  <span class="msg-bubble" style="--x:24%;--size:54px;--dur:16s;--delay:-1s;--sway:14px"><i></i><i></i><i></i></span>
+  <span class="msg-bubble" style="--x:35%;--size:38px;--dur:12s;--delay:-6s;--sway:-12px"><i></i><i></i><i></i></span>
+  <span class="msg-bubble" style="--x:46%;--size:58px;--dur:17s;--delay:-11s;--sway:10px"><i></i><i></i><i></i></span>
+  <span class="msg-bubble" style="--x:57%;--size:34px;--dur:10s;--delay:-5s;--sway:-14px"><i></i><i></i><i></i></span>
+  <span class="msg-bubble" style="--x:66%;--size:48px;--dur:15s;--delay:-13s;--sway:12px"><i></i><i></i><i></i></span>
+  <span class="msg-bubble" style="--x:76%;--size:30px;--dur:11s;--delay:-2s;--sway:-8px"><i></i><i></i><i></i></span>
+  <span class="msg-bubble" style="--x:85%;--size:52px;--dur:16s;--delay:-9s;--sway:14px"><i></i><i></i><i></i></span>
+  <span class="msg-bubble" style="--x:94%;--size:36px;--dur:12s;--delay:-7s;--sway:-12px"><i></i><i></i><i></i></span>
+</section>
   </main>
   <footer>
     <div class="wrap">
@@ -1438,5 +1461,21 @@ for(i=0;i<N;i++)P.push({x:Math.random(),y:Math.random(),r:.5+Math.random()*1.4,s
 function f(t){x.clearRect(0,0,W,H);for(i=0;i<N;i++){var p=P[i];if(!rm){p.y-=p.s;p.x+=Math.sin(t*.0004+p.p)*.00008;if(p.y<0)p.y=1;}x.fillStyle='rgba('+p.c+','+(.3+.25*Math.sin(t*.002+p.p))+')';x.beginPath();x.arc(p.x*W,p.y*H,p.r,0,6.3);x.fill();}if(!rm)requestAnimationFrame(f);}
 requestAnimationFrame(f);})();
 </script>
+
+<script>
+(function(){
+  'use strict';
+  var band = document.querySelector('.msg-band');
+  if(!band) return;
+  var inView = false, tabVisible = !document.hidden;
+  function update(){ band.classList.toggle('is-paused', !(inView && tabVisible)); }
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){ inView = entries[0].isIntersecting; update(); }, { rootMargin: '60px' }).observe(band);
+  } else { inView = true; }
+  document.addEventListener('visibilitychange', function(){ tabVisible = !document.hidden; update(); });
+  update();
+})();
+</script>
+
 </body>
 </html>
