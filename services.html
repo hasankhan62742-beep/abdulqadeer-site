@@ -779,11 +779,11 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
 .page-hero h1{animation-delay:.16s}
 .page-hero p{animation-delay:.32s}
 @media (prefers-reduced-motion: reduce){.page-hero .eyebrow,.page-hero h1,.page-hero p{animation:none}}
-/* ===== Services wheel (closing visual) ===== */
-.svc-wheel-sec{padding:clamp(64px,9vw,110px) 0 clamp(72px,10vw,120px);text-align:center;overflow:hidden}
-.svc-wheel-sec .sec-label{justify-content:center}
-.svc-wheel-sec .sec-title{margin:14px auto 0}
-.svc-wheel-sec .sec-lede{margin:16px auto 0}
+/* ===== Services wheel (hero visual) ===== */
+.page-hero .hero-ctas{justify-content:flex-start;margin-top:28px;animation:heroRise .9s cubic-bezier(.22,.8,.3,1) backwards;animation-delay:.45s}
+.page-hero .hero-wheel-note{font-size:.92rem;color:rgba(235,245,255,.62);margin-top:clamp(28px,4vw,40px);animation:heroRise .9s cubic-bezier(.22,.8,.3,1) backwards;animation-delay:.55s}
+.page-hero .svc-wheel{animation:heroRise .9s cubic-bezier(.22,.8,.3,1) backwards;animation-delay:.6s}
+@media (prefers-reduced-motion: reduce){.page-hero .hero-ctas,.page-hero .hero-wheel-note,.page-hero .svc-wheel{animation:none}}
 .svc-wheel{--wheel-size:clamp(320px,86vw,560px);--r-full:calc(var(--wheel-size)*.36);--spin:0deg;--r:var(--r-full);--fade:1;--chip-scale:1;position:relative;width:var(--wheel-size);height:var(--wheel-size);margin:clamp(28px,5vw,48px) auto 0}
 .svc-ring{position:absolute;left:50%;top:50%;border:1px dashed rgba(124,107,255,.22);border-radius:50%;transform:translate(-50%,-50%);pointer-events:none}
 .svc-ring.r1{width:calc(var(--r-full)*2);height:calc(var(--r-full)*2)}
@@ -810,7 +810,20 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
     <a class="btn btn-primary" href="https://calendly.com/abdulqadeerml/30min" target="_blank" rel="noopener">Book a Free Call</a>
   </nav></div></div>
   <main id="main">
-<section class="page-hero on-ink"><div class="wrap"><span class="eyebrow">SERVICES</span><h1>AI systems that <span class="accent">remove busywork.</span></h1><p>Automation, chatbots, dashboards and custom software, built around how your business already works.</p></div></section>
+<section class="page-hero on-ink"><div class="wrap"><span class="eyebrow">SERVICES</span><h1>AI systems that <span class="accent">remove busywork.</span></h1><p>Automation, chatbots, dashboards and custom software, built around how your business already works.</p><div class="hero-ctas"><a class="btn btn-primary" href="https://calendly.com/abdulqadeerml/30min" target="_blank" rel="noopener">Book Your Free Strategy Call <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn btn-ghost" href="#services">See all services</a></div><p class="hero-wheel-note">Nine ways to take busywork off your team&rsquo;s plate &mdash; pick one and see how it works.</p>    <div class="svc-wheel" id="svc-wheel" aria-label="All nine services orbiting one hub">
+      <div class="svc-ring r1" aria-hidden="true"></div>
+      <div class="svc-ring r2" aria-hidden="true"></div>
+      <div class="svc-hub" aria-hidden="true"><svg viewBox="0 0 120 120" aria-hidden="true"><g stroke-linecap="round"><g stroke="rgba(45,212,191,.55)" stroke-width="1.2"><line x1="60" y1="60" x2="60" y2="24"/><line x1="60" y1="60" x2="91" y2="42"/><line x1="60" y1="60" x2="91" y2="78"/><line x1="60" y1="60" x2="60" y2="96"/><line x1="60" y1="60" x2="29" y2="78"/><line x1="60" y1="60" x2="29" y2="42"/></g><g stroke="rgba(124,107,255,.4)" stroke-width="1"><polygon points="60,24 91,42 91,78 60,96 29,78 29,42" fill="none"/></g><g><circle cx="60" cy="60" r="7" fill="#2DD4BF"/><circle cx="60" cy="24" r="4" fill="#38BDF8"/><circle cx="91" cy="42" r="4" fill="#7C6BFF"/><circle cx="91" cy="78" r="4" fill="#F472B6"/><circle cx="60" cy="96" r="4" fill="#2DD4BF"/><circle cx="29" cy="78" r="4" fill="#38BDF8"/><circle cx="29" cy="42" r="4" fill="#F472B6"/></g></g></svg></div>
+      <a class="svc-chip" style="--a0:0deg" href="/services/business-automation/">Business Automation</a>
+      <a class="svc-chip" style="--a0:40deg" href="/services/ai-chatbot-development/">AI Chatbots</a>
+      <a class="svc-chip" style="--a0:80deg" href="/services/predictive-analytics/">Predictive Analytics</a>
+      <a class="svc-chip" style="--a0:120deg" href="/services/ai-machine-learning/">AI &amp; Machine Learning</a>
+      <a class="svc-chip" style="--a0:160deg" href="/services/dashboards-business-intelligence/">Dashboards &amp; BI</a>
+      <a class="svc-chip" style="--a0:200deg" href="/services/web-application-development/">Web Apps</a>
+      <a class="svc-chip" style="--a0:240deg" href="/services/management-systems/">Management Systems</a>
+      <a class="svc-chip" style="--a0:280deg" href="/services/api-integrations/">API Integrations</a>
+      <a class="svc-chip" style="--a0:320deg" href="/services/ai-marketing/">AI Marketing</a>
+    </div></div></section>
 <section id="services" class="section on-ink" aria-labelledby="services-title">
       <div class="wrap">
         <div class="sec-head">
@@ -842,27 +855,6 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         </div>
       </div>
     </section>
-<section class="svc-wheel-sec on-ink" id="svc-wheel-section" aria-labelledby="svc-wheel-title">
-  <div class="wrap">
-    <div class="sec-label"><span class="num">04</span>ALL SERVICES</div>
-    <h2 class="sec-title" id="svc-wheel-title">Every service, <span class="accent">one orbit.</span></h2>
-    <p class="sec-lede">Nine ways to take busywork off your team&rsquo;s plate &mdash; pick one and see how it works.</p>
-    <div class="svc-wheel" id="svc-wheel" aria-label="All nine services orbiting one hub">
-      <div class="svc-ring r1" aria-hidden="true"></div>
-      <div class="svc-ring r2" aria-hidden="true"></div>
-      <div class="svc-hub" aria-hidden="true"><svg viewBox="0 0 120 120" aria-hidden="true"><g stroke-linecap="round"><g stroke="rgba(45,212,191,.55)" stroke-width="1.2"><line x1="60" y1="60" x2="60" y2="24"/><line x1="60" y1="60" x2="91" y2="42"/><line x1="60" y1="60" x2="91" y2="78"/><line x1="60" y1="60" x2="60" y2="96"/><line x1="60" y1="60" x2="29" y2="78"/><line x1="60" y1="60" x2="29" y2="42"/></g><g stroke="rgba(124,107,255,.4)" stroke-width="1"><polygon points="60,24 91,42 91,78 60,96 29,78 29,42" fill="none"/></g><g><circle cx="60" cy="60" r="7" fill="#2DD4BF"/><circle cx="60" cy="24" r="4" fill="#38BDF8"/><circle cx="91" cy="42" r="4" fill="#7C6BFF"/><circle cx="91" cy="78" r="4" fill="#F472B6"/><circle cx="60" cy="96" r="4" fill="#2DD4BF"/><circle cx="29" cy="78" r="4" fill="#38BDF8"/><circle cx="29" cy="42" r="4" fill="#F472B6"/></g></g></svg></div>
-      <a class="svc-chip" style="--a0:0deg" href="/services/business-automation/">Business Automation</a>
-      <a class="svc-chip" style="--a0:40deg" href="/services/ai-chatbot-development/">AI Chatbots</a>
-      <a class="svc-chip" style="--a0:80deg" href="/services/predictive-analytics/">Predictive Analytics</a>
-      <a class="svc-chip" style="--a0:120deg" href="/services/ai-machine-learning/">AI &amp; Machine Learning</a>
-      <a class="svc-chip" style="--a0:160deg" href="/services/dashboards-business-intelligence/">Dashboards &amp; BI</a>
-      <a class="svc-chip" style="--a0:200deg" href="/services/web-application-development/">Web Apps</a>
-      <a class="svc-chip" style="--a0:240deg" href="/services/management-systems/">Management Systems</a>
-      <a class="svc-chip" style="--a0:280deg" href="/services/api-integrations/">API Integrations</a>
-      <a class="svc-chip" style="--a0:320deg" href="/services/ai-marketing/">AI Marketing</a>
-    </div>
-  </div>
-</section>
   </main>
   <footer>
     <div class="wrap">
