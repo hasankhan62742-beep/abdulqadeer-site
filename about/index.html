@@ -241,9 +241,10 @@
     .mobile-cta { display: none; }
     .toast { position: fixed; left: 50%; bottom: 26px; transform: translate(-50%, 140%);
       background: var(--accent); color: var(--ink); font-weight: 700; padding: 13px 22px;
-      border-radius: 999px; z-index: 95; transition: transform .3s ease; box-shadow: var(--shadow);
+      border-radius: 999px; z-index: 95; visibility: hidden; transition: transform .3s ease; box-shadow: var(--shadow);
       max-width: calc(100vw - 40px); text-align: center; }
-    .toast.show { transform: translate(-50%, 0); }
+    .toast:empty { display: none; }
+    .toast.show { transform: translate(-50%, 0); visibility: visible; }
 
     /* ---------- CHAT ---------- */
     .chat-fab { position: fixed; right: 24px; bottom: 24px; z-index: 85; width: 60px; height: 60px;
@@ -986,7 +987,7 @@ nav{position:relative;background:transparent;border:0;padding:0;min-height:60px;
         toast.textContent = message;
         toast.classList.add('show');
         clearTimeout(toastTimer);
-        toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 2600);
+        toastTimer = setTimeout(function () { toast.classList.remove('show'); toast.textContent = ''; }, 2600);
       }
       document.querySelectorAll('.copy-email').forEach(function (btn) {
         btn.addEventListener('click', function () {
