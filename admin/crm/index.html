@@ -67,6 +67,13 @@
   .drawer .row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
   .drawer-actions { display:flex; gap:10px; margin-top:18px; flex-wrap:wrap; }
   .meta { font-size:.8rem; color:var(--muted); }
+  .fu-overdue { color:#f87171; font-weight:700; }
+  .fu-today { color:#fbbf24; font-weight:600; }
+  a.btn { text-decoration:none; display:inline-block; }
+  /* toast */
+  .toast { position:fixed; left:50%; bottom:26px; transform:translate(-50%,140%); background:var(--accent); color:#031018; padding:10px 20px; border-radius:999px; font-weight:600; z-index:95; transition:transform .3s ease, visibility .3s; visibility:hidden; }
+  .toast.show { transform:translate(-50%,0); visibility:visible; }
+  .toast:empty { display:none; }
   @media (max-width:640px){ th:nth-child(4),td:nth-child(4),th:nth-child(6),td:nth-child(6){display:none;} }
 </style>
 </head>
@@ -105,6 +112,10 @@
       <select id="f-status" aria-label="Filter by status">
         <option value="">All statuses</option><option value="new">New</option><option value="contacted">Contacted</option>
         <option value="qualified">Qualified</option><option value="proposal">Proposal sent</option><option value="won">Won</option><option value="lost">Lost</option>
+      </select>
+      <select id="f-sort" aria-label="Sort leads">
+        <option value="newest">Newest first</option><option value="oldest">Oldest first</option>
+        <option value="followup">Follow-up date</option><option value="name">Name A–Z</option>
       </select>
       <button class="btn btn-lime" id="add-btn">+ Add lead</button>
       <button class="btn btn-ghost" id="export-btn">Export CSV</button>
@@ -146,12 +157,16 @@
     <p class="meta" id="d-meta"></p>
     <div class="drawer-actions">
       <button class="btn btn-lime" type="submit">Save</button>
+      <a class="btn btn-ghost hidden" id="d-wa" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-ghost hidden" id="d-mail">Email</a>
       <button class="btn btn-ghost" type="button" id="d-close">Close</button>
       <button class="btn btn-danger hidden" type="button" id="d-delete">Delete lead</button>
     </div>
     <div class="err" id="d-err" role="alert"></div>
   </form>
 </aside>
+
+<div class="toast" id="crm-toast" role="status" aria-live="polite"></div>
 
 <script src="config.js"></script>
 <script src="/vendor/supabase.js" defer></script>
@@ -170,6 +185,15 @@ window.addEventListener('DOMContentLoaded', function () {
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]; }); }
   function fmtDate(d) { return d ? new Date(d).toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' }) : '—'; }
+  function waUrl(phone) { var d = String(phone || '').replace(/\D/g, ''); if (d.charAt(0) === '0') d = '92' + d.slice(1); return 'https://wa.me/' + d; }
+  function fuCell(l, today) {
+    if (!l.next_follow_up) return '<td>—</td>';
+    if (l.status !== 'won' && l.status !== 'lost' && l.next_follow_up < today) return '<td class="fu-overdue">' + fmtDate(l.next_follow_up) + ' · overdue</td>';
+    if (l.status !== 'won' && l.status !== 'lost' && l.next_follow_up === today) return '<td class="fu-today">' + fmtDate(l.next_follow_up) + ' · due today</td>';
+    return '<td>' + fmtDate(l.next_follow_up) + '</td>';
+  }
+  var toastTimer = null;
+  function showToast(msg) { var t = $('crm-toast'); t.textContent = msg; t.classList.add('show'); if (toastTimer) clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.classList.remove('show'); t.textContent = ''; }, 2500); }
 
   function show(view) {
     $('login-view').classList.toggle('hidden', view !== 'login');
@@ -205,15 +229,30 @@ window.addEventListener('DOMContentLoaded', function () {
       return [l.name, l.email, l.company, l.service].some(function (v) { return v && v.toLowerCase().indexOf(q) > -1; });
     });
   }
+  function sorted() {
+    var rows = filtered(), mode = $('f-sort').value;
+    rows.sort(function (a, b) {
+      if (mode === 'oldest') return new Date(a.created_at) - new Date(b.created_at);
+      if (mode === 'name') return String(a.name || '').localeCompare(String(b.name || ''));
+      if (mode === 'followup') {
+        if (!a.next_follow_up && !b.next_follow_up) return 0;
+        if (!a.next_follow_up) return 1; if (!b.next_follow_up) return -1;
+        return a.next_follow_up < b.next_follow_up ? -1 : (a.next_follow_up > b.next_follow_up ? 1 : 0);
+      }
+      return new Date(b.created_at) - new Date(a.created_at);
+    });
+    return rows;
+  }
   function render() {
     var today = new Date().toISOString().slice(0, 10);
     var due = leads.filter(function (l) { return l.next_follow_up && l.next_follow_up <= today && l.status !== 'won' && l.status !== 'lost'; }).length;
     var count = function (s) { return leads.filter(function (l) { return l.status === s; }).length; };
+    var wonN = count('won'), lostN = count('lost'), winRate = (wonN + lostN) ? Math.round(wonN / (wonN + lostN) * 100) + '%' : '—';
     $('stats').innerHTML = [
       ['Total leads', leads.length], ['New', count('new')], ['Qualified', count('qualified')],
-      ['Proposals sent', count('proposal')], ['Won', count('won')], ['Follow-ups due', due]
+      ['Proposals sent', count('proposal')], ['Won', count('won')], ['Follow-ups due', due], ['Win rate', winRate]
     ].map(function (s) { return '<div class="stat"><b>' + s[1] + '</b><span>' + s[0] + '</span></div>'; }).join('');
-    var rows = filtered();
+    var rows = sorted();
     if (!rows.length) { $('table-zone').innerHTML = '<div class="empty">No leads match. New website inquiries will appear here automatically.</div>'; return; }
     $('table-zone').innerHTML = '<table><thead><tr><th>Name</th><th>Service</th><th>Status</th><th>Priority</th><th>Received</th><th>Follow-up</th></tr></thead><tbody>' +
       rows.map(function (l) {
@@ -221,7 +260,7 @@ window.addEventListener('DOMContentLoaded', function () {
           '<td>' + esc(l.service || '—') + '</td>' +
           '<td><span class="pill st-' + l.status + '">' + STATUSES[l.status] + '</span></td>' +
           '<td class="' + (l.priority === 'high' ? 'pr-high' : '') + '">' + esc(l.priority) + '</td>' +
-          '<td>' + fmtDate(l.created_at) + '</td><td>' + (l.next_follow_up ? fmtDate(l.next_follow_up) : '—') + '</td></tr>';
+          '<td>' + fmtDate(l.created_at) + '</td>' + fuCell(l, today) + '</tr>';
       }).join('') + '</tbody></table>';
     Array.prototype.forEach.call($('table-zone').querySelectorAll('tbody tr'), function (tr) {
       tr.addEventListener('click', function () { openDrawer(tr.getAttribute('data-id')); });
@@ -229,6 +268,7 @@ window.addEventListener('DOMContentLoaded', function () {
   }
   $('q').addEventListener('input', render);
   $('f-status').addEventListener('change', render);
+  $('f-sort').addEventListener('change', render);
 
   /* ---------- drawer ---------- */
   function openDrawer(id) {
@@ -243,6 +283,10 @@ window.addEventListener('DOMContentLoaded', function () {
     $('d-notes').value = l ? (l.notes || '') : '';
     $('d-meta').textContent = l ? ('Source: ' + (l.source || 'website') + ' · Received ' + fmtDate(l.created_at) + ' · ID ' + l.id.slice(0, 8)) : '';
     $('d-delete').classList.toggle('hidden', !l); $('d-err').textContent = '';
+    $('d-wa').classList.toggle('hidden', !(l && l.phone));
+    $('d-mail').classList.toggle('hidden', !(l && l.email));
+    if (l && l.phone) $('d-wa').href = waUrl(l.phone);
+    if (l && l.email) $('d-mail').href = 'mailto:' + l.email;
     $('drawer-bg').classList.remove('hidden'); $('drawer').classList.remove('hidden');
   }
   function closeDrawer() { $('drawer-bg').classList.add('hidden'); $('drawer').classList.add('hidden'); }
@@ -257,13 +301,13 @@ window.addEventListener('DOMContentLoaded', function () {
       status: $('d-status').value, priority: $('d-priority').value,
       last_contact: $('d-last').value || null, next_follow_up: $('d-next').value || null, notes: $('d-notes').value.trim() || null };
     var req = editingId ? sb.from('leads').update(payload).eq('id', editingId) : sb.from('leads').insert(Object.assign({ source: 'manual' }, payload));
-    req.then(function (r) { if (r.error) { $('d-err').textContent = r.error.message; } else { closeDrawer(); loadLeads(); } });
+    req.then(function (r) { if (r.error) { $('d-err').textContent = r.error.message; } else { closeDrawer(); loadLeads(); showToast('Lead saved'); } });
   });
   $('d-delete').addEventListener('click', function () {
     if (!editingId) return;
     if (!window.confirm('Delete this lead permanently? This cannot be undone.')) return;
     sb.from('leads').delete().eq('id', editingId).then(function (r) {
-      if (r.error) { $('d-err').textContent = r.error.message; } else { closeDrawer(); loadLeads(); }
+      if (r.error) { $('d-err').textContent = r.error.message; } else { closeDrawer(); loadLeads(); showToast('Lead deleted'); }
     });
   });
 
