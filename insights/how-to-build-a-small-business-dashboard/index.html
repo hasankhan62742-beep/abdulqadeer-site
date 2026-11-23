@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJ9JDFQB1H"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YJ9JDFQB1H');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="A small business dashboard is one screen with the five to ten numbers that tell you whether your business is healthy. Here is how to build one in a spreadsheet — and keep it alive with a five-minute morning habit." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Abdul Qadeer" />
+  <meta name="theme-color" content="#070707" />
+  <link rel="canonical" href="https://abdulqadeerml.com/insights/how-to-build-a-small-business-dashboard/" />
+  <meta property="og:title" content="How to Build a Small Business Dashboard — Qadeer Automations" />
+  <meta property="og:description" content="A small business dashboard is one screen with the five to ten numbers that tell you whether your business is healthy. Here is how to build one in a spreadsheet — and keep it alive with a five-minute morning habit." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://abdulqadeerml.com/insights/how-to-build-a-small-business-dashboard/" />
+  <meta property="og:site_name" content="Qadeer Automations" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://abdulqadeerml.com/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Build a Small Business Dashboard — Qadeer Automations" />
+  <meta name="twitter:description" content="A small business dashboard is one screen with the five to ten numbers that tell you whether your business is healthy. Here is how to build one in a spreadsheet — and keep it alive with a five-minute morning habit." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <title>How to Build a Small Business Dashboard</title>
+  <link rel="preload" href="/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/SpaceGrotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How to Build a Small Business Dashboard",
+      "description": "A small business dashboard is one screen with the five to ten numbers that tell you whether your business is healthy. Here is how to build one in a spreadsheet — and keep it alive with a five-minute morning habit.",
+      "author": { "@type": "Person", "name": "Abdul Qadeer", "url": "https://abdulqadeerml.com/about/", "jobTitle": "Founder, Qadeer Automations" },
+      "publisher": { "@type": "Organization", "name": "Qadeer Automations" },
+      "image": "https://abdulqadeerml.com/og-image.jpg",
+      "datePublished": "2026-11-23",
+      "dateModified": "2026-11-23",
+      "mainEntityOfPage": "https://abdulqadeerml.com/insights/how-to-build-a-small-business-dashboard/"
+    }
+  </script>
+  <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+                "@type": "Question",
+                "name": "What should be on a small business dashboard?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Five to ten numbers across four areas: money coming in, money owed, new work, and customers. Cash on hand, revenue against target, overdue invoices, new enquiries, unanswered leads, jobs booked, and repeat customers cover most businesses. Add a number only if a bad reading tells you what to do about it."
+                }
+        },
+        {
+                "@type": "Question",
+                "name": "How much does it cost to build a small business dashboard?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Nothing to start. A Google Sheet and a few formulas are enough for the first version, and Google's Looker Studio is free if you want charts that update themselves. Paid tools like Power BI start at around $14 per user per month, according to Microsoft \u2014 worth it only once your numbers are stable and you want them pulled in automatically."
+                }
+        },
+        {
+                "@type": "Question",
+                "name": "How often should I update my dashboard?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Daily for cash, sales, and unanswered leads; weekly for pipeline and close rate; monthly for margins and customer costs. The rule is simple: check a number as often as it can change your decision. A number that only moves once a month doesn't need a daily look."
+                }
+        },
+        {
+                "@type": "Question",
+                "name": "Do I need special software to build a dashboard?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No. Start with a spreadsheet \u2014 it is the fastest way to learn which numbers actually matter to you. Move to a dashboard tool only when the spreadsheet version is working and you want the numbers to refresh themselves. The tool never fixes a dashboard that tracks the wrong numbers."
+                }
+        }
+]
+    }
+  </script>
+  <style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/Inter-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/Inter-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 700;font-display:swap;src:url(/fonts/SpaceGrotesk-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 700;font-display:swap;src:url(/fonts/SpaceGrotesk-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+    :root {
+      --ivory: #F4F8FF; --ink: #000000; --ink-2: #050505;
+      --lime: #2DD4BF; --accent: #2DD4BF; --accent-deep: #0F9F8F; --on-ink: #F4F8FF;
+      --muted-dark: rgba(226,236,255,.64); --line-dark: rgba(226,236,255,.14);
+      --g1: linear-gradient(100deg,#2DD4BF,#22D3EE); --gt: linear-gradient(92deg,#FF2BD6 0%,#7C6BFF 34%,#38BDF8 68%,#2DD4BF 100%);
+      --font-d: "Space Grotesk", "Avenir Next", system-ui, sans-serif; --font-b: "Inter", "Segoe UI", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--ink); color: var(--on-ink); font-family: var(--font-b); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--lime); color: var(--ink); }
+    .wrap { width: min(1080px, calc(100% - 48px)); margin: 0 auto; }
+    .nav-shell { position: sticky; top: 0; z-index: 80; background: rgba(0,0,0,.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line-dark); }
+    nav { display: flex; align-items: center; gap: 26px; min-height: 70px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto; color: var(--on-ink); }
+    .brand-mark { width: 38px; height: 38px; border-radius: 50%; background: linear-gradient(135deg,#2DD4BF,#2563EB); color: #031018; display: flex; align-items: center; justify-content: center; font-family: var(--font-d); font-weight: 700; font-size: 1.05rem; letter-spacing: -.02em; }
+    .brand-name { font-family: var(--font-d); font-weight: 600; }
+    .brand-name small { display: block; font-size: .66rem; letter-spacing: .14em; color: var(--muted-dark); font-family: var(--font-b); font-weight: 500; }
+    .nav-link { position: relative; color: var(--muted-dark); text-decoration: none; font-size: .88rem; font-weight: 600; padding: 8px 0; }
+    .nav-link:hover { color: var(--on-ink); }
+    .nav-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: 2px; height: 2px; background: var(--accent); transform: scaleX(0); transform-origin: 0 50%; transition: transform .25s ease; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .btn { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 13px 26px; border-radius: 999px; font-weight: 700; font-size: .95rem; text-decoration: none; border: 0; cursor: pointer; transition: transform .2s ease, box-shadow .25s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-lime { background: var(--g1); color: #031018; }
+    .btn-lime:hover { box-shadow: 0 14px 34px rgba(45,212,191,.28); }
+    .btn-ghost { background: transparent; color: var(--on-ink); border: 1px solid var(--line-dark); }
+    .crumbs { padding: 26px 0 0; font-size: .82rem; color: var(--muted-dark); }
+    .crumbs a { color: var(--muted-dark); text-decoration: none; }
+    .crumbs a:hover { color: var(--lime); }
+    .hero { padding: 70px 0 80px; position: relative; overflow: hidden; }
+    .hero::before { content: ""; position: absolute; width: 560px; height: 560px; right: -140px; top: -180px; background: radial-gradient(circle, rgba(45,212,191,.09), transparent 62%); pointer-events: none; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px; font-size: .76rem; font-weight: 700; letter-spacing: .16em; color: var(--lime); }
+    .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--lime); }
+    h1 { font-family: var(--font-d); font-size: clamp(2.4rem, 5.4vw, 4.4rem); line-height: 1.06; letter-spacing: -.02em; margin: 0; max-width: 16ch; }
+    h1 .accent { background: var(--gt); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+    .lede { max-width: 56ch; color: var(--muted-dark); font-size: 1.1rem; margin: 24px 0 0; }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    h2 { font-family: var(--font-d); font-size: clamp(1.6rem, 3vw, 2.3rem); letter-spacing: -.02em; margin: 0 0 18px; }
+    h2 .accent { background: var(--gt); -webkit-background-clip: text; background-clip: text; color: transparent; -webkit-text-fill-color: transparent; }
+    section.block { padding: 64px 0; border-top: 1px solid var(--line-dark); }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-top: 30px; }
+    .card { border: 1px solid var(--line-dark); border-radius: 14px; padding: 28px; background: var(--ink-2); transition: border-color .25s ease, transform .25s ease; }
+    .card:hover { border-color: rgba(45,212,191,.45); transform: translateY(-3px); }
+    .card h3 { font-family: var(--font-d); margin: 0 0 10px; font-size: 1.15rem; }
+    .card h3 .n { color: var(--lime); margin-right: 10px; }
+    .card p { margin: 0; color: var(--muted-dark); font-size: .96rem; }
+    .steps { counter-reset: step; margin-top: 30px; display: grid; gap: 0; }
+    .step { display: grid; grid-template-columns: 64px 1fr; gap: 20px; padding: 26px 0; border-bottom: 1px solid var(--line-dark); }
+    .step:first-child { border-top: 1px solid var(--line-dark); }
+    .step .num { width: 52px; height: 52px; border-radius: 50%; border: 1px solid rgba(45,212,191,.5); color: var(--lime); display: flex; align-items: center; justify-content: center; font-family: var(--font-d); font-weight: 700; font-size: 1.1rem; }
+    .step h3 { margin: 0 0 8px; font-family: var(--font-d); }
+    .step p { margin: 0; color: var(--muted-dark); max-width: 62ch; }
+    .faq-item { border-bottom: 1px solid var(--line-dark); }
+    .faq-item:first-of-type { border-top: 1px solid var(--line-dark); }
+    .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 20px; background: none; border: 0; color: var(--on-ink); font-family: var(--font-d); font-size: 1.05rem; font-weight: 600; text-align: left; padding: 22px 0; cursor: pointer; }
+    .faq-q .fx { flex: none; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line-dark); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; transition: transform .25s ease, background .25s ease; }
+    .faq-item.open .fx { background: var(--lime); color: var(--ink); border-color: var(--lime); transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
+    .faq-a p { margin: 0; padding: 0 0 26px; color: var(--muted-dark); max-width: 64ch; }
+    .cta-band { border: 1px solid rgba(45,212,191,.35); border-radius: 18px; padding: 54px 40px; text-align: center; background: linear-gradient(180deg, rgba(45,212,191,.06), transparent); margin: 64px 0 80px; }
+    .cta-band p { color: var(--muted-dark); max-width: 52ch; margin: 14px auto 28px; }
+    footer { background: #050505; border-top: 1px solid var(--line-dark); padding: 34px 0 44px; color: var(--muted-dark); font-size: .86rem; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+    footer a { color: var(--muted-dark); text-decoration: none; margin-left: 18px; }
+    footer a:hover { color: var(--lime); }
+    @media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } .nav-link { display: none; } .step { grid-template-columns: 48px 1fr; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
+  </style>
+  <style>
+    /* TEAL IDENTITY 2026-11-22 — unified with main pages (teal→blue/cyan on black); indigo/cyan only inside data visualizations */
+    ::selection { background: rgba(45,212,191,.4); }
+    .btn-primary { background: var(--g1); color: #031018; border: none; }
+    .hero { background:
+      radial-gradient(900px 480px at 85% 0%, rgba(45,212,191,.10), transparent 60%),
+      radial-gradient(820px 480px at 0% 105%, rgba(14,159,110,.09), transparent 60%),
+      linear-gradient(180deg, #000000, #050505); }
+    .tag:hover { border-color: rgba(45,212,191,.55); }
+  </style>
+</head>
+<body>
+  <div class="nav-shell">
+    <div class="wrap">
+      <nav aria-label="Primary navigation">
+        <a class="brand" href="/" aria-label="Qadeer Automations — home">
+          <span class="brand-mark">QA</span>
+          <span class="brand-name">Qadeer Automations<small>AI AUTOMATION AGENCY</small></span>
+        </a>
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/#services">Services</a>
+        <a class="nav-link" href="/#process">Process</a>
+        <a class="nav-link" href="/#industries">Industries</a>
+        <a class="nav-link" href="/#assessment">Assessment</a>
+        
+        
+        <a class="nav-link" href="/#faq">FAQ</a>
+        <a class="nav-link" href="/#contact">Contact</a>
+        <a class="btn btn-lime" href="/#contact">Book a free call</a>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="hero">
+      <div class="wrap">
+        <p class="crumbs"><a href="/">Home</a> → <a href="/insights/">Insights</a> → How to Build a Small Business Dashboard</p>
+        <span class="eyebrow">DASHBOARDS · GUIDE</span>
+        <h1>How to Build a <span class="accent">Small Business Dashboard</span></h1>
+        <p class="lede">A small business dashboard is one screen that shows the handful of numbers that tell you whether your business is healthy — cash in the bank, new leads, jobs booked, and money customers still owe you. You build one by choosing five to ten numbers that answer the questions you already ask every morning, giving each number a source and a target, and putting them somewhere you will actually look. Start in a spreadsheet; you can automate it later.</p>
+        <p class="lede" style="font-size:.9rem">By <a href="/about/">Abdul Qadeer</a> · 23 November 2026 · 6 min read</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+                <h2>Start with the <span class="accent">questions</span>, not the charts</h2>
+        <p style="color:var(--muted-dark);max-width:68ch">Most dashboards are ignored for a reason that has nothing to do with charts. That reason is set before the first chart is drawn: the builder started from the data that was available, not from the decision the screen had to support. The dashboard guides that small businesses actually stick with all say the same thing: start from the questions you ask every morning. Are we on pace to hit this month's revenue target? How many leads are still waiting for a reply? Is there enough cash to cover next week's bills? Write down the two or three questions that matter most to you. Every number on your dashboard has to answer one of them. If a number doesn't answer a question you ask, it doesn't belong on the screen. This one step is what separates a dashboard you check every morning from a wall of charts you stop opening after a week.</p>
+        <h2 style="margin-top:44px">Pick five to ten numbers that <span class="accent">earn their place</span></h2>
+        <p style="color:var(--muted-dark);max-width:68ch">Most guides land on the same range: five to ten metrics. Fewer and you are guessing; more and you stop looking. Spread them across four areas so no part of the business hides. Money in: today's revenue against target, and cash on hand. Money owed: invoices past due, and how much is stuck there. Work coming in: new enquiries in the last 24 hours, unanswered leads, and jobs or orders booked. Customers: how many come back. Pick the numbers that fit your kind of business — a salon watches bookings and no-shows, a shop watches sales and stock, a contractor watches quotes sent and quotes won. For each number, write down three things: where it comes from, what "good" looks like, and what you will do when it goes bad. If a number can't tell you what to do next, it is taking up space that a useful number could have.</p>
+        <h2 style="margin-top:44px">Give every number a home and a <span class="accent">refresh rhythm</span></h2>
+        <p style="color:var(--muted-dark);max-width:68ch">A dashboard doesn't create numbers; it collects them. Your accounting software knows the money, your booking system knows the jobs, your inbox or customer list knows the leads, and your bank knows the cash. For each number on your list, name the one place it comes from. If two systems disagree about the same number, pick one as the truth and stick to it. Then decide how often each number needs refreshing. Cash, sales and unanswered leads change daily, so they get checked daily. Pipeline and close rate make sense weekly. Margins and customer costs only move month to month, so check them monthly. A number that takes an hour to update will quietly stop being updated — so if a number can't be refreshed in seconds, simplify how you measure it.</p>
+        <h2 style="margin-top:44px">Lay it out so the worst number <span class="accent">finds you</span></h2>
+        <p style="color:var(--muted-dark);max-width:68ch">One screen, nothing more. Put the two numbers that decide your day at the top: cash on hand and today's revenue against target. Underneath, group the rest by what they are: leads on one side, work and money owed on the other. Give every number a target and a colour — green when it is on track, yellow when it needs watching, red when it needs action today. You should be able to read the whole screen in under a minute and know exactly where the problem is. If you have to scroll, hunt, or do maths in your head, the layout is wrong. The test is simple: hand it to someone who doesn't run the business and ask them what is going wrong. If they can point to it, the dashboard works.</p>
+        <h2 style="margin-top:44px">Keep it alive with a <span class="accent">five-minute morning habit</span></h2>
+        <p style="color:var(--muted-dark);max-width:68ch">A dashboard that nobody opens is just a report. The habit that keeps it alive takes five minutes. Every morning, open it, find the worst number, and do one thing about it: call the customer who hasn't paid, follow up the lead that went quiet, or move a job to fill an empty slot. Fix the worst number first, and only move on when its trend turns around. Once a month, look at the whole screen and delete any number nobody acted on — if a month passed and nobody used it, it doesn't belong there. Start in a spreadsheet. Google Sheets costs nothing, and Google's Looker Studio is free and connects to Sheets and Google Analytics when you are ready for automatic updates. A dashboard built this way grows with you instead of gathering dust.</p>
+        <h2 style="margin-top:44px">Common <span class="accent">questions</span></h2>
+                <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What should be on a small business dashboard?<span class="fx">+</span></button>
+          <div class="faq-a"><p>Five to ten numbers across four areas: money coming in, money owed, new work, and customers. Cash on hand, revenue against target, overdue invoices, new enquiries, unanswered leads, jobs booked, and repeat customers cover most businesses. Add a number only if a bad reading tells you what to do about it.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How much does it cost to build a small business dashboard?<span class="fx">+</span></button>
+          <div class="faq-a"><p>Nothing to start. A Google Sheet and a few formulas are enough for the first version, and Google's Looker Studio is free if you want charts that update themselves. Paid tools like Power BI start at around $14 per user per month, according to Microsoft — worth it only once your numbers are stable and you want them pulled in automatically.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How often should I update my dashboard?<span class="fx">+</span></button>
+          <div class="faq-a"><p>Daily for cash, sales, and unanswered leads; weekly for pipeline and close rate; monthly for margins and customer costs. The rule is simple: check a number as often as it can change your decision. A number that only moves once a month doesn't need a daily look.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Do I need special software to build a dashboard?<span class="fx">+</span></button>
+          <div class="faq-a"><p>No. Start with a spreadsheet — it is the fastest way to learn which numbers actually matter to you. Move to a dashboard tool only when the spreadsheet version is working and you want the numbers to refresh themselves. The tool never fixes a dashboard that tracks the wrong numbers.</p></div>
+        </div>
+        <h2 style="margin-top:44px">Related <span class="accent">reading</span></h2>
+        <ul style="color:var(--muted-dark);max-width:68ch">
+          <li><a href="/insights/how-to-measure-automation-roi-small-business/">How to Measure Automation ROI for a Small Business</a></li>
+          <li><a href="/insights/how-to-automate-data-entry-small-business/">How to Automate Data Entry for a Small Business</a></li>
+        </ul>
+        <div style="border-top:1px solid var(--line-dark);margin-top:48px;padding-top:28px">
+          <p style="color:var(--muted-dark);font-size:.9rem;margin:0 0 14px">Share this article</p>
+          <div style="display:flex;flex-wrap:wrap;gap:10px">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fabdulqadeerml.com%2Finsights%2Fhow-to-build-a-small-business-dashboard%2F" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:9px 18px;border:1px solid var(--line-dark);border-radius:999px;color:var(--on-ink);text-decoration:none;font-size:.88rem;font-weight:600">Facebook</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fabdulqadeerml.com%2Finsights%2Fhow-to-build-a-small-business-dashboard%2F" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:9px 18px;border:1px solid var(--line-dark);border-radius:999px;color:var(--on-ink);text-decoration:none;font-size:.88rem;font-weight:600">LinkedIn</a>
+            <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fabdulqadeerml.com%2Finsights%2Fhow-to-build-a-small-business-dashboard%2F" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:9px 18px;border:1px solid var(--line-dark);border-radius:999px;color:var(--on-ink);text-decoration:none;font-size:.88rem;font-weight:600">X</a>
+            <a href="https://wa.me/?text=https%3A%2F%2Fabdulqadeerml.com%2Finsights%2Fhow-to-build-a-small-business-dashboard%2F" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;padding:9px 18px;border:1px solid var(--line-dark);border-radius:999px;color:var(--on-ink);text-decoration:none;font-size:.88rem;font-weight:600">WhatsApp</a>
+          </div>
+        </div>
+        <div class="cta-band">
+          <h2>Want your numbers on <span class="accent">one screen</span>?</h2>
+          <p>If your numbers live in five different apps and you are tired of hunting for them, a dashboard that pulls them together is a good next step. Book a free call and we will map out what yours should show.</p>
+          <div class="hero-ctas" style="justify-content:center">
+            <a class="btn btn-lime" href="https://calendly.com/abdulqadeerml/30min" target="_blank" rel="noopener">Book a free 30-min review</a>
+            <a class="btn btn-ghost" href="/services/dashboards-business-intelligence/">Dashboards & business intelligence</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<footer>
+    <div class="wrap">
+      <span>© 2026 Qadeer Automations — AI Automation · Chatbots · Dashboards · Business Systems</span>
+      <span><a href="/">Home</a><a href="/#services">Services</a><a href="/about/">About</a><a href="/insights/">Insights</a><a href="/#contact">Contact</a><a href="/privacy/">Privacy</a><a href="https://www.facebook.com/61551129263562" target="_blank" rel="noopener">Facebook</a></span>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-item').forEach(function (item) {
+      var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+      q.addEventListener('click', function () {
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(function (other) {
+          other.classList.remove('open');
+          other.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+          other.querySelector('.faq-a').style.maxHeight = '0px';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          q.setAttribute('aria-expanded', 'true');
+          a.style.maxHeight = a.scrollHeight + 'px';
+        }
+      });
+    });
+  </script>
+<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "acd177b19fd1470b8d88c2cf6685d36c"}'></script><!-- Cloudflare Pages Analytics --></body>
+</html>
